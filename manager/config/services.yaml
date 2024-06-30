@@ -16,7 +16,7 @@ services:
     # this creates a service per class whose id is the fully-qualified class name
     App\:
         resource: '../src/*'
-        exclude: '../src/{DependencyInjection,Model/User/Entity,Model/Work/Entity,Migrations,Tests,Kernel.php}'
+        exclude: '../src/{DependencyInjection,Model/User/Entity,migrations,Tests,Kernel.php}'
 
     App\Model\User\Entity\User\UserRepository: ~
 #    App\Model\Work\Entity\Members\Group\GroupRepository: ~
@@ -90,8 +90,8 @@ services:
 #    App\Service\Work\Processor\Processor:
 #        arguments: [!tagged app.twig.work_processor.driver]
 
-    App\Service\Uploader\FileUploader:
-        arguments: ['@default.storage', '%env(STORAGE_BASE_URL)%']
+#    App\Service\Uploader\FileUploader:
+#        arguments: ['@default.storage', '%env(STORAGE_BASE_URL)%']
 
     App\Model\EventDispatcher:
         class: App\Event\Dispatcher\MessengerEventDispatcher

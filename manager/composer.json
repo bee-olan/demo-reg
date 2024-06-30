@@ -9,14 +9,19 @@
         "ext-json": "^1.6",
         "cebe/markdown": "^1.2",
         "centrifugal/phpcent": "^3.0",
+        "doctrine/annotations": "^1.0",
+        "doctrine/doctrine-bundle": "^2.3",
+        "doctrine/doctrine-migrations-bundle": "^3.0",
+        "doctrine/orm": "^2.7",
         "exercise/htmlpurifier-bundle": "^2.0",
         "finesse/swiftmailer-defaults-plugin": "^2.0",
-        "knplabs/knp-menu-bundle": "dev-master",
+        "knplabs/knp-menu-bundle": "^2.3",
         "knplabs/knp-paginator-bundle": "^4.0",
         "knpuniversity/oauth2-client-bundle": "^1.28",
         "league/flysystem-bundle": "^1.1",
         "league/oauth2-facebook": "^2.0",
         "nyholm/psr7": "^1.1",
+        "phpdocumentor/reflection-docblock": "^5.3",
         "ramsey/uuid": "^3.8",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/asset": "4.3.*",
@@ -28,10 +33,11 @@
         "symfony/framework-bundle": "4.3.*",
         "symfony/messenger": "4.3.*",
         "symfony/monolog-bundle": "^3.1",
-        "symfony/orm-pack": "*",
         "symfony/process": "4.3.*",
+        "symfony/property-access": "4.3.*",
+        "symfony/property-info": "4.3.*",
         "symfony/security-bundle": "4.3.*",
-        "symfony/serializer-pack": "*",
+        "symfony/serializer": "4.3.*",
         "symfony/swiftmailer-bundle": "^3.1",
         "symfony/translation": "4.3.*",
         "symfony/twig-bundle": "4.3.*",
@@ -46,16 +52,23 @@
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.1",
         "fzaninotto/faker": "^1.8",
-        "symfony/debug-pack": "*",
+        "phpunit/phpunit": "^9.5",
+        "symfony/browser-kit": "4.3.*",
+        "symfony/css-selector": "4.3.*",
+        "symfony/debug-bundle": "4.3.*",
         "symfony/maker-bundle": "^1.0",
-        "symfony/profiler-pack": "*",
-        "symfony/test-pack": "*"
+        "symfony/phpunit-bridge": "^7.1",
+        "symfony/stopwatch": "4.3.*",
+        "symfony/web-profiler-bundle": "4.3.*"
     },
     "config": {
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": true
+        }
     },
     "autoload": {
         "psr-4": {
