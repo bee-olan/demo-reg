@@ -1,0 +1,133 @@
+version: '3'
+services:
+    manager-nginx:
+        build:
+            context: ./manager/docker/development
+            dockerfile: nginx.docker
+        volumes:
+            - ./manager:/app
+        depends_on:
+            - manager-php-fpm
+        ports:
+            - "8080:80"
+    manager-php-fpm:
+        build:
+            context: ./manager/docker/development
+            dockerfile: php-fpm.docker
+        volumes:
+            - ./manager:/app
+        depends_on:
+            - manager-postgres
+            - manager-redis
+            - manager-queue-redis
+            - storage
+            - mailer
+            - centrifugo
+    manager-php-cli:
+        build:
+            context: ./manager/docker/development
+            dockerfile: php-cli.docker
+        volumes:
+            - ./manager:/app
+            - composer:/root/.composer/cache
+        depends_on:
+            - manager-postgres
+            - manager-redis
+            - manager-queue-redis
+            - storage
+            - mailer
+            - centrifugo
+    manager-queue-worker:
+        build:
+            context: ./manager/docker/development
+            dockerfile: php-cli.docker
+        volumes:
+            - ./manager:/app
+            - composer:/root/.composer/cache
+        depends_on:
+            - manager-postgres
+            - manager-redis
+            - manager-queue-redis
+            - storage
+            - mailer
+            - centrifugo
+        command: sh -c "until [ -f .ready ] ; do sleep 1 ; done && php bin/console messenger:consume async -vv"
+    manager-node-watch:
+        image: node:12.7-alpine
+        volumes:
+            - ./manager:/app
+        working_dir: /app
+        command: sh -c "until [ -f .ready ] ; do sleep 1 ; done && npm run watch"
+    manager-node:
+        image: node:12.7-alpine
+        volumes:
+            - ./manager:/app
+        working_dir: /app
+    manager-postgres:
+        image: postgres:11.2-alpine
+        volumes:
+            - manager-postgres:/var/lib/postgresql/data
+        environment:
+            POSTGRES_USER: app
+            POSTGRES_PASSWORD: secret
+            POSTGRES_DB: app
+        ports:
+            - "54321:5432"
+    manager-redis:
+        image: redis:5.0-alpine
+        volumes:
+            - manager-redis:/data
+        command:
+            - 'redis-server'
+            - '--databases 2'
+            - '--save 900 1'
+            - '--save 300 10'
+            - '--save 60 10000'
+            - '--requirepass secret'
+    manager-queue-redis:
+        image: redis:5.0-alpine
+        volumes:
+            - manager-queue-redis:/data
+
+    storage:
+        build:
+            context: ./storage/docker/development
+            dockerfile: nginx.docker
+        volumes:
+            - ./storage:/app
+        ports:
+            - "8081:80"
+    storage-ftp:
+        image: stilliard/pure-ftpd
+        environment:
+            FTP_USER_NAME: app
+            FTP_USER_PASS: secret
+            FTP_USER_HOME: /app
+        volumes:
+            - ./storage/public:/app
+
+    mailer:
+        image: mailhog/mailhog
+        ports:
+            - "8082:8025"
+
+    centrifugo:
+        image: centrifugo/centrifugo:v2.2
+        ulimits:
+            nofile:
+                soft: 65536
+                hard: 65536
+        environment:
+            CENTRIFUGO_SECRET: secret
+            CENTRIFUGO_API_KEY: secret
+        volumes:
+            - ./centrifugo/docker/development/centrifugo:/centrifugo
+        ports:
+            - "8083:8000"
+        command: centrifugo --admin --admin_insecure
+
+volumes:
+    manager-postgres:
+    manager-redis:
+    manager-queue-redis:
+    composer:
