@@ -1,0 +1,130 @@
+/*=====хлебные крошки ======================*/
+.kroxii-gradien {
+  background-image: linear-gradient(
+                  to bottom,
+                  rgba($gradien, 0),
+                  rgba($gradien, .2) 25%,
+                  rgba($gradien, .3) 50%,
+                  rgba($gradien, .1) 75%,
+                  rgba($gradien, 0)
+  );
+}
+
+.kroxii {
+  display: flex;
+  //padding-left:  $sidebar-width;
+  position: sticky; // прилипание позиционирование
+  //position: fixed; // фиксированное позиционирование
+  top: 7rem;
+  left: 13.5rem;
+  z-index: $z-index-kroxii;
+
+  //@include breakpoint($tablet-bp) {
+  //  display: none;
+  //}
+}
+
+.krox { // для проекта
+  display: flex;
+  //padding-left:  $sidebar-width;
+  position: sticky; // прилипание позиционирование
+  //position: fixed; // фиксированное позиционирование
+  // top: 70px;
+  top: 190px;
+  //left: 13.5rem;
+  z-index: $z-index-kroxii;
+
+  //@include breakpoint($tablet-bp) {
+  //  display: none;
+  //}
+}
+
+.kroxii-xl * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+.kroxii-xl {
+  display: flex;
+  flex-wrap: wrap;
+  counter-reset: flag;
+  margin: 0 0 10px 0;
+
+
+}
+
+
+.kroxii-xl a,
+.kroxii-xl span {
+  background: transparent;
+  color: $kroxii;
+  transition: all 0.5s;
+  text-decoration: none;
+  outline: none;
+
+  line-height: 24px;
+  padding: 0 20px 0 20px;
+  position: relative;
+  font-size: 1.1rem;
+
+  box-shadow: 0 10px 15px rgba($black, .2); //тень
+
+  border: 1px solid $kroxii;
+  border-right: 0;
+  margin: 1px 0;
+  border-radius: 3px 0 0 3px;
+  opacity: 1;
+}
+
+.kroxii-xl .aktiv {
+  // background: #f1e9c2;
+  color: $red2;
+  // opacity: .5;
+}
+
+.aktiv-kras {
+
+  color: $red2;
+
+}
+
+.kroxii-xl a:first-child {
+  padding-left: 26px;
+  padding-bottom: 1px;
+}
+
+.kroxii-xl a:first-child:before {
+  left: 14px;
+}
+
+.kroxii-xl a:hover {
+  background: $kroxii;
+  color: $header-color;
+  //  color: $white;
+}
+
+.kroxii-xl a:hover:after {
+  background: $kroxii;
+}
+
+.kroxii-xl a:after,
+.kroxii-xl span:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  //  box-shadow: 0 10px 15px rgba($black, .45); //тень
+  transform: scale(0.7) rotate(45deg);
+  z-index: 1;
+  box-shadow: 1px -1px 0 1px $lini-prof; //$header-color;
+  border-radius: 0 5px 0 50px;
+  background: $kroxii;
+  transition: all 0.5s;
+}
+
+
+/*==============================================*/

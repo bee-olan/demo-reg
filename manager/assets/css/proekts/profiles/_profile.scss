@@ -1,0 +1,62 @@
+.profilee {
+  margin-top: -.5rem;
+
+  //@include breakpoint($tablet-bp) {
+  //    margin-top: -1rem;
+  //    position: relative; ///---1 что бы дочернии были absolute
+  //
+  //    border-bottom: 2px solid $border-foto;
+  //}
+}
+
+.profilee__header {
+  margin-bottom: 2rem;
+  text-align: center;
+
+  //@include breakpoint($tablet-bp) {
+  //    padding-top: 2rem;
+  //    padding-left: 8rem;
+  //    text-align: left;
+  //}
+}
+
+.profilee__name {
+
+  font-size: 1.4rem;
+  color: $beloe;
+  // text-align: center;
+
+  //@include breakpoint($tablet-bp) {
+  //    font-size: 1.5rem;
+  //}
+}
+
+.profilee__prof {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: $beloe-new;
+
+  //@include breakpoint($tablet-bp) {
+  //    font-size: 1.2rem;
+  //}
+}
+
+.profilee__text {
+  padding: 1.5rem 0;
+  margin: 1.5rem 0;
+
+  color: $color-text;
+  font-size: 1.2rem;
+  text-align: center;
+  border-top: 2px solid $border-lin-nav;
+  border-bottom: 2px solid $border-lin-nav;
+
+  //@include breakpoint($tablet-bp) {
+  //    display: none;
+  //}
+}
+
+
+
+
+

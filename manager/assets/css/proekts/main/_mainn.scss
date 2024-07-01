@@ -1,0 +1,12 @@
+.mainn {
+    padding: 3.5rem 0 8rem $sidebarr-width;
+
+    // добавляем миксин  - убираемпадинг слева
+    //@include breakpoint($tablet-bp) {
+    //    padding-top: 6rem;
+    //    padding-left: 0;
+    //}
+}
+.main-pro {
+    padding: 0 2rem;
+}

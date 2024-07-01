@@ -1,0 +1,98 @@
+
+.olan {
+  display: block; // блочная
+  background-image: url('../../../../assets/images/proekts/profile/olan.jpg');
+  width: 70px;
+  height: 59px;
+  margin: 2rem auto 1.5rem;
+  position: relative; //чтобы бордер не исчезал  под картинкой
+
+  border: 2px solid $border-foto;
+  box-shadow: 0 7px 20px rgba(0, 0, 0, .25);
+  border-radius: 10%;
+}
+.logo_es{
+  background-image: url('../../../../assets/images/proekts/logo_es.png');
+  width: 270px;
+  height: 45px;
+  //box-shadow: 0 5px 10px rgba($primary-modal, .2);
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.karanda-kar {
+  display: block; // блочная
+  background-image: url('../../../../assets/images/proekts/karand.png');
+  width: 24px;
+  height: 24px;
+  // margin: 2rem auto 1.5rem;
+  position: relative; //чтобы бордер не исчезал  под картинкой
+
+}
+
+.delit-kar {
+  display: block; // блочная
+  background-image: url('../../../../assets/images/proekts/delet.png');
+  width: 24px;
+  height: 24px;
+  // margin: 2rem auto 1.5rem;
+  position: relative; //чтобы бордер не исчезал  под картинкой
+
+}
+
+.mesto-kar {
+  display: block; // блочная
+  background-image: url('../../../../assets/images/proekts/mestos/mestos.png');
+  width: 68px;
+  height: 68px;
+  margin: 2rem auto 1.5rem;
+  position: relative; //чтобы бордер не исчезал  под картинкой
+
+}
+.person-kar {
+  display: block; // блочная
+  background-image: url('../../../../assets/images/proekts/persona/person.png');
+  width: 74px;
+  height: 74px;
+  margin: 2rem auto 1.5rem;
+  position: relative; //чтобы бордер не исчезал  под картинкой
+
+  border: 2px solid $border-foto;
+  box-shadow: 0 7px 20px rgba(0, 0, 0, .25);
+  border-radius: 10%;
+}
+.person-wse {
+  display: block; // блочная
+  background-image: url('../../../../assets/images/proekts/uchasties/grouppa.png');
+  width: 68px;
+  height: 68px;
+  margin: 2rem auto 1.5rem;
+  position: relative; //чтобы бордер не исчезал  под картинкой
+
+  border: 2px solid $border-foto;
+  box-shadow: 0 7px 20px rgba(0, 0, 0, .25);
+  border-radius: 10%;
+}
+
+.bloknot-kar {
+  display: block; // блочная
+  background-image: url('../../../../assets/images/proekts/uchasties/bloknot.png');
+  width: 68px;
+  height: 56px;
+  margin: 2rem auto 1.5rem;
+  position: relative; //чтобы бордер не исчезал  под картинкой
+
+  border: 2px solid $border-foto;
+  box-shadow: 0 7px 20px rgba(0, 0, 0, .25);
+  border-radius: 10%;
+}
+.plem-ind {
+  display: block; // блочная
+  background-image: url('../../../../assets/images/proekts/matkas/matki_.png');
+  width: 64px;
+  height: 62px;
+  margin: 2rem auto 1.5rem;
+  position: relative; //чтобы бордер не исчезал  под картинкой
+
+}

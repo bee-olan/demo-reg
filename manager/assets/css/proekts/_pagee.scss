@@ -1,0 +1,64 @@
+.pagee {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    min-height: 100vh;
+
+    background: linear-gradient($grad2, $grad1);
+    
+    background-attachment: fixed; // фиксирую фон
+    overflow: hidden;
+
+    //@include breakpoint($tablet-bp) {
+    //    .show-sidebar & {
+    //        position: relative;
+    //    }
+    //}
+  &--sezon {
+        background: transparent;
+    }
+}
+
+.pagee__title {
+    // margin-bottom: 1rem;
+    padding-left: 3rem;
+    font-size: 1.4rem;
+    color: $white;
+  
+    &--center {
+        text-align: center;
+    }
+    &--obla {
+        padding-left: 10rem;
+    }
+    &--raio {
+        padding-left: 20rem;
+    }
+
+    //@include breakpoint($tablet-bp) {
+    //
+    //    // padding: .3rem .3rem .4rem .5rem;
+    //
+    //    &--obla {
+    //       display: none;
+    //    }
+    //
+    //    &--raio {
+    //        padding-left: .3rem;
+    //    }
+    //}
+  }
+//.pagee__mask {
+    //@include breakpoint($tablet-bp) {
+    //    display: block;
+    //    width: 100%;
+    //    height: 100%;
+    //
+    //    background-color: rgba($black, .9);
+    //
+    //    position: absolute;
+    //    top: 0;
+    //    left: 0;
+    //    z-index: 100;
+    //}
+//}

@@ -1,0 +1,7 @@
+.pro-body{
+  overflow-y: scroll;
+  // скрываем скролл для body при модальном о.
+  &.no-scroll{
+    overflow: hidden;
+  }
+}
