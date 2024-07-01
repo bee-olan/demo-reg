@@ -4,7 +4,7 @@
 
     <p>Hello, {{ executor.name.first }}!</p>
 
-    <p>You are assigned to task &laquo;{{ task.name }}&raquo;:</p>
+    <p>Вам поручено тестировать матку &laquo;{{ task.name }}&raquo;:</p>
 
     {% set url = url('work.projects.tasks.show', {'id': task.id}) %}
 

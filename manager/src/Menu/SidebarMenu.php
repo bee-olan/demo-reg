@@ -64,7 +64,7 @@ class SidebarMenu
 //                ->setLinkAttribute('class', 'nav-link');
 //        }
 
-        $menu->addChild('Profile', ['route' => 'profile'])
+        $menu->addChild('Профиль', ['route' => 'profile'])
             ->setExtra('icon', 'nav-icon icon-user')
             ->setExtra('routes', [
                 ['route' => 'profile'],

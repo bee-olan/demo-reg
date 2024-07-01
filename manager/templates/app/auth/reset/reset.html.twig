@@ -1,6 +1,6 @@
 {% extends 'auth.html.twig' %}
 
-{% block title %}Password Reset{% endblock %}
+{% block title %}Сброс пароля{% endblock %}
 
 {% block body %}
     <div class="container">
@@ -10,7 +10,7 @@
                     <div class="card-body p-4">
                         {% include '_flashes.html.twig' %}
 
-                        <h1>Password Reset</h1>
+                        <h1>Сброс пароля</h1>
 
                         {{ form_start(form) }}
 
@@ -22,7 +22,7 @@
                             {{ form_errors(form.password) }}
                         </div>
 
-                        <button type="submit" class="btn btn-block btn-success">Set Password</button>
+                        <button type="submit" class="btn btn-block btn-success">Установить пароль</button>
 
                         {{ form_end(form) }}
                     </div>
