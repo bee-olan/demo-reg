@@ -6,7 +6,7 @@
     <meta name="centrifugo-url" content="{{ centrifugo_url }}">
     <meta name="centrifugo-user" content="{{ app.user.id }}">
     <meta name="centrifugo-token" content="{{ centrifugo_token() }}">
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{% block title %}Добро пожаловать!{% endblock %}</title>
     <!-- Custom styles for this template -->
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
@@ -55,7 +55,7 @@
 </div>
 <footer class="app-footer">
     <div>
-        <span>© {{ "now"|date("Y") }} All rights reserved</span>
+        <span>© {{ "now"|date("Y") }} Все права защищены</span>
     </div>
 </footer>
 {% block javascripts %}

@@ -4,28 +4,25 @@
 
 
     {% block zagol %}
-        <div class="zagol ">
-            <div class=" osnowa">
+        <div class="zagol zagol-bg-primary ma-to-1 pa-to-2">
                 <h1 class="zagol-teni"> Рег - Те - Ма</h1>
-                {#                <h2 class="storie-teni storie-teni--em4">#}
-                {#                    Станьте участником проекта#}
-                {#                </h2>#}
-            </div>
         </div>
     {% endblock %}
 {% block body %}
-    <div class="container">
+    <div class="zagol-container">
 
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            {#            <div class="col-md-8">#}
+            <div class="zagol-col-md-8">
                 <div class="card-group">
                     <div class="card p-4">
                         <div class="card-body">
                             {% include '_flashes.html.twig' %}
 
                             <h1 class="zagol-teni zagol-teni--em4">Авторизация</h1>
-
-                            <p class="text-muted">Войди в свою учетную запись</p>
+                            <p>
+                            <span class="zagol-teni zagol-teni--px30" > Войди в свою учетную запись  </span>
+                           </p>
                             {% if error %}
                                 <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                             {% endif %}
@@ -35,6 +32,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="icon-envelope"></i></span>
                                     </div>
+
                                     <input class="form-control" type="email" name="email" value="{{ last_username }}"
                                            placeholder="Email"/>
                                 </div>
@@ -53,7 +51,9 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
-                                        <button class="btn btn-primary px-4" type="submit">Вход</button>
+                                        <button class="btnn btnn-log  " type="submit">
+                                            В учетную запись
+                                        </button>
                                     </div>
                                     <div class="col-6 text-right">
                                         <a class="btn btn-link px-0" href="{{ path('auth.reset') }}">
@@ -72,28 +72,33 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+                    <div class="card text-white zagol-bg-primary py-5 d-md-down-none" style="width:44%">
                         <div class="card-body text-center">
                             <div>
-                                <h2>Регистрация</h2>
-                                <p class="  ma-bo-1">Сайт для пчеловодов и матководов.</p>
 
+                                <h2 class="zagol-teni zagol-teni--em4" >Регистрация</h2>
+                                <p class="  ma-bo-1">
+                                   <span class="zagol-teni zagol-teni--px30" > Сайт для пчеловодов и матководов.  </span>
+                                </p>
                             </div>
-                            <div class="  ma-bo-1">
+                            <div>
 
                                 <p class=" pa-le-2 ">
-                                    <strong class=" strongo strongo--chast-text teni ">Рег - </strong>региональное
+                                    <span class="zagol-teni zagol-teni--em4" >Рег  </span>
+                                    <span class="zagol-teni zagol-teni--px30" > - региональный  </span>
                                 </p>
-                                <p class=" pa-le-5 ">
-                                    <strong class="strongo strongo--chast-text teni ">Те - </strong>тестирование
+                                <p >
+                                    <span class="zagol-teni zagol-teni--em4">Те  </span>
+                                    <span class="zagol-teni zagol-teni--px30" > - тест  </span>
                                 </p>
                                 <p class=" pa-le-8 ">
-                                    <strong class="strongo strongo--chast-text teni ">Ма - </strong>маток.
+                                    <span class="zagol-teni zagol-teni--em4">Ма  </span>
+                                     <span class="zagol-teni zagol-teni--px30" > - маток.  </span>
                                 </p>
 
                             </div>
                             <div>
-                                <a class="btn btn-primary active mt-3" href="{{ path('auth.signup') }}">
+                                <a class="btnn btnn-reg ma-to-1" href="{{ path('auth.signup') }}">
                                     Зарегистрироваться Сейчас!
                                 </a>
                             </div>

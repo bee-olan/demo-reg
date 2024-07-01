@@ -1,6 +1,6 @@
 .zagol {
-  margin-bottom: 3rem;
-  padding-bottom: 1rem; // изменила для rasas-ras
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
   max-width: 100%;
   margin-right: 0;
   margin-left: 0;
@@ -27,4 +27,33 @@
   &--em4 {
     font-size: 3.750em;
   }
+
+  &--px30 {
+    font-size: 1.875rem;
+  }
+}
+//20 Пиксели = 1.25 Rem
+//22 Пиксели = 1.375 Rem
+//24 Пиксели = 1.5 Rem
+//26 Пиксели = 1.625 Rem
+// 28 Пиксели = 1.75 Rem.
+//30 Пиксели = 1.875 Rem.
+
+
+.zagol-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  margin: -15rem auto 0 auto;
+}
+
+.zagol-col-md-8 {
+  flex: 0 0 80%;
+  max-width: 80%;
+  border-radius: 5px;
+  box-shadow: 0 5px 22px rgba(#23282c, .25);
+}
+.zagol-bg-primary{
+  background: linear-gradient($grad1, $grad2);
 }
