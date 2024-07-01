@@ -66,17 +66,11 @@ services:
     App\Menu\SidebarMenu:
         tags: [{ name: knp_menu.menu_builder, method: build, alias: sidebar }]
 
-#    App\Menu\Work\MainMenu:
-#        tags: [{ name: knp_menu.menu_builder, method: build, alias: work_main }]
-#
-#    App\Menu\Work\Projects\ProjectMenu:
-#        tags: [{ name: knp_menu.menu_builder, method: build, alias: work_project }]
-#
-#    App\Menu\Work\Projects\SettingsMenu:
-#        tags: [{ name: knp_menu.menu_builder, method: build, alias: work_project_settings }]
-#
-#    App\Menu\Work\Projects\TaskPresetMenu:
-#        tags: [{ name: knp_menu.menu_builder, method: build, alias: work_projects_task_presets }]
+    App\Menu\Proekts\ProektMenu:
+        tags: [{ name: knp_menu.menu_builder, method: build, alias: proekt_menu }]
+
+    App\Menu\Proekts\PageGlavas\UchastGl\GlavMenu:
+        tags: [{ name: knp_menu.menu_builder, method: build, alias: proekt_page_uchast_glav }]
 
     Symfony\Component\HttpFoundation\Session\Session:
         alias: Symfony\Component\HttpFoundation\Session\SessionInterface

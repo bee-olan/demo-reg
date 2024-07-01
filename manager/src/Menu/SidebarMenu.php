@@ -24,12 +24,17 @@ class SidebarMenu
         $menu = $this->factory->createItem('root')
             ->setChildrenAttributes(['class' => 'nav']);
 
-        $menu->addChild('Dashboard', ['route' => 'home'])
+        $menu->addChild('Меню Админки', ['route' => 'home'])
             ->setExtra('icon', 'nav-icon icon-speedometer')
             ->setAttribute('class', 'nav-item')
             ->setLinkAttribute('class', 'nav-link');
 
-        $menu->addChild('Work')->setAttribute('class', 'nav-title');
+//        $menu->addChild('Work')->setAttribute('class', 'nav-title');
+
+        $menu->addChild('Меню Проекта', ['route' => 'app.proekts.basepro'])
+            ->setExtra('icon', 'nav-icon icon-speedometer')
+            ->setAttribute('class', 'nav-item')
+            ->setLinkAttribute('class', 'nav-link');
 
 //        $menu->addChild('Projects', ['route' => 'work.projects'])
 //            ->setExtra('routes', [

@@ -1,0 +1,151 @@
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script);
+
+
+.osnowa {
+  padding-bottom: 2rem;
+  margin-top: 3rem;
+  background-color: rgb(119, 122, 77);
+  background: -webkit-linear-gradient(-45deg,
+          rgb(119, 122, 77) 25%,
+          rgb(175, 169, 112) 25%,
+          #ccb44b 50%,
+          rgb(119, 122, 77) 50%,
+          rgb(119, 122, 77) 75%,
+          rgb(175, 169, 112) 75%);
+  background-size: 4px 4px;
+}
+
+.storie-teni {
+  text-align: center;
+  font-family: 'Oleo Script', cursive;
+  font-size: 6.250em;
+  color: transparent; /*это скроет текст*/
+  letter-spacing: 0.1em;
+  text-shadow: 0 1px 5px #ccb44b,
+
+  0 -1px 0 rgba(0, 0, 0, 1),
+  0 -3px 0 rgba(0, 0, 0, 0.25),
+  0 1px 0 rgba(255, 255, 255, 0.5),
+  0 2px 2px rgba(255, 255, 255, 0.2);
+
+  &--em4 {
+    font-size: 3.750em;
+  }
+
+  &--em3 {
+    font-size: 2.25em;
+
+  }
+
+  //@include breakpoint($tablet-bp) {
+  //  font-size: 3.25em;
+  //  text-shadow: 0 1px 5px #ccb44b,
+  //  0 -.5px 0 rgba(0, 0, 0, 1),
+  //  0 -1.5px 0 rgba(0, 0, 0, 0.25),
+  //  0 .5px 0 rgba(255, 255, 255, 0.5),
+  //  0 1px 1px rgba(255, 255, 255, 0.2);
+  //
+  //  &--em4 {
+  //    font-size: 2.250em;
+  //
+  //  }
+  //}
+}
+
+.stories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-template-rows: 140px;
+  margin-bottom: 2rem;
+
+  //@include breakpoint($mobile-bp) {
+  //  grid-template-columns: 110px 110px 110px 110px 110px;
+  //  overflow: auto;
+  //}
+}
+
+//.stories__item {
+//  overflow: hidden;
+//  position: relative;
+//
+//  border-radius: 5px;
+//  box-shadow: 0 5px 15px rgba($black, .2);
+//  cursor: pointer;
+//
+//  &:after {
+//    content: "";
+//    display: block;
+//    width: 100%;
+//    height: 100%;
+//
+//    background-image: linear-gradient(
+//                    to bottom,
+//                    rgba($black, .6),
+//                    rgba($black, 0) 30%,
+//                    rgba($black, 0) 75%,
+//                    rgba($black, .6)
+//    );
+//
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    z-index: 2;
+//  }
+//
+//  &:hover {
+//    .stories__preview {
+//      transform: scale(1.3);
+//      transition-duration: 3s;
+//    }
+//  }
+//}
+//
+//.stories__preview {
+//  display: block;
+//  width: 100%;
+//  height: 100%;
+//  object-fit: cover;
+//
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  z-index: 1;
+//
+//  transform: scale(1.05);
+//  transition: transform 1s ease-in-out;
+//}
+//
+//.stories__title,
+//.stories__date {
+//  width: 100%;
+//  padding: 1.2rem;
+//
+//  font-size: 1.2rem;
+//  line-height: 1.1;
+//  color: $beloe;
+//
+//  position: absolute;
+//  left: 0;
+//  z-index: 3;
+//
+//  &--rln {
+//    color: $blue;
+//  }
+//}
+//
+//.stories__title {
+//  top: 0;
+//}
+//
+//.stories__date {
+//  bottom: 0;
+//
+//  text-align: right;
+//}
+
+
+
+
+
+

@@ -1,0 +1,261 @@
+.proekts {
+  margin-bottom: 3rem;
+  padding-bottom: 1rem; // изменила для rasas-ras
+  max-width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  overflow: hidden; // в рамках размера -все лишнее скрылось overflow
+  background-color: transparent;
+  box-shadow: 0 5px 22px rgba($body-bg, .25);
+  border-radius: 5px;
+
+}
+
+
+//.proekts-my {
+//  margin-bottom: 3rem;
+//  padding-bottom: 1rem; // изменила для rasas-ras
+//  max-width: 100%;
+//  margin-right: 0;
+//  margin-left: 0;
+//  overflow: hidden; // в рамках размера -все лишнее скрылось overflow
+//  background: linear-gradient($grad1, $grad2);
+//  //background-color: transparent;
+//  box-shadow: 0 5px 22px rgba($white, .25);
+//  border-radius: 5px;
+//}
+//
+//.proekts {
+//  margin-bottom: 3rem;
+//  padding-bottom: 1rem; // изменила для rasas-ras
+//  max-width: 100%;
+//  margin-right: 0;
+//  margin-left: 0;
+//  overflow: hidden; // в рамках размера -все лишнее скрылось overflow
+//
+//  background-color: transparent;
+//  box-shadow: 0 5px 22px rgba($white, .25);
+//  border-radius: 5px;
+//
+//  &--marg-bot {
+//    margin-bottom: 1rem;
+//  }
+//
+//  &--glavn {
+//    padding-bottom: 0;
+//  }
+//
+//  &--uhastiee {
+//    background-color: $col-uchastie;
+//    box-shadow: 0 5px 22px rgba($black, .35);
+//  }
+//
+//  &--paseka {
+//    //box-shadow: inset 0 0 10px rgba($godina-swet, 0.9), 0 5px 10px rgba(32, 32, 32, 0.2);
+//    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.9);
+//
+//    color: $beloe-new;
+//    padding-bottom: 2rem;
+//    background: linear-gradient($grad1, $grad2);
+//
+//  }
+//
+//  &--tochka {
+//    box-shadow: inset 0 0 10px rgba($grad1, 0.9);
+//    color: $grad1;
+//    padding-bottom: 2rem;
+//    border: 1px solid $grad1;
+//  }
+//
+//  &--godina {
+//    box-shadow: inset 0 0 10px rgba($godina-col, 0.9);
+//    color: $beloe-new;
+//    padding-bottom: 2rem;
+//
+//  }
+//
+//  &--plemmatka {
+//    box-shadow: inset 0 0 10px rgba($plem-color, 0.9);
+//    color: $plem-color;
+//    background-color: $white;
+//  }
+//
+//  // &--elitmatka {
+//  //   box-shadow: inset 0 0 10px rgba($text, 0.9);
+//  //   color: $plem-color;
+//  //   background-color: $white;
+//  // }
+//
+//  &--sezon {
+//    color: $sezon-text;
+//
+//    // box-shadow: inset 0px 0px 10px rgba($col-child-ten, 0.9), //тень внутри
+//    //box-shadow: inset 0px 0px 10px rgba($sezon-teni, 0.9),
+//    //0 15px 25px rgba($white, .35);
+//    background-color:$col-child ;
+//    border-bottom: 2px solid $sezon-teni; // linia
+//  }
+//
+//  &--childmatka {
+//    max-width: 100%;
+//    margin-left: 0;
+//    //margin-right: 2rem;
+//    color: $child-text;
+//    background-color:$col-child ;
+//    // box-shadow: inset 0px 0px 10px rgba($col-child-ten, 0.9), //тень внутри
+//    box-shadow: inset 0 0 10px rgba($child-text, 0.9);
+//    border-bottom: 2px solid $child-text; // linia
+//  }
+//
+//  &--kategor {
+//    max-width: 100%;
+//    //margin-left: 2rem;
+//    //margin-right: 2rem;
+//    color: $white;
+//    background-color:$col-kategor ;
+//    box-shadow: inset 0 0 10px rgba($white, 0.9), //тень внутри
+//      0 15px 25px rgba($col-kategor, .35);
+//    border-bottom: 2px solid $white; // linia
+//  }
+//
+//  &--pchelomat {
+//    max-width: 100%;
+//    //margin-left: 2rem;
+//    //margin-right: 2rem;
+//    color: $white;
+//    background-color: $col-kategor ;
+//    box-shadow: inset 0 0 14px rgba($white, 0.9), //тень внутри
+//    0 15px 25px rgba($col-kategor, .35);
+//    border-bottom: 2px solid $white; // linia
+//  }
+//  &--childpchelo {
+//    max-width: 100%;
+//    //margin-left: 2rem;
+//    //margin-right: 2rem;
+//    color: $white;
+//    //background-color: $col-kategor ;
+//    background-color: transparent;
+//    box-shadow: inset 0 0 14px rgba($white, 0.9), //тень внутри
+//    0 15px 25px rgba($col-kategor, .35);
+//    border-bottom: 2px solid $white; // linia
+//  }
+//
+//  &--drev-rod {
+//    color: $fon-ser-bor;
+//    background-color: $beloe; //   $fon-ser;
+//    box-shadow: inset 0 0 10px rgba($fon-ser-bor, 0.9);
+//    border-bottom: 2px solid $fon-ser-bor; //
+//    padding-bottom: .3rem;
+//  }
+//
+//  &--otec {
+//    color:  $beloe;
+//
+//    background-color: #588557 ;  //$col-otec ;
+//    box-shadow: inset 0 0 10px rgba($fon-ser-bor, 0.9);
+//    border-bottom: 2px solid $col-otec;
+//    padding-bottom: .3rem;
+//  }
+//
+//  &--rasa {
+//    // max-width: 100%;
+//    // margin-left: 0;
+//    // margin-right: 0;
+//
+//    color: $rasa-color;
+//    background-color: $white;
+//    box-shadow: inset 0 0 10px rgba($rasa-color, 0.9);
+//    border-bottom: 2px solid $rasa-color; // linia
+//  }
+//
+//  // @include breakpoint($tablet-bp) {
+//  //   //margin-left: 0;
+//  //   //margin-right: 0;
+//  //   padding: 1.5rem;
+//  // }
+//
+//  //@include breakpoint($mobile-bp) {
+//  //  padding: 1.5rem;
+//  //
+//  //  &--rasa {
+//  //    padding-right: 0;
+//  //    margin-left: 0;
+//  //    margin-right:0;
+//  //
+//  //  }
+//  //
+//  //}
+//
+//}
+//
+//.pb0{
+//  padding-bottom: 0;
+//}
+//.proekts-plr {
+//  padding: 0 0 0 1rem;
+//
+//  //@include breakpoint($mobile-bp) {
+//  //  padding: 0 1rem;
+//  //}
+//}
+//
+//.proekts-uch {
+//  margin-bottom: 3rem;
+//  max-width: 100%;
+//  overflow: hidden; // в рамках размера -все лишнее скрылось overflow
+//  background-color: transparent;
+//  box-shadow: 0 5px 22px rgba($black, .35);
+//  border-radius: 5px;
+//
+//  //@include breakpoint($mobile-bp) {
+//  //  padding: 1.5rem;
+//  //}
+//}
+//.proekts-group {
+//  margin-bottom: 3rem;
+//  max-width: 100%;
+//  overflow: hidden; // в рамках размера -все лишнее скрылось overflow
+//  background-color: transparent;
+//  box-shadow: 0 5px 22px rgba($black, .35);
+//  border-radius: 5px;
+//
+//  //@include breakpoint($mobile-bp) {
+//  //  padding: 1.5rem;
+//  //}
+//}
+//
+//.proekts-plem {
+//  margin-bottom: 3rem;
+//  max-width: 100%;
+//  // margin-left: 1rem;
+//  // margin-right: 2rem;
+//  overflow: hidden; // в рамках размера -все лишнее скрылось overflow
+//
+//  border-radius: 5px;
+//  box-shadow: inset 0 0 10px rgba($plem-color, 0.9);
+//  color: $plem-color;
+//  background-color: $white;
+//
+//  //@include breakpoint($spisok-bp) {
+//  //  // margin-left: -4rem;
+//  //  margin-right: -4rem;
+//  //}
+//
+//  //@include breakpoint($mobile-bp) {
+//  //  padding: 1.5rem;
+//  //}
+//}
+//.proekts-elit {
+//  margin-bottom: 3rem;
+//  padding-bottom: 3rem;
+//  max-width: 100%;
+//  overflow: hidden; // в рамках размера -все лишнее скрылось overflow
+//
+//  border-radius: 5px;
+//  box-shadow: inset 0 0 10px rgba($elit-col-pro7, 0.9);
+//  color: $beloe-new;
+//
+//    &--child {
+//     background-color: $elit-col-pro1;
+//    }
+//}

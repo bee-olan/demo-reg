@@ -113,8 +113,13 @@ pre {
 @import "sdwig-pa-ma/sdvig";
 @import "knopkas/knopka";
 
+@import "proekts/headers/header";
+@import "proekts/headers/nav";
+@import "proekts/headers/search";
+@import "proekts/headers/subnav";
 
-
+@import "proekts/proekt/proekts";
+@import "proekts/stories/stories";
 .direct-chat-action {
     padding: 0 0 10px 50px;
     font-size: .8rem;

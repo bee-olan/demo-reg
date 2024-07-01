@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<meta name="google" content="notranslate">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="">
+    <title>{% block title %}Привер Проект{% endblock %}</title>
+
+</head>
+<body class="pro-body" id="modalId" >
+    {# class="show-sidebar" #}
+    <div class="pagee" id="pagee">
+    
+        {% block header %}
+            {{ include('app/proekts/base/_header.html.twig') }}
+        {% endblock %}
+
+        {% block sidebarr %}
+            {{ include('app/proekts/base/_sidebarr.html.twig') }}
+        {% endblock %}
+
+
+        <!-- Main -->
+        <main class="mainn">
+            <div class="main-pro" >
+                {% block menupro %}
+                    {{ include('app/proekts/_tabs.html.twig') }}
+                {% endblock %}
+            </div>
+            <div class="containerr">
+                <div class="krox kroxii-gradien ">
+                    <div class="kroxii-xl">
+                        {% block kroxii %}
+                            <a href="{{ path('app.proekts.basepro') }}">Главная</a>
+                        {% endblock %}
+                    </div>
+                </div>
+
+        
+            {% include '_flashes.html.twig' %}
+
+                {% block bodyy %}
+
+                    {% if uchastie and  persona and mestoNomer %}
+                        {{ include('app/proekts/base/_main-matkas.html.twig') }}
+                    {% else %}
+                        {{ include('app/proekts/base/_main-uchast.html.twig') }}
+                    {% endif %}
+                {% endblock %}
+            </div>
+        </main>
+    </div>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+{#     {% block modall %}#}
+{#    {{  include('proekt/base/_story-modal.html.twig')}}#}
+{#    {{  include('proekt/base/_contact-modal.html.twig') }}#}
+{#     {% endblock %}#}
+
+{#    {% block javascripts %}#}
+{#         <script src="../assets/proekt/js/mobileNavs.js"></script>#}
+{#        <script src="../assets/proekt/js/modal.js"></script>#}
+{#        <script src="../assets/proekt/js/fotomodal.js"></script>#}
+{#    {% endblock %}#}
+{#    {% block javascripts %}#}
+{#        <script src="{{ asset('../assets/proekt/js/fotomodal.js') }}"></script>#}
+{#        <script src="{{ asset('../assets/proekt/js/mobileNavs.js') }}"></script>#}
+{#        <script src="{{ asset('../assets/proekt/js/textarea.js') }}"></script>#}
+{#        <script src="{{ asset('../assets/proekt/js/modal.js') }}"></script>#}
+
+{#    {% endblock %}#}
+</body>
+</html>
+

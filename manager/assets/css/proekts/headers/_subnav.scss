@@ -1,0 +1,105 @@
+.subnav {
+    display: none; //скрыть nav
+    
+    width: 20rem;
+    padding: .5rem 0;
+
+    background-color: rgba($header-color, .4);
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 6px 8px rgba($black, .2);
+    position: absolute; // родителя nav__item
+    top: 100%;
+     //left: 15px;
+    left: 0;
+   
+
+    // @include breakpoint($tablet-bp) {
+    //    // position: static;
+    //    position: static;
+    //    width: 100%;
+    //    padding-left: 2rem;
+    //
+    //    background-color: transparent;
+    //    box-shadow: none;
+    //}
+}
+
+.sub-nav__link {
+    display: block;
+    padding: .45rem 0 .45rem 2rem ;
+    margin-left: 2.2rem;
+    font-size: 1.9rem;
+    color: $primary-modal;
+    text-decoration: none;
+    opacity: .6;
+    transition: background-color .2s ease-in-out;
+
+&:hover {
+    //background-color: darken($header-color, 5%);
+    color:$primary-modal;
+    opacity: 1;
+    // transition: background-color .2s ease-in-out;
+
+    // background-color: rgb(119,122,77);
+
+    text-decoration: none;    
+}
+
+//@include breakpoint($tablet-bp) {
+//    padding-left: 0;
+//    padding-right: 0;
+//
+//    font-size: 1.8rem;
+//
+//    &:hover {
+//        background: none;
+//    }
+//}
+}
+
+.subnav__link {
+        display: block;
+        padding: .45rem 1.2rem;
+        font-size: 1.2rem;
+        color: $grad1;
+        text-decoration: none;
+        opacity: 1;
+        transition: background-color .2s ease-in-out;
+
+    &:hover {
+        //background-color: darken($header-color, 5%);
+        // color: $white;
+
+        background-color: rgb(119,122,77);
+        background: -webkit-linear-gradient(-45deg, 
+        rgb(119,122,77) 25%,
+        rgb(175, 169, 112) 25%, 
+        #ccb44b 50%, 
+        rgb(119,122,77) 50%, 
+        rgb(119,122,77) 75%, 
+        rgb(175, 169, 112) 75%);
+        background-size:4px 4px;
+
+        // background-color: $header-color;
+        text-decoration: none;    
+    }
+
+    //@include breakpoint($tablet-bp) {
+    //    padding-left: 0;
+    //    padding-right: 0;
+    //
+    //    font-size: 1.8rem;
+    //
+    //    &:hover {
+    //        background: none;
+    //    }
+    //}
+}
+
+
+
+
+
+
+
+

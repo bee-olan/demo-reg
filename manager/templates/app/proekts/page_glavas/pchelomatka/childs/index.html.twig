@@ -1,0 +1,19 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}ПчелоДочь{% endblock %}
+
+
+{% block menupro %}
+    {{ include('app/proekts/_tabs.html.twig') }}
+    {{ include('app/proekts/page_glavas/pchelomatka/childs/_tabs.html.twig') }}
+{% endblock %}
+
+{#{% block kroxii %}#}
+{#    <a href="{{ path('app.proekts.basepro') }}">Главная</a>#}
+{#    <span class="aktiv ">ПчелоДочь</span>#}
+{#{% endblock %}#}
+
+{% block bodyy %}
+
+    Это ПчелоДочь. Тут будет что-то важное в картинках
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}ПлемМатка{% endblock %}
+
+
+{% block menupro %}
+    {{ include('app/proekts/_tabs.html.twig') }}
+
+ {{ include('app/proekts/page_glavas/elitmatka/childs/_tabs.html.twig') }}
+{% endblock %}
+
+{% block kroxii %}
+    <a href="{{ path('app.proekts.basepro') }}">Главная</a>
+    <span class="aktiv ">ДочьЭлит</span>
+{% endblock %}
+
+{% block bodyy %}
+
+    Это ДочьЭлит. Тут будет что-то важное в картинках
+{% endblock %}

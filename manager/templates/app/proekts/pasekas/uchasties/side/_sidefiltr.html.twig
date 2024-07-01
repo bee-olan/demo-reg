@@ -1,0 +1,45 @@
+<aside class="sidee" >
+    <div class="sidee__header">
+      <img src="{{ asset('assets/proekt/images/logo_es.png') }}" alt="">
+    </div>
+
+   <div class="sideemenu" >
+       <div class="sideefiltr__li sideefiltr__li--wid100">
+           <a class="btnn btnn--pt btnn--mb0"  href="/proekt">На Главную</a>
+       </div>
+   </div>
+
+  <div class="sideefiltr">
+    {{ form_start(form) }}
+        <ul class="sideefiltr__ul">
+            <li class="sideefiltr__li sideefiltr__li--wid100 sideefiltr__li--flex">
+              <div >
+                <button type="submit" class=" btnn btnn--mb0 btnn--pt" >Фильтр</button>
+              </div>
+              <div class="sidee__lupa">
+                <img src="{{ asset('assets/proekt/images/lupa.png') }}" alt="">
+              </div>
+              <div >
+                <a  class=" btnn btnn--mb0 btnn--pt" href="{{ path('app.proekts.pasekas.uchasties') }}" >Сбросить</a>
+              </div>
+            </li>
+            
+            <li class="side-title__li">
+              Поиск по 
+            </li>
+            <li class="sideefiltr__li sideefiltr__li--wid100">
+              <a class="sideefiltr__link " > {{ form_widget(form.nike) }}</a>
+            </li>
+
+            <li class="sideefiltr__li">
+              <a class="sideefiltr__link ">{{ form_widget(form.group) }}</a>
+            </li>
+            <li class="sideefiltr__li sideefiltr__li--wid10">
+              <a class="sideefiltr__link ">{{ form_widget(form.status) }}</a>
+            </li>
+          
+          </ul>
+      {{ form_end(form) }}
+  </div>
+
+</aside>

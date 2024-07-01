@@ -1,0 +1,112 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}Участники{% endblock %}
+
+    {% block sidebar %}              
+           {% include('app/proekts/pasekas/uchasties/side/_sidefiltr.html.twig') %}
+    {% endblock %}
+
+{% block menupro %}
+    {{ include('app/proekts/_tabs.html.twig') }}
+
+    {{ include('app/proekts/page_glavas/uchastieGl/_tabs.html.twig') }}
+{% endblock %}
+
+{#{% block kroxii %}#}
+{#    <a href="{{ path('proekt') }}">Главная</a>#}
+{#     <span class="aktiv">Список участноков</span>#}
+{#   #}
+{#{% endblock %}#}
+
+
+{% block bodyy %}
+
+<div  class="proekts-group">
+
+    <div class="wstavka wstavka--uch">
+        <div class="wstavka__title">
+            Список участников проекта
+        </div>
+    </div>
+
+    <div class="uchasties">
+        <div class="uchasties__left">
+        
+            <div class="tabll">
+                <ul class = "uch-tabl__list uch-color">
+                    <li class = "uch-tabl__list-li uch-color uch-tabl__linia" > Ник </li>
+                    <li class = "uch-tabl__list-li uch-color uch-tabl__linia">  ПерсНомер </li>
+                    <li class = "uch-tabl__list-li uch-color uch-tabl__linia"> Место  </li>
+                    <li class = "uch-tabl__list-li uch-color uch-tabl__linia">Группа</li>
+                    <li class = "uch-tabl__list-li uch-color uch-tabl__linia" >ПлемМатки</li>
+{#                    <li class = "uch-tabl__list-li uch-color uch-tabl__linia" >Сезонов</li>#}
+                    <li class = "uch-tabl__list-li uch-color uch-tabl__linia">
+                        Статус
+                        {# {{ member_status(uchastie.status) }}  #}
+                    </li>
+
+                </ul>
+                   
+                {% for uchastie in pagination %}
+                    <ul class = "uch-tabl__list">
+                            <li class = " uch-tabl__list-li" >
+                                 <a class="uch-tabl__link" href="{{ path('app.proekts.pasekas.uchasties.spisok.show', {'id': uchastie.id}) }}">
+                                {{ uchastie.nike }} </a>
+                            </li>
+                            <li class = "uch-tabl__list-li uch-tabl__linia">  {{ uchastie.persona }} </li>
+                            <li class = "uch-tabl__list-li uch-tabl__linia">  {{ uchastie.mesto }} </li>
+                            <li class = "uch-tabl__list-li uch-tabl__linia">{{ uchastie.group }}</li>
+                            <li class = "uch-tabl__list-li uch-tabl__linia">{{ uchastie.uchastniks_count }}</li>
+{#                            <li class = "uch-tabl__list-li uch-tabl__linia">{{ uchastie.sezon_count }}</li>#}
+                            <li class = "uch-tabl__list-li uch-tabl__linia">
+                                 {{uchastie.status}}
+    {#                            {{ uchastiee_status(uchastie.status) }}#}
+                            </li>
+                     </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="uchasties_break">
+        <div class="uchasties__left">
+
+            <div class="tabll">
+                <ul class = "uch-tabl__list uch-color">
+                    <li class = "uch-tabl__list-li" >
+                        Ник
+                    </li>
+                    <li class = "uch-tabl__list-li uch-tabl__linia">  ПерсНомер </li>
+                    <li class = "uch-tabl__list-li uch-tabl__linia"> Место  </li>
+{#                    <li class = "uch-tabl__list-li uch-tabl__linia"> email  </li>#}
+{#                    <li class = "uch-tabl__list-li uch-tabl__linia">Группа</li>#}
+                    <li class = "uch-tabl__list-li uch-tabl__linia" >ПлемМатки</li>
+{#                    <li class = "uch-tabl__list-li uch-tabl__linia" >Сезонов</li>#}
+{#                    <li class = "uch-tabl__list-li uch-tabl__linia">#}
+{#                        Статус#}
+{#                        #}{# {{ member_status(uchastie.status) }}  #}
+{#                    </li>#}
+
+                </ul>
+
+                {% for uchastie in pagination %}
+                    <ul class = "uch-tabl__list">
+                        <li class = " uch-tabl__list-li" >
+                            <a class="uch-tabl__link" href="{{ path('app.proekts.pasekas.uchasties.spisok.show', {'id': uchastie.id}) }}">
+                                {{ uchastie.nike }} </a>
+                        </li>
+                        <li class = "uch-tabl__list-li uch-tabl__linia">  {{ uchastie.persona }} </li>
+                        <li class = "uch-tabl__list-li uch-tabl__linia">  {{ uchastie.mesto }} </li>                   
+                        <li class = "uch-tabl__list-li uch-tabl__linia">{{ uchastie.uchastniks_count }}</li>
+                       
+                    </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+    </div>
+</div>
+{% endblock %}

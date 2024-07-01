@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  width: calc(100% - #{$sidebarr-width});
+
+  background-color: $grad1;
+  box-shadow: 0 5px 10px rgba($primary-modal, .2);
+  border-left: 2px solid $grad2-o;
+  border-top: 2px solid $grad2-o;
+  // border-bottom: 2px solid $grad2-o;
+  position: fixed; // фиксированное позиционирование
+  top: 0;
+
+  right: 0;
+  z-index: $z-index-header;
+
+  //@include breakpoint($tablet-bp) {
+  //  width: 100%;
+  //}
+
+}
+
+.header__left {
+  width: 85%;
+
+  //@include breakpoint($tablet-bp) {
+  //  width: 30%;
+  //}
+}
+
+.header__right {
+  width: 15%;
+  display: flex; // оба эл-ты в header__right -в линию
+  justify-content: flex-end; // прижали к правой стороне
+  // margin-right: 1rem;
+
+  //@include breakpoint($tablet-bp) {
+  //  width: 70%;
+  //}
+}

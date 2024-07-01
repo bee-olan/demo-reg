@@ -1,0 +1,181 @@
+//@import url(http://fonts.googleapis.com/css?family=Oleo+Script);
+
+.nav-teni{
+    text-align: center;
+    //font-family: 'Oleo Script', cursive;
+    opacity: 1;
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: transparent; /*это скроет текст*/
+    letter-spacing: 0.1em;
+    text-shadow: 0 1px 5px #ccb44b ,
+    /*это реальный цвет текста - просто размытый*/
+   //  0 1px 5px rgb(88,92,42),
+     
+    /* это темные тени для вставки
+   , вторая из которых придает более четкий вид и глубину верхней части букв*/
+    0 1px 0 rgba(0,0,0,0.7),
+    0 -1px 0 rgba(0,0,0,0.25),
+     
+    /* это основные моменты - используя rgba, вы можете изменить последнее значение, если они слишком (или слишком мало) яркие */
+    0 .4px 0 rgba(255,255,255,1),
+    0 .5px .8px rgba(255,255,255,0.2);
+   
+     &--em4{
+       font-size: 3.750em;
+    
+     }
+   
+     //@include breakpoint($tablet-bp) {
+     //  font-size: 3.25em;
+     //
+     //  text-shadow: 0 1px 5px #ccb44b ,
+     //      0 -.5px 0 rgba(0,0,0,1),
+     //      0 -1.5px 0 rgba(0,0,0,0.25),
+     //
+     //      0 .5px 0 rgba(255,255,255,0.5),
+     //      0 1px 1px rgba(255,255,255,0.2);
+     //
+     //   &--em4{
+     //     font-size: 2.250em;
+     //
+     //   }
+     //
+     //
+     //  }
+   }
+
+.nav {
+    &--mobile {
+        // display: block;
+        display: none;
+        margin: 3rem 0;
+    }
+
+    //@include breakpoint($tablet-bp) {
+    //    display: none;
+    //
+    //    &--mobile {
+    //        display: block;
+    //    }
+    //}
+}
+
+.nav__list {
+    display: flex;
+
+    //@include breakpoint($tablet-bp) {
+    //    flex-direction: column; // что бы навигация шла друг под другом
+    //
+    //}
+}
+
+.na__item {
+    position: relative; // позиционирование для
+
+    &:hover {
+        .nav__link {
+           background-color: $header-color;
+           text-decoration: none; 
+        //    color: $white
+        }
+
+        > .subnav {
+           display: block;
+       }
+    }
+
+    //@include breakpoint($tablet-bp) {
+    //   &:hover {
+    //       .nav__link {
+    //           background: none;
+    //       }
+    //   }
+   //}
+}
+
+.nav__item {
+     position: relative; // позиционирование для
+     color:  $grad1;
+     &:hover {
+         .nav__link {
+            // background-color: $header-color;
+            background-color: rgb(119,122,77);
+            background: -webkit-linear-gradient(-45deg,
+            rgb(119,122,77) 25%,
+            rgb(175, 169, 112) 25%,
+            #ccb44b 50%,
+            rgb(119,122,77) 50%,
+            rgb(119,122,77) 75%,
+            rgb(175, 169, 112) 75%);
+            background-size:4px 4px;
+
+            text-decoration: none; 
+            color: $grad1;
+         }
+
+         > .subnav {
+            display: block;
+        }
+     }
+
+    // @include breakpoint($tablet-bp) {
+    //    &:hover {
+    //        .nav__link {
+    //            background: none;
+    //        }
+    //    }
+    //}
+}
+
+// стилизация ссылок
+ .nav__link {
+    display: block; // ссылки - блочные
+    padding: 0 1.2rem ;
+
+    //  font-size: 1.6rem; // шрифт - размер
+    //  line-height: 2;
+    //  color: $header-color;
+    //  color: $white;// цвет
+     text-decoration: none;
+    // text-transform: uppercase;
+
+     transition: background-color .2s linear;
+     
+ // стрелочка - имеет под  навигацию
+     &.has-subnav {
+        position: relative;
+        padding-right: 2.3rem;
+
+         &:after {
+             content: "";
+             display: block;
+             margin-top: 1px;
+
+             border-style: solid;
+            border-width: 9px 5px 0 5px;
+            border-color: $lini-prof transparent transparent transparent;
+
+            position: absolute;
+            top: 50%;
+            right: 1.35rem;
+            transform: translateY(-50%); //по центру по вертикали
+         }
+     }
+     
+    // @include breakpoint($tablet-bp) {
+    //    padding-left: 0;
+    //    padding-right: 0;
+    //
+    //    font-size: 1.8rem;
+    //}
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,92 @@
+.sidebarr {
+    width: $sidebarr-width;
+    height: 100vh;
+    background: linear-gradient($grad1, $grad2);
+    // box-shadow: 5px 0 15px rgba(#050505, .1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-index-sidebar;
+    overflow: auto;
+
+//-------проверка как работает миксин -----------------
+//    @include breakpoint($tablet-bp) {
+//        display: flex;
+//        flex-direction: column;
+//        height: calc(100vh - 4rem);
+//        padding-bottom: 1.5rem;
+//        overflow: auto;
+//
+//        top: 4rem;
+//
+//        transform: translateX(-100%);
+//        transition: transform .2s linear;
+//
+//        .show-sidebarr & {
+//            transform: translateX(0);
+//        }
+//    }
+// --------------------------
+}
+
+.sidebarr--sezon {
+    width: $sidebarr-width;
+    height: 100vh;
+    background: linear-gradient($grad1, $grad2);
+    // box-shadow: 5px 0 15px rgba(#050505, .1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-index-sidebar;
+    overflow: auto;
+}
+
+.sidebarr__header {
+    height: 45px;
+    box-shadow: 0 5px 10px rgba($primary-modal, .2);
+
+    //img {
+    //    display: block;
+    //    width: 100%;
+    //    height: 100%;
+    //  //  padding: .2rem 0;
+    //    object-fit: cover; // если картинка не по размеру
+    //}
+
+    //@include breakpoint($tablet-bp) {
+    //    height: 4.6rem;
+    //}
+}
+
+.sidebarr__content {
+    padding: 0 .2rem 0 .6rem; //отступ слева-справа
+
+   //@include breakpoint($tablet-bp) {
+   // flex-grow: 1;
+   // }
+}
+.sidebarr__footer {
+    display: flex; 
+    //разделим кнопки и разнесем на слева - справа --  space-between
+    justify-content: center;
+    padding: 0 2rem;
+}
+
+.sidebarr__footer-text {
+    // это отступы сверху\снизу для padding и для margin у текста
+    padding: 3rem 0 ;
+    margin: 3rem 0 ;
+
+    color: $color-text;
+     font-size: 1.4rem;
+     text-align: center; 
+// это border сверху\снизу у текста
+    border-top: 2px solid $border-lin-nav;
+    border-bottom: 2px solid $border-lin-nav;
+
+    //@include breakpoint($tablet-bp) {
+    //    display: none;
+    //}
+}
+
+

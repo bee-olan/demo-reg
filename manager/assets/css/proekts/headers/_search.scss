@@ -1,0 +1,49 @@
+.searchh {
+    width: 100%;
+    max-width: 17rem;
+
+    background-color: $primary;
+    // background-image: url("./assets/images/sait/logo_sot.jpg") center no-repeat;
+    //@include breakpoint($tablet-bp) {
+    //max-width: 31rem;
+    //}
+}
+.searchh_osnowa{
+    // padding-bottom: 5rem;
+     background-color: rgb(119,122,77);
+     background: -webkit-linear-gradient(-45deg, 
+     rgb(119,122,77) 25%,
+     rgb(175, 169, 112) 25%, 
+     #ccb44b 50%, 
+     rgb(119,122,77) 50%, 
+     rgb(119,122,77) 75%, 
+     rgb(175, 169, 112) 75%);
+     background-size:4px 4px;
+    }
+     
+.searchh__input {
+     display: block;
+     width: 100%;
+     padding: .5rem 2rem .4rem 2rem;
+
+     background: transparent; // прозрачный фон
+     border: none;
+
+     font-family: inherit; // наследуем шрифт -заменяя тот по умочан
+     font-size: 1.6rem;
+     color: $white;
+     
+// цвет белый с непрозрачностью 40%
+    &::placeholder {
+        color: rgba($white, .4);
+    }
+
+    //@include breakpoint($tablet-bp) {
+    //
+    //    height: 4rem;
+    //    padding-top: .9rem;
+    //    padding-bottom: .9rem;
+    //
+    //    font-size: 1.6rem;
+    //}
+}

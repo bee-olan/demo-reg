@@ -1,0 +1,39 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}Участники{% endblock %}
+
+{% block menupro %}
+    {{ include('app/proekts/_tabs.html.twig') }}
+{% endblock %}
+
+{% block bodyy %}
+
+    <div class="box">
+
+        <table class="table table-bordered">
+            <tbody>
+            <tr>
+                <th>Name</th>
+                <td>{{ uchastie.name.full }}</td>
+            </tr>
+            <tr>
+                <th>Ник</th>
+                <td>{{ uchastie.name.nike }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ uchastie.email.value }}</td>
+            </tr>
+            <tr>
+                <th>Group</th>
+                <td>{{ uchastie.group.name }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ uchastie_status(uchastie.status.name) }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
