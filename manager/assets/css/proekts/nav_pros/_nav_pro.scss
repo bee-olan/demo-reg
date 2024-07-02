@@ -44,7 +44,8 @@
 //
 
 .nav_pro-tabs {
-  border-bottom:  $nav-tabs-border-width solid $lini-prof;
+  border-bottom: 1.5px solid #afa970;
+  //border-bottom:  $nav-tabs-border-width solid $lini-prof;
           //$nav-tabs-border-width solid $nav-tabs-border-color;
 
   .nav_pro-item {
@@ -52,12 +53,12 @@
   }
 
   .nav_pro-link {
-    border: $nav-tabs-border-width solid transparent;
+    border: 1.5px solid transparent;
     @include border-top-radius($nav-tabs-border-radius);
 
     @include hover-focus {
       //border-color: $nav-tabs-link-hover-border-color;
-      border-top-color: $lini-prof;
+      border-top-color: #afa970;
       border-right-color: $lini-prof;
       border-bottom-color: $grad4;
       border-left-color: $lini-prof;
