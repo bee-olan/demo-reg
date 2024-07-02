@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Районы{% endblock %}
+
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Главная</a></li>
+         <li class="breadcrumb-item active"> {{ oblast.name }} </li>
+		<li class="breadcrumb-item active"> <a href="{{ path('mesto.okrug.oblast.raion.create',
+            {'id': oblast.id}) }}" > Добавить Район </a>
+        </li>
+    </ol>
+{% endblock %}
+
+{% block body %}
+
+
+ <h2>{{ oblast.nomer }} - {{ oblast.name }}</h2>
+
+    <div class="box">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>Номер</th>
+                <th>Название</th>
+                <th>Номер Районы</th>
+                <th>Действия</th>
+            </tr>
+            <tbody>
+            {% set token = csrf_token('delete') %}
+           
+             {% for raion in raions %}
+                <tr>
+                    <td>{{ raion.nomer }}</td>
+                    <td> {{ raion.name }} </td>
+                   <td>{{ raion.mesto }}</td>
+                    <td>
+                         <div class="d-flex flex-row">
+                            <a href="{{ path('mesto.okrug.oblast.raion.edit', {'id': oblast.id, 'raion_id': raion.id}) }}" class="btn btn-sm btn-primary mr-1"><span class="fa fa-pencil"></span></a>
+                           <form action="{{ path('mesto.okrug.oblast.raion.delete', {'id': oblast.id, 'raion_id': raion.id}) }}" method="post" onsubmit="return confirm('Удалить? Вы точно решили?')">
+                                <input type="hidden" name="token" value="{{ token }}" />
+                                <button type="submit" class="btn btn-sm btn-danger"><span class="fa fa-times"></span></button>
+                            </form>
+                        </div> 
+                    </td>
+                </tr>
+            {% endfor %} 
+            </tbody>
+        </table>
+    </div>
+    <div class="controls">
+        <a href="{{ path('mesto.okrug.oblast.raion.create',
+            {'id': oblast.id}) }}" class="btn-my btn-success">Добавить Районы
+        </a>
+    </div>
+{% endblock %}

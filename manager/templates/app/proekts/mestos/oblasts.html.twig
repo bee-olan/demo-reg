@@ -1,0 +1,145 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}Регионы/Области{% endblock %}
+
+{% block sidebarr %}
+    {{ include('/app/proekts/mestos/side/_sideoblast.html.twig') }}
+{% endblock %}
+
+{% block menupro %}
+    {{ include('app/proekts/_tabs.html.twig') }}
+
+    {{ include('app/proekts/page_glavas/uchastieGl/_tabs.html.twig') }}
+{% endblock %}
+
+{% block kroxii %}
+    <span class="aktiv ">Участие</span>
+    <a href="{{ path('app.proekts.mestos.okrugs') }}">Место</a>
+    {#    <a href="{{ path('app.proekts.mestos.inform') }}">Информация</a>#}
+    <a href="{{ path('app.proekts.mestos.okrugs', {'okrug_id': okrug.id} ) }}">Номера Округов</a>
+
+    <span class="aktiv">Номера Регионов/Областей</span>
+{% endblock %}
+
+
+{% block bodyy %}
+
+    <div class="proekts">
+
+        <div class="wstavka">
+            <div class="wstavka__title nav-teni">
+                Место расположения пасеки: Регион/Область
+            </div>
+        </div>
+
+        <ul class="mestoo__title mestoo--okru">
+
+            <li class="mestoo__title-item mestoo__nomer-text">{{ okrug.nomer }}</li>
+            <li class="mestoo__title-item "> {{ okrug.name }}</li>
+            <li>
+                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </li>
+        </ul>
+
+        <div class="mestoo__linia-top"></div>
+        <h2 class="pagee__title pagee__title--center ">
+            Выбираем название : Республики / Края / Области </h2>
+
+
+        {% for oblast in oblasts %}
+
+            <div class="mestoo mestoo--obla ">
+                <div class="mestoo__raspol">
+                    <ul class="mestoo__title">
+                        <li class="mestoo__title-item mestoo__nomer-red">
+                            {# <a href="{{ path('proekt.mestoo.raions', {'oblast_id': oblast.id, 'okrug_id': okrug.id  }) }}"> #}
+                            {{ okrug.nomer }} - {{ oblast.nomer }}
+                            {# </a>      #}
+                        </li>
+                        <li class="mestoo__title-item ">
+                            <a href="{{ path('app.proekts.mestos.raions', {'oblast_id': oblast.id , 'okrug_id': okrug.id }) }}">
+                                {{ oblast.name }} ( {{ oblast.raions }} )
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {# ----------------------- #}
+
+
+
+    <div class="proekts proekts-plr">
+        <h3 class="form__title">Написать запрос на недостающие название Республики / Края / Области + Района</h3>
+
+        <div class="mesto-form__header  ">
+            <div class="mesto-form ">
+                {{ form_start(commentForm) }}
+
+                {{ form_widget(commentForm) }}
+
+                <button type="submit" class="btnn  btnn--mb0 btnn--pt">Отправить</button>
+                {{ form_end(commentForm) }}
+
+            </div>
+        </div>
+    </div>
+
+
+
+    {# ----------------------- #}
+    <div class="proekts proekts-plr">
+        <div class="card-mesto">
+            <h3 class="form__title">Запросы на недостающие названия Республик / Края / Областей + Районов</h3>
+            {% if comments|length %}
+                <div class="card-body">
+                    <div class="direct-chat">
+                        <div class="direct-chat-messages">
+                            {% for comment in comments %}
+                                <div class="direct-chat-msg">
+                                    <div class="direct-chat-info clearfix">
+                                        <span class="direct-chat-name pull-left">{{ comment.author_name }}</span>
+                                        <span class="direct-chat-timestamp pull-right">{{ comment.date|date('Y-m-d H:i:s') }}</span>
+                                    </div>
+                                    <img class="direct-chat-img" src="{{ gravatar(comment.author_email, 40) }}" alt="">
+                                    <div class="direct-chat-text">
+                                        {{ comment.text|markdown|purify|adminka_processor }}
+                                        {% if is_granted('manage', comment) %}
+                                            <div class="controls-m ">
+                                                <a href="{{ path('app.proekts.mestos.comment.edit',
+                                                    {'okrug_id': okrug.id, 'id': comment.id}) }}"
+                                                   class="btnn btnn--mb0 btnn--pt btnn--col-child">
+                                                    <div class="karandash karandash--child">
+                                                        <div class="karanda-kar"></div>
+                                                    </div>
+                                                </a>
+                                                <form action="{{ path('app.proekts.mestos.comment.delete', {'okrug_id': okrug.id, 'id': comment.id}) }}"
+                                                      method="post" onsubmit="return confirm('Are you sure?')">
+                                                    <input type="hidden" name="token"
+                                                           value="{{ csrf_token('delete-comment') }}"/>
+                                                    <button type="submit"
+                                                            class="btnn  btnn--ml3 btnn--pt btnn--col-child">
+
+{#                                                        <div class="karandash karandash--child">#}
+                                                            <div class="delit-kar"></div>
+{#                                                        </div>#}
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

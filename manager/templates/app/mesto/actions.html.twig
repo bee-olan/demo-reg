@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ТестМатки{% endblock %}
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Главная</a></li>
+{#        <li class="breadcrumb-item"><a href="{{ path('work') }}">Work</a></li>#}
+{#        <li class="breadcrumb-item"><a href="{{ path('work.plemmatkas') }}">Projects</a></li>#}
+{#        {% if plemmatka %}#}
+{#            <li class="breadcrumb-item"><a href="{{ path('paseka.matkas.plemmatka.show', {'plem_id': plemmatka.id}) }}">{{ plemmatka.name }}</a></li>#}
+{#        {% endif %}#}
+        <li class="breadcrumb-item active">Действие</li>
+    </ol>
+{% endblock %}
+
+{% block body %}
+
+{#    {% if plemmatka %}#}
+{#        {% include 'app/work/plemmatkas/plemmatka/_tabs.html.twig' %}#}
+{#    {% else %}#}
+{#        {% include 'app/work/_tabs.html.twig' %}#}
+{#    {% endif %}#}
+
+    <div class="box">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Дата</th>
+
+                    <th>Пользователь</th>
+                    <th>Действие</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for action in zajavkis %}
+                    <tr>
+                        <td>{{ action.date|date('Y-m-d H:i:s') }}</td>
+{#                        {% if not plemmatka %}#}
+{#                            <td>#}
+{#                                <a href="{{ path('paseka.matkas.plemmatka.show', {'plem_id':  action.plemmatka_id}) }}">{{ action.plemmatka_name }}</a>#}
+{#                            </td>#}
+{#                        {% endif %}#}
+                        <td>{{ action.name }}!!</td>
+                        <td>
+{#                            {% if action.childmatka_id %}#}
+{#                                <a href="{{ path('paseka.matkas.childmatkas.show', {'id':  action.childmatka_id}) }}">{{ action.childmatka_name }}</a>#}
+{#                            {% endif %}#}
+                           {{ action.entity_type }}
+                        </td>
+                        <td>
+                        {{ action.text }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+{% endblock %}

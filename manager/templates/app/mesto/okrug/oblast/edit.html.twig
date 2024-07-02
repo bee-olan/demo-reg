@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block mesto %}{{ oblast.name }}{% endblock %}
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Home</a></li>
+{#        <li class="breadcrumb-item"><a href="{{ path('rabota') }}">Work</a></li>#}
+{#        <li class="breadcrumb-item"><a href="{{ path('rabota.u4astniki') }}">Projects</a></li>#}
+{#        <li class="breadcrumb-item"><a href="{{ path('rabota.u4astniki.mestos.mesto.show', {'id': okrug.id}) }}">{{ okrug.name }}</a></li>#}
+{#        <li class="breadcrumb-item"><a href="{{ path('rabota.u4astniki.mestos.mesto', {'okrug_id': okrug.id}) }}">Settings</a></li>#}
+{#        <li class="breadcrumb-item"><a href="{{ path('rabota.u4astniki.mestos.mesto.oblast', {'okrug_id': okrug.id}) }}">Linias</a></li>#}
+{#        <li class="breadcrumb-item"><a href="{{ path('rabota.u4astniki.mestos.mesto.oblast.show', {'okrug_id': okrug.id, 'id': oblast.id}) }}">{{ oblast.name }}</a></li>#}
+        <li class="breadcrumb-item active">Редактировать</li>
+    </ol>
+{% endblock %}
+
+{% block body %}
+
+    
+
+    
+
+    <h2>{{ oblast.name }}</h2>
+
+    <div class="card">
+        <div class="card-body">
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <div>
+                <button type="submit" class="btn-my btn-primary">Сохранить</button>
+            </div>
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+
+{% endblock %}

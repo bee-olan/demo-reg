@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Место-округ{% endblock %}
+
+
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Главная</a></li>
+        <li class="breadcrumb-item active">Округ</li>
+    </ol>
+{% endblock %}
+
+
+
+{% block body %}
+
+
+          <div class="box">
+              <table class="table table-bordered table-hover">
+                  <thead>
+                      <tr>
+                          <th> Номер </th>
+                          <th> Название </th>
+                          <th> Край\Область  </th>
+                          <th></th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      {% set token = csrf_token('delete') %}
+                      {% for okrug in okrugs %}
+                    <tr>
+
+                        <td>
+                            {{ okrug.nomer }}
+                        </td>
+                        <td>
+
+                            <a href="{{ path('mesto.okrug.oblast', {'id': okrug.id}) }}" title="Добавить Край\Область " > {{ okrug.name }} </a>
+
+                        </td>
+                        <td>        
+                                 {{ okrug.oblasts }}
+                        </td>
+                       
+                        <td>
+                            <div class="d-flex flex-row">
+                                <a href="{{ path('mesto.okrug.edit', {'id': okrug.id}) }}" class="btn btn-sm btn-primary mr-1"><span class="fa fa-pencil"></span></a>
+                                <form action="{{ path('mesto.okrug.delete', {'id': okrug.id}) }}" method="post" onsubmit="return confirm('Are you sure?')">
+                                    <input type="hidden" name="token" value="{{ token }}" />
+                                    <button type="submit" class="btn btn-sm btn-danger"><span class="fa fa-trash"></span></button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="controls">
+        <a href="{{ path('mesto.okrug.create') }}" class="btn-my btn-success">Добавить   новые названия в БД</a>
+    </div>
+{% endblock %}

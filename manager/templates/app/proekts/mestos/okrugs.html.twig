@@ -1,0 +1,57 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}Округа{% endblock %}
+
+{% block sidebarr %}
+    {{ include('app/proekts/mestos/side/_sideokrug.html.twig') }}
+{% endblock %}
+
+{% block menupro %}
+    {{ include('app/proekts/_tabs.html.twig') }}
+
+    {{ include('app/proekts/page_glavas/uchastieGl/_tabs.html.twig') }}
+{% endblock %}
+
+{% block kroxii %}
+{#    <a href="{{ path('app.proekts.basepro') }}">Главная</a>#}
+    <span class="aktiv ">Участие</span>
+    <a href="{{ path('app.proekts.mestos.okrugs') }}">Место</a>
+{#    <a href="{{ path('app.proekts.mestos.inform') }}">Информация</a>#}
+    <span class="aktiv ">Выбрать Округ</span>
+{% endblock %}
+
+
+{% block bodyy %}
+
+
+    <div class="proekts">
+
+        <div class="wstavka">
+            <div class="wstavka__title nav-teni">
+                Место расположения пасеки: Округ
+            </div>
+        </div>
+
+        <h2 class="pagee__title ">Выбираем свой Округ </h2>
+
+        {% for okrug in okrugs %}
+            <div class="mestoo ">
+                <div class="mestoo__raspol">
+                    <ul class="mestoo__title">
+                        <li class="mestoo__title-item mestoo__nomer-red">
+                            <a href="{{ path('app.proekts.mestos.oblasts', {'okrug_id': okrug.id}) }}">{{ okrug.nomer }} </a>
+                        </li>
+                        <li class="mestoo__title-item ">
+                            <a href="{{ path('app.proekts.mestos.oblasts', {'okrug_id': okrug.id}) }}">
+                                {{ okrug.name }} ( {{ okrug.oblasts }} )
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+        {# </div> #}
+
+    </div>
+
+{% endblock %}

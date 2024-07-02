@@ -1,0 +1,125 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}Место-округ{% endblock %}
+
+{% block sidebarr %}
+    {{ include('/app/proekts/mestos/side/_sidemesto.html.twig') }}
+{% endblock %}
+
+{% block menupro %}
+    {{ include('app/proekts/_tabs.html.twig') }}
+
+    {{ include('app/proekts/page_glavas/uchastieGl/_tabs.html.twig') }}
+{% endblock %}
+
+{% block kroxii %}   
+ <span class="aktiv ">Место</span> 
+           <a href="{{ path('app.proekts.mestos.inform') }}">Информация</a>
+            <a href="{{ path('app.proekts.mestos.okrugs', {'okrug_id': okrug.id} ) }}"> Округ</a>
+            <a href="{{ path('app.proekts.mestos.oblasts', { 'oblast_id': oblast.id, 'okrug_id': okrug.id} ) }}">Регион/Область</a>
+        
+             <a href="{{ path('app.proekts.mestos.raions', {'raion_id': raion.id, 'oblast_id': oblast.id, 'okrug_id': okrug.id } ) }}">Район</a>
+           
+            <span class="aktiv">Сохранить Номер места </span>
+{% endblock %}
+
+
+{% block bodyy %}
+
+<div  class="proekts">
+
+    <div class="wstavka">
+        <div class="wstavka__title nav-teni">
+            Место расположения пасеки: Сохранить
+        </div>
+    </div>
+
+    <div >
+        <div class="mestoo__raspol">
+            <ul class="mestoo__title">
+                
+                 <li class="mestoo__title-item mestoo__nomer-text">{{ okrug.nomer }}</li>
+                <li class="mestoo__title-item "> {{ okrug.name }}</li>
+                <li>
+                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                </li>
+            </ul>
+        </div>
+    
+    <div class = "mestoo__linia-top "></div>
+                    
+       <div class=" mestoo--obla ">
+            <div class="mestoo__raspol">
+                <ul class="mestoo__title">
+                     <li class="mestoo__title-item mestoo__nomer-text">{{ oblast.nomer }}</li>
+                    <li class="mestoo__title-item ">{{ oblast.name }} </li>
+                
+                    <li>
+                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                    </li>      
+                </ul>
+            </div>    
+        </div>
+
+      <div class = "mestoo__linia-top mestoo-ml20"></div>
+
+        {# <h2 class = "pagee__title pagee__title--raio ">
+            Ваш район  </h2>  #}
+  
+    <div class=" mestoo--raio">
+        <div class="mestoo__raspol">
+            <ul class="mestoo__title">
+                <li class="mestoo__title-item mestoo__nomer-text">{{ raion.mesto }} </li>
+                <li class="mestoo__title-item ">{{ raion.name }}  </li>           
+                <li class="mestoo__title-item" > 
+                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check2-all" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                                d="M12.354 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                        <path d="M6.25 8.043l-.896-.897a.5.5 0 1 0-.708.708l.897.896.707-.707zm1 2.414l.896.897a.5.5 0 0 0 .708 0l7-7a.5.5 0 0 0-.708-.708L8.5 10.293l-.543-.543-.707.707z"/>
+                    </svg>
+                </li>      
+            </ul>
+        </div>
+    </div>
+</div> 
+    <div class = "mestoo__linia-top mestoo-ml40"></div>
+
+    <div class="mestoo   ">       
+        {# <div class="mestoo__raspol ">      #}
+            <ul class="mestoo__title ">
+                <li class="mestoo__title-item mestoo__name-text">
+                        Номер места расположения Вашей пасеки 
+                </li>  
+                <li class="mestoo__title-item mestoo__nomer-red">{{ raion.mesto }}</li>
+                <li class="mestoo__title-item ">
+                    <a class="mestoo__read  btnn btnn--mb1 btnn--pt" href="{{ path('app.proekts.mestos.create', {'raion_id': raion.id , 'mestonomer': raion.mesto }) }}">
+                      Сохранить {# <div class = "btnn btnn--mb0 btnn--pt">  Сохранить  </div> #}
+                    </a>     
+                </li>                        
+            </ul>           
+        {# </div>     #}
+    </div>
+    <div class = "mestoo__linia-top"></div>
+    <div class = "mestoo__linia-top"></div>
+    <div class="mestoo  ">
+        <div class="mestoo__raspol ">
+            <ul class="mestoo__title nomer-text">
+                <li class="mestoo__title-item ">
+                     Вы случайно не туда зашли ?
+                </li>
+                <li class="mestoo__title-item ">
+                    <a class="mestoo__read  btnn btnn--mb1 btnn--pt" href="{{ path('app.proekts.mestos.okrugs') }}">
+                        Попробуйте еще раз
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class = "mestoo__linia-top"></div>
+</div>
+ {% endblock %}

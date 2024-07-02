@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block mesto %}Край\Область{% endblock %}
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('rabota') }}">Rabota</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('rabota.u4astniki') }}">Materis</a></li>
+        {# <li class="breadcrumb-item"><a href="{{ path('rabota.u4astniki.mestos.mesto.show', {'id': okrug.id}) }}">{{ okrug.name }}</a></li> #}
+        <li class="breadcrumb-item active">Настройки-!!!!!</li>
+    </ol>
+{% endblock %}
+
+{% block body %}
+
+
+
+      {# {% include 'app/rabota/u4astniki/materi/_tabs.html.twig' %}
+	  
+	  {{ include('app/rabota/u4astniki/materi/_linia.html.twig') }}
+
+    {% include 'app/rabota/u4astniki/materi/settings/_tabs.html.twig' %} #}
+
+	
+
+
+    <div class="box">
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                     <td>{{ okrug.name }}</td> 
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    {# <td>{{ materi_status(materi.status.name) }}</td> #}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

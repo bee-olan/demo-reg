@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Край\Область{% endblock %}
+
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Главная</a></li>
+
+         <li class="breadcrumb-item"><a href="{{ path('mesto.okrug') }}">Округ</a></li>
+         <li class="breadcrumb-item">{{ okrug.name }}</li>
+        <li class="breadcrumb-item active">Область</li>
+    </ol>
+{% endblock %}
+
+{% block body %}
+
+
+ <h2>{{ okrug.nomer }} - {{ okrug.name }}</h2>
+
+
+
+    <div class="box">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>Номер</th>
+                <th>Название</th>
+                <th>Номер Округ-Область</th>
+                <th>Районы</th>
+                <th>Действия</th>
+            </tr>
+            <tbody>
+            {% set token = csrf_token('delete') %}
+           
+             {% for oblast in oblasts %}
+                <tr>
+                    <td>{{ oblast.nomer }}</td>
+
+                    <td>
+                         <a href="{{ path('mesto.okrug.oblast.raion', {'id': oblast.id}) }}" title="Добавить Районы">{{ oblast.name }} </a>
+
+                    </td>
+
+                   <td>{{ oblast.mesto }}</td>
+                    <td>{{ oblast.raions }}</td>
+                    <td>
+                        <div class="d-flex flex-row">
+                            <a href="{{ path('mesto.okrug.oblast.edit', {'id': okrug.id, 'oblast_id': oblast.id}) }}" class="btn btn-sm btn-primary mr-1"><span class="fa fa-pencil"></span></a>
+                            <form action="{{ path('mesto.okrug.oblast.delete', {'id': okrug.id, 'oblast_id': oblast.id}) }}" method="post" onsubmit="return confirm('Удалить? Вы точно решили?')">
+                                <input type="hidden" name="token" value="{{ token }}" />
+                                <button type="submit" class="btn btn-sm btn-danger"><span class="fa fa-times"></span></button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %} 
+            </tbody>
+        </table>
+    </div>
+    <div class="controls">
+        <a href="{{ path('mesto.okrug.oblast.create',
+            {'id': okrug.id}) }}" class="btn-my btn-success">Добавить Край\Область
+        </a>
+    </div>
+{% endblock %}

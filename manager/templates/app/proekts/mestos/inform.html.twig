@@ -1,0 +1,70 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}Информация{% endblock %}
+
+{% block sidebarr %}
+    {{ include('/app/proekts/mestos/side/_sideinform.html.twig') }}
+{% endblock %}
+
+{% block menupro %}
+    {{ include('app/proekts/_tabs.html.twig') }}
+
+    {{ include('app/proekts/page_glavas/uchastieGl/_tabs.html.twig') }}
+{% endblock %}
+
+{% block kroxii %}
+    <a href="{{ path('app.proekts.basepro') }}">Главная</a>
+    <span class="aktiv ">Участие</span>
+    <a href="{{ path('app.proekts.mestos.okrugs') }}">Место</a>
+    <span class="aktiv">Информация</span>
+{% endblock %}
+
+{% block bodyy %}
+
+    <div class="proekts">
+
+        <div class="wstavka">
+            <div class="wstavka__title nav-teni">
+                Номера мест расположения пасек участников проекта
+            </div>
+        </div>
+        <div class="proekts-plr">
+            <div class="ramka">
+                {% for mestonom in fetcher %}
+                    <div class="ramka__mesto-nomer">
+                        {{ mestonom.mestonomer }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            {% if mestonomer %}
+                <h2 class="pagee__title "><strong class="strongo--name-nike">{{ last }},</strong> номер места
+                    расположения Вашей пасеки </h2>
+                <div class="ramka">
+                    <div class="ramka__mesto-nomer mestoo__nomer-text">
+                        {{ mestonomer.nomer }}
+                    </div>
+                </div>
+                <div class="proekts-plr">
+                    <div class="wstavka wstavka--uch back-color-uch">
+                        <h2 class="personaa__title    ">Стать участником !!! </h2>
+                        <a class="btnn btnn--ml btnn--pt btnn--col-uchas"
+                           href="{{ path('app.proekts.pasekas.uchasties.uchastiee') }}">
+                            <strong class="strongo strongo--krox"> продолжить </strong>
+                        </a>
+                    </div>
+                </div>
+            {% else %}
+                <h2 class="pagee__title ">Вам, для участия в проекте, нужно определиться
+                    с номером места нахождения Вашей пасеки.<br>
+                    Можно отсюда
+                    <a href="{{ path('app.proekts.mestos.okrugs') }}">
+                        <strong class="strongo "> перейти </strong>
+                    </a>
+                    или <br>
+                    в верхнем меню выбрать: <strong class="strongo ">Место.</strong>
+                </h2>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Okrug{% endblock %}
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Главная</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('mesto.okrug') }}">Okrug</a></li>
+        <li class="breadcrumb-item active">{{ okrug.name }}</li>
+    </ol>
+{% endblock %}
+
+{% block body %}
+
+    <div class="card">
+        <div class="card-body">
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+
+{% endblock %}

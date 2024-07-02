@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Okrug{% endblock %}
+
+
+
+
+{% block body %}
+<h2>Добавляем новые номера для Округа/Области/Района в БД </h2>
+    <div class="card">
+        <div class="card-body">
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit" class="btn btn-primary">Добавить Округа</button>
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+
+{% endblock %}

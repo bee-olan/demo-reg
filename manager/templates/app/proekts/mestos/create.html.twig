@@ -1,0 +1,36 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}Номер места{% endblock %}
+
+{% block menupro %}
+    {{ include('app/proekts/_tabs.html.twig') }}
+
+    {{ include('app/proekts/page_glavas/uchastieGl/_tabs.html.twig') }}
+{% endblock %}
+
+{% block kroxii %}
+            <a href="{{ path('home') }}">Главная</a>
+            <a href="{{ path('app.proekts.mestos.inform') }}">НомерМеста</a>
+            <a href="{{ path('app.proekts.mestos') }}">Номера Округов</a>
+            <a  href="#">Номера Областей</a>       
+            <span class="aktiv" >Номера Районов</span> 
+{% endblock %}
+
+{% block bodyy %}
+
+    <h2 class = "page__title ">Вы выбрали  номер места расположения пасеки:  {{mestonomer }} </h2>
+
+   <button type="submit" class="btn-my btn-my--sm">Создать</button>
+
+    <div class="card">
+        <div class="card-body">
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit" class="btn-my btn-my--sm">Создать</button>
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+
+{% endblock %}
