@@ -29,6 +29,8 @@ doctrine:
             mesto_okrug_oblast_raion_id: 'App\Model\Mesto\Entity\Okrugs\Oblasts\Raions\IdType'
             mesto_mestonomer_id: 'App\Model\Mesto\Entity\InfaMesto\IdType'
 
+            comment_comment_id: 'App\Model\Comment\Entity\Comment\IdType'
+            comment_comment_author_id: 'App\Model\Comment\Entity\Comment\AuthorIdType'
 
     orm:
         auto_generate_proxy_classes: true
@@ -47,9 +49,10 @@ doctrine:
                 dir: '%kernel.project_dir%/src/Model/Mesto/Entity'
                 prefix: 'App\Model\Mesto\Entity'
                 alias: Mesto
-#            Comment:
-#                is_bundle: false
-#                type: annotation
-#                dir: '%kernel.project_dir%/src/Model/Comment/Entity'
-#                prefix: 'App\Model\Comment\Entity'
-#                alias: User
+            Comment:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Model/Comment/Entity'
+                prefix: 'App\Model\Comment\Entity'
+                alias: User
+

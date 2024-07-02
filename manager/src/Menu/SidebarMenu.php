@@ -68,6 +68,20 @@ class SidebarMenu
 //                ->setAttribute('class', 'nav-item')
 //                ->setLinkAttribute('class', 'nav-link');
 //        }
+        $menu->addChild('----------------------------')->setAttribute('class', 'nav-title')
+            ->setAttribute('class', 'nav-item')
+            ->setLinkAttribute('class', 'nav-link');
+        $menu->addChild('Место', ['route' => 'mesto.okrug'])
+            ->setExtra(
+                'routes',
+                [
+                    ['route' => 'mesto.okrug'],
+                    ['pattern' => '/^mesto\.okrug\..+/']
+                ]
+            )
+            ->setExtra('icon', 'nav-icon icon-briefcase')
+            ->setAttribute('class', 'nav-item')
+            ->setLinkAttribute('class', 'nav-link');
 
         $menu->addChild('Профиль', ['route' => 'profile'])
             ->setExtra('icon', 'nav-icon icon-user')

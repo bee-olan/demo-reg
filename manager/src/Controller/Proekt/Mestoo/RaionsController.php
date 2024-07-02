@@ -6,7 +6,7 @@ namespace App\Controller\Proekt\Mestoo;
 
 use App\Annotation\Guid;
 
-use App\Model\Comment\UseCase\Comment;
+//use App\Model\Comment\UseCase\Comment;
 
 use App\Controller\ErrorHandler;
 use App\Model\Mesto\Entity\Okrugs\Oblasts\Oblast;
@@ -38,41 +38,41 @@ class RaionsController extends AbstractController
      * @param Oblast $oblast
      * @param RaionFetcher $raions
      * @param CommentRaiFetcher $comments
-     * @param Comment\AddMesto\Handler $commentHandler
+//     * @param Comment\AddMesto\Handler $commentHandler
      * @return Response
      */
     public function raions(Request $request,
                            Oblast $oblast,
                            CommentRaiFetcher $comments,
-                           RaionFetcher $raions,
-                           Comment\AddMesto\Handler $commentHandler
+                           RaionFetcher $raions
+//                           Comment\AddMesto\Handler $commentHandler
                             ): Response
     {
         //$this->denyAccessUnlessGranted(OkrugAccess::MANAGE_MEMBERS, $okrug);
 
-        $commentCommand = new Comment\AddMesto\Command(
-            $this->getUser()->getId(),
-            Oblast::class,
-            $oblast->getId()->getValue()
-        );
-        $commentForm = $this->createForm(Comment\AddMesto\Form::class, $commentCommand);
-        $commentForm->handleRequest($request);
-        if ($commentForm->isSubmitted() && $commentForm->isValid()) {
-            try {
-                $commentHandler->handle($commentCommand);
-                return $this->redirectToRoute('app.proekts.mestos.raions', ['oblast_id' => $oblast->getId()]);
-            } catch (\DomainException $e) {
-                $this->errors->handle($e);
-                $this->addFlash('error', $e->getMessage());
-            }
-        }
+//        $commentCommand = new Comment\AddMesto\Command(
+//            $this->getUser()->getId(),
+//            Oblast::class,
+//            $oblast->getId()->getValue()
+//        );
+//        $commentForm = $this->createForm(Comment\AddMesto\Form::class, $commentCommand);
+//        $commentForm->handleRequest($request);
+//        if ($commentForm->isSubmitted() && $commentForm->isValid()) {
+//            try {
+//                $commentHandler->handle($commentCommand);
+//                return $this->redirectToRoute('app.proekts.mestos.raions', ['oblast_id' => $oblast->getId()]);
+//            } catch (\DomainException $e) {
+//                $this->errors->handle($e);
+//                $this->addFlash('error', $e->getMessage());
+//            }
+//        }
 
         return $this->render('app/proekts/mestos/raions.html.twig', [
             'okrug' => $oblast->getOkrug(),
             'oblast' => $oblast,
             'raions' => $raions->allOfOblast($oblast->getId()->getValue()),
             'comments' => $comments->allForRaion($oblast->getId()->getValue()),
-            'commentForm' => $commentForm->createView(),
+//            'commentForm' => $commentForm->createView(),
         ]);
     }
 }
