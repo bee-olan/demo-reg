@@ -1,0 +1,122 @@
+
+.tabl th, .tabl td {
+  // padding: .55rem;
+  vertical-align: middle;
+  &--file {
+    color: #3F3F3F;
+  }
+}
+
+.tab th, .tab td {
+  vertical-align: middle;
+  color: $godina-swet;
+}
+.tab-bold {
+  //color: $text;
+  color: $godina-col;
+  font-weight: normal; /* то же самое что и 700 */
+  font-size: 1.5rem;
+}
+
+.tab-bold-my {
+  color: $text;
+  font-weight: normal;
+  font-size: 1.5rem;
+  border-bottom: 1px solid $text;
+}
+.tab-bold-mat {
+  color: $text;
+  font-weight: normal;
+  font-size: 1.5rem;
+  //border-bottom: 1px solid $text;
+}
+
+.tab-hover-godina tbody tr:hover {
+  color: $text;
+  background-color: rgba($beloe-new, 0.2);
+}
+
+th {
+  padding: .55rem;
+  text-align: inherit;
+  font-weight: 500;
+  color: $child-form;
+}
+
+td {
+  padding: .55rem;
+  text-align: inherit;
+  font-weight: 400;
+}
+
+tr {
+  font-weight: 400;
+  text-align: left;
+}
+
+
+
+.tabl-hover-child tbody tr:hover {
+  background-color: rgba($col-child-ten , 0.2);
+}
+
+.tabl-child {
+  width: 100%;
+  margin-bottom: 1rem;
+  //color: $text;
+  color: $child-text;
+  font-size: 1.2rem;
+  //line-height: 1.5;
+}
+
+.tabl-col-plem {
+  padding: .5rem .5rem .5rem 1rem;
+  color: $plem-color;
+}
+
+.tabl-col-child {
+  padding: .5rem .5rem .5rem 1rem;
+  color: $child-text;
+}
+
+
+.tabl-bord- th, .tabl-bord- td {
+  border: 1px solid #e6e6e6;
+}
+
+.tabl-bord- {
+  border: 1px solid #e6e6e6;
+  padding: .5rem .5rem .5rem 1rem;
+  // border: 1px solid rgba($col-child-ten, 0.2);
+  color: $col-child-ten;
+
+  a {
+    text-decoration: none;
+    opacity: 1;
+    transition: opacity .2s linear;
+
+    &:hover {
+      opacity: 1;
+      text-decoration: none;
+      color: $text;
+    }
+  }
+}
+
+.tabl-bord-pchelo {
+  border: 1px solid rgba($text-elit-swet, 0.7);
+
+}
+
+.tabl-bord-plem {
+
+  border: 1px solid rgba($plem-color, 0.5);
+  color: $plem-color;
+}
+
+.tabl-bord-child {
+
+  border: 1px solid rgba($child-text, 0.5);
+  color: $child-text;
+
+}

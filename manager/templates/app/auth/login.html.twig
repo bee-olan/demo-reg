@@ -19,10 +19,10 @@
                         <div class="card-body">
                             {% include '_flashes.html.twig' %}
 
-                            <h1 class="zagol-teni zagol-teni--em4">Авторизация</h1>
-                            <p>
+                            <h1 class="zagol-teni zagol-teni--em4 ma-bo-2">Авторизация</h1>
+                            <div class="ma-bo-2 ">
                             <span class="zagol-teni zagol-teni--px30" > Войди в свою учетную запись  </span>
-                           </p>
+                           </div>
                             {% if error %}
                                 <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                             {% endif %}
@@ -36,27 +36,28 @@
                                     <input class="form-control" type="email" name="email" value="{{ last_username }}"
                                            placeholder="Email"/>
                                 </div>
-                                <div class="input-group mb-3">
+                                <div class="input-group ma-bo-2">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="icon-lock"></i></span>
                                     </div>
                                     <input class="form-control" type="password" name="password" placeholder="Password"/>
                                 </div>
-                                <div class="form-group">
-                                    <div class="checkbox mb-3">
-                                        <label>
-                                            <input type="checkbox" name="_remember_me">
-                                            <span class="zagol-teni zagol-teni--px30">Запомни меня</span>
-                                        </label>
-                                    </div>
+                                <div class="col-6 ">
+                                    <button class="btnn btnn-log " type="submit">
+                                        Войди  учетную запись
+                                    </button>
                                 </div>
+                                <hr/>
                                 <div class="row">
-                                    <div class="col-6">
-                                        <button class="btnn btnn-log  " type="submit">
-                                            В учетную запись
-                                        </button>
+                                    <div class="form-group">
+                                        <div class="checkbox mb-3">
+                                            <label>
+                                                <input type="checkbox" name="_remember_me">
+                                                <span class="zagol-teni zagol-teni--px30">Запомни меня</span>
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="col-6 text-right">
+                                    <div class="col-6 text-right ma-to-4">
                                         <a class="btnn btnn-log" href="{{ path('auth.reset') }}">
                                             Забыли пароль?
                                         </a>
@@ -64,13 +65,13 @@
                                 </div>
                             </form>
                             <hr/>
-                            <div class="row">
-                                <div class="col-12">
-                                    <a class="btn btn-block btn-facebook" href="{{ path('oauth.facebook') }}">
-                                        <span>facebook</span>
-                                    </a>
-                                </div>
-                            </div>
+{#                            <div class="row">#}
+{#                                <div class="col-12">#}
+{#                                    <a class="btn btn-block btn-facebook" href="{{ path('oauth.facebook') }}">#}
+{#                                        <span>facebook</span>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
                         </div>
                     </div>
                     <div class="card text-white zagol-bg-primary py-5 d-md-down-none" style="width:44%">

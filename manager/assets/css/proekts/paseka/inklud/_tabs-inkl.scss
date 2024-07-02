@@ -1,0 +1,32 @@
+.mb-4-inkl {
+  margin-bottom: 1.5rem !important;
+}
+.nav-tabs-inkl {
+  border-bottom: 1px solid #c8ced3;
+}
+.nav-inkl {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+    a {
+      color: inherit;
+      opacity: 0.6;
+      transition: opacity .2s linear;
+    }
+}
+ul{
+  list-style: none;
+}
+
+.nav-tabs-inkl .nav-link-inkl {
+  border: 1px solid transparent;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+.nav-link-inkl {
+  display: block;
+  padding: 0.5rem 1rem;
+  background-color: #c8ced3;
+}

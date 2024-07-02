@@ -3,7 +3,19 @@
 @import "~simple-line-icons/scss/simple-line-icons";
 @import "~font-awesome/scss/font-awesome";
 @import "~toastr/toastr";
+@import "vendor/reset";
 
+body {
+    //font-family: JetBreins Mono, -apple-system, BlinkMacSystemFont,
+    //"Segoe UI", Roboto, "Helvetica Neue",
+    //Arial, "Noto Sans", sans-serif,
+    //"Apple Color Emoji", "Segoe UI Emoji",
+    //"Segoe UI Symbol", "Noto Color Emoji";
+
+    font-size: 1.0rem;
+    line-height: 1.4;
+    color: $border-linia;
+}
 main {
     & > .container {
         padding: 80px 15px 0;
@@ -112,6 +124,7 @@ pre {
 @import "auth/zagolov";
 @import "sdwig-pa-ma/sdvig";
 @import "knopkas/knopka";
+@import "kroxis/kroxii";
 
 @import "proekts/probody";
 @import "proekts/pagee";
@@ -128,7 +141,14 @@ pre {
 @import "proekts/sides/sidebarr";
 @import "proekts/imgg/kartinka";
 @import "proekts/main/mainn";
+@import "proekts/nav_pros/nav_pro";
 @import "proekts/profiles/profile";
+
+@import "proekts/paseka/inklud/inklud";
+@import "proekts/paseka/inklud/tabs-inkl";
+
+@import "proekts/paseka/tablle/tablle";
+@import "proekts/paseka/tablle/tablle-child";
 
 .direct-chat-action {
     padding: 0 0 10px 50px;

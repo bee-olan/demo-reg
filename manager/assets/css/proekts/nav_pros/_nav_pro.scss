@@ -1,0 +1,151 @@
+
+.nav_pro {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  font-size: 1.2rem;
+
+  a {
+    // color: inherit;
+    color: $grad1;
+    opacity: 0.8;
+    transition: opacity .2s linear;
+
+    &:hover {
+      text-decoration: none;
+      // color: inherit;
+      opacity: 1;
+    }
+  }
+}
+
+.nav_pro-link {
+  display: block;
+  padding: $nav-link-padding-y $nav-link-padding-x;
+  // color: $lini-prof;
+  color: $grad1;
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  // Отключенное состояние осветляет текст
+  &.disabled {
+    color: $nav-link-disabled-color;
+    pointer-events: none;
+    cursor: default;
+  }
+
+}
+
+//
+// Tabs
+//
+
+.nav_pro-tabs {
+  border-bottom:  $nav-tabs-border-width solid $lini-prof;
+          //$nav-tabs-border-width solid $nav-tabs-border-color;
+
+  .nav_pro-item {
+    margin-bottom: -$nav-tabs-border-width;
+  }
+
+  .nav_pro-link {
+    border: $nav-tabs-border-width solid transparent;
+    @include border-top-radius($nav-tabs-border-radius);
+
+    @include hover-focus {
+      //border-color: $nav-tabs-link-hover-border-color;
+      border-top-color: $lini-prof;
+      border-right-color: $lini-prof;
+      border-bottom-color: $grad4;
+      border-left-color: $lini-prof;
+
+    }
+    &--glav{
+      opacity: 1;
+      color: $glavn ;
+    }
+
+    &.disabled {
+      color: $nav-link-disabled-color;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  .nav_pro-link.active,
+  .nav_pro-item.show .nav_pro-link {
+    //color: $nav-tabs-link-active-color;
+    //color: $lini-prof;
+    // color: $red2;
+    color: $beloe-new;
+    background-color: $grad1;
+    //background-color: $nav-tabs-link-active-bg;
+    //border-color: $nav-tabs-link-active-border-color;
+
+    border-top-color:  $lini-prof;
+    border-right-color: $lini-prof;
+    border-bottom-color: $grad1;
+    border-left-color: $lini-prof;
+  }
+
+  .dropdown-menu {
+    // Сделайте так, чтобы выпадающая граница перекрывала границу вкладки
+    margin-top: -$nav-tabs-border-width;
+    // Уберите здесь верхние закругленные углы, так как над меню есть жесткий край
+    @include border-top-radius(0);
+  }
+}
+
+
+//
+// Таблетки
+//
+
+.nav_pro-pills {
+  .nav_pro-link {
+    @include border-radius($nav-pills-border-radius);
+  }
+
+  .nav_pro-link.active,
+  .show > .nav_pro-link {
+    color: $nav-pills-link-active-color;
+    background-color: $nav-pills-link-active-bg;
+  }
+}
+
+
+//
+// Обоснованные варианты
+//
+
+.nav_pro-fill {
+  .nav_pro-item {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+.nav_pro-justified {
+  .nav_pro-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+  }
+}
+
+
+// Tabbable tabs
+//
+// Для начала скройте панели с вкладками, покажите их, когда `.active`
+
+.tab-content {
+  > .tab-pane {
+    display: none;
+  }
+  > .active {
+    display: block;
+  }
+}

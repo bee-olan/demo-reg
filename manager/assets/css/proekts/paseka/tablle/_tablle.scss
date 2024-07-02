@@ -1,0 +1,99 @@
+table {
+  border-collapse: collapse;
+}
+.tab {
+  border-collapse: collapse;
+}
+
+.td-width {
+  width: 40%;
+}
+
+// .tab-width {
+//   width: 100rem;
+// }
+
+.tabl-th {
+  text-align: center;
+  color: $beloe;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: .5rem 1rem .5rem 1rem;
+}
+
+.tabl th,
+.tabl td {
+  // padding: .55rem;
+  vertical-align: middle;
+
+}
+
+th {
+  padding: .55rem;
+  text-align: inherit;
+  font-weight: 400;
+  color: $child-form;
+}
+
+td {
+  padding: .55rem;
+  text-align: inherit;
+  font-weight: 400;
+}
+
+tr {
+  font-weight: 400;
+  text-align: left;
+}
+
+.tabl-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: .5rem 1rem 0 1rem;
+}
+
+.tabl-icon-td {
+  position: relative;
+}
+
+.tabl__header {
+  max-width: 100%;
+  margin: 0 1rem 2rem 1rem;
+  overflow: hidden;
+}
+
+.tabl-hover tbody tr:hover {
+  color: $beloe;
+  background-color: rgba($beloe, 0.075);
+}
+
+.tabl {
+  width: 100%;
+  margin-bottom: 1rem;
+  //color: $plem-color;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.tabl-bord_bot {
+  padding-bottom: 1rem;
+
+  border-bottom: 1px solid rgba($godina-col, 0.3);
+}
+
+.tabl-bordered {
+  border: 1px solid rgba($beloe, 0.3);
+}
+
+.tabl__kateg {
+
+  //margin-top: 2rem;
+  //margin-bottom: 3rem;
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+    color: $beloe;
+  }
+}

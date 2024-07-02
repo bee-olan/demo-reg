@@ -17,29 +17,29 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class GlavMenuController extends AbstractController
 {
-//    /**
-//     * @Route("app/proekts/page_glavas/pasekas", name="app.proekts.page_glavas.pasekas")
-//     * @param Request $request
+    /**
+     * @Route("app/proekts/page_glavas/pasekas", name="app.proekts.page_glavas.pasekas")
+     * @param Request $request
 //     * @param MestoNomerRepository $mestoNomers
 //     * @param UchastieRepository $uchasties
 //     * @param PersonaRepository $personas
-//     * @return Response
-//     */
-//    public function index(Request $request,
+     * @return Response
+     */
+    public function index(Request $request
 //                          UchastieRepository $uchasties,
 //                          PersonaRepository $personas,
 //                          MestoNomerRepository $mestoNomers
-//                            ): Response
-//    {
-//        $idUser = $this->getUser()->getId();
-//
+                            ): Response
+    {
+        $idUser = $this->getUser()->getId();
+
 //        $uchastie = $uchasties->has(new Id($idUser));
 //        $persona = $personas->has(new PersonaId($idUser));
 //        $mestoNomer = $mestoNomers->has(new MestoNomerId($idUser));
-////        dd($mestoNomer);
-//
-//        return $this->render('/app/proekts/page_glavas/pasekas/index.html.twig',
+//        dd($mestoNomer);
+
+        return $this->render('/app/proekts/page_glavas/pasekas/index.html.twig',
 //         compact('uchastie', 'persona', 'mestoNomer')
-//        );
-//    }
+        );
+    }
 }

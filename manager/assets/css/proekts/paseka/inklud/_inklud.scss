@@ -1,0 +1,135 @@
+.inklud {
+  display: flex;
+  // font-size: 1.8rem;
+  text-align: center;
+  align-items: center;
+  background-color: #f0f3f5;
+  margin-bottom: 1rem;
+  box-shadow: inset 0 0 10px rgba($plem-color, 0.9); //тень внутри
+  // box-shadow: 0 5px 22px rgba($white, .25);
+  border-bottom: 2px solid $plem-color; // linia
+
+  &--elit {
+    background-color: $transpar;
+    box-shadow: inset 0 0 10px rgba($elit-col, 0.9); //тень внутри
+    border-bottom: 1px solid $text-elit; // linia
+  }
+
+  &--tochka {
+    background-color: $transpar;
+    box-shadow: inset 0 0 10px rgba($grad1, 0.9); //тень внутри
+    border-bottom: 1px solid $grad1; // linia
+  }
+
+  &--paseka {
+    background-color: $transpar;
+    box-shadow: inset 0 0 10px rgba($godina-swet, 0.9);
+    border-bottom: none;
+  }
+
+  &--godina {
+    background-color: $transpar;
+    box-shadow: inset 0 0 10px rgba($godina-col, 0.9); //тень внутри
+    border-bottom: 1px solid $godina-col; // linia
+  }
+
+  &--pchelomat {
+    background-color: $transpar;
+    box-shadow: inset 0 0 10px rgba($white, 0.9); //тень внутри
+    border-bottom: 1px solid $white; // linia
+  }
+
+  &--childpchelo {
+    background-color: #a09e9e;;
+    //background-color: $transpar;
+    box-shadow: inset 0 0 10px rgba($white, 0.9); //тень внутри
+    border-bottom: 1px solid $white; // linia
+  }
+
+  &--rasa {
+    box-shadow: inset 0 0 10px rgba($rasa-color, 0.9); //тень внутри
+    border-bottom: 2px solid $rasa-color; // linia
+  }
+
+  &--kategor {
+    box-shadow: inset 0 0 10px rgba($white, 0.9); //тень внутри
+    border-bottom: 2px solid $white; // linia
+  }
+
+  &--sezon {
+    box-shadow: inset 0 0 10px rgba($sezon-teni, 0.9); //тень внутри
+    border-bottom: 2px solid $sezon-teni; // linia
+  }
+
+  &--child {
+    //    color:  #efe9cd;
+
+    background-color: $col-child-inklud;
+    box-shadow: inset 0 0 10px rgba($child-text, 0.9); //тень внутри
+    border-bottom: 2px solid $child-text; // linia
+  }
+
+  &--mb0 {
+    margin-bottom: 0;
+  }
+
+  //@include breakpoint($tablet-bp) {
+  //    display: none;
+  //
+  //    &--rasa {
+  //        display: none;
+  //    }
+  //
+  //}
+}
+
+.inklud__title {
+  width: calc(100% - #{80px});
+  font-size: 1.6rem;
+  margin-right: 7rem;
+  //color: $border-lin-nav;
+  padding: .8rem 0;
+
+  &--plem {
+    width: calc(100% - #{100px});
+  }
+}
+
+.teni {
+  background-color: $plem-color;
+  color: transparent;
+  text-shadow: 0 2px 3px rgba($plem-color, 0.5);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+
+  &--child {
+    background-color: $col-child-ten;
+  }
+
+  &--size {
+    font-size: 1.7rem;
+  }
+
+  &--size-2 {
+    font-size: 1.9rem;
+  }
+
+  &--col-nav {
+    color: $grad1;
+    font-size: 2rem;
+  }
+
+  &--rasa {
+    background-color: $rasa-color;
+  }
+
+  &--kategor {
+    background-color: #565656;
+  }
+
+  &--sezon {
+    background-color: $sezon-teni;
+  }
+
+}
