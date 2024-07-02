@@ -1,0 +1,82 @@
+<a  class="btnn-elit  btnn-elit--nike" href="{{ path('app.proekts.pasekas.uchasties.spisok.show', {'id': action.actor_id}) }}">
+    {{ action.actor_nike }}
+</a>
+
+{% if action.set_pchelomatka_id and action.set_name %}
+    созданный в
+    <a href="{{ path('app.proekts.pasekas.pchelomatkas.pchelomatka.show', {'pchelomatka_id': action.set_pchelomatka_id}) }}">
+        {{ action.set_pchelomatka_name }}
+  </a>
+    как {{ paseka_matkas_childmatka_type(action.set_type) }}
+    с приоритетом {{ paseka_matkas_childmatka_priority(action.set_priority) }}
+{% endif %}
+
+
+{% if action.set_name and not action.set_pchelomatka_id %}
+    переименован в &laquo;{{ action.set_name }}&raquo;
+{% endif %}
+
+{% if action.set_content and not action.set_pchelomatka_id %}
+    отредактированный контент
+{% endif %}
+
+{% if action.set_executor_id %}
+    назначенный тестёр
+    <a class="btnn-elit btnn-elit--execut" href="{{ path('app.proekts.pasekas.uchasties.spisok.show', {'id': action.set_executor_id}) }}">
+        {{ action.set_executor_nike }}
+    </a>
+{% endif %}
+
+{% if action.set_revoked_executor_id %}
+    тестёр
+    <a class="btnn-elit btnn-elit--execut" href="{{ path('app.proekts.pasekas.uchasties.spisok.show', {'id': action.set_revoked_executor_id}) }}">
+        {{ action.set_revoked_executor_nike }}???
+    </a>  откреплен от маточки
+{% endif %}
+
+{% if action.set_file_id %}
+    добавленный файл
+{% endif %}
+
+{% if action.set_removed_file_id %}
+    удаленный файл
+{% endif %}
+
+{% if action.set_pchelomatka_id and not action.set_pchelomatka_id %}
+    переехал в
+    <a href="{{ path('adminka.matkas.pchelomatka.show', {'id': action.set_pchelomatka_id}) }}">
+        {{ action.set_pchelomatka_name }}
+    </a>
+{% endif %}
+
+{% if action.set_parent_id %}
+    установлен как дочерний элемент
+    <a href="{{ path('adminka.matkas.childmatkas.show', {'id': action.set_parent_id}) }}">
+        #{{ action.set_parent_id }}
+    </a>
+{% endif %}
+
+{% if action.set_removed_parent %}
+    удаленный родитель
+{% endif %}
+
+{% if action.set_plan %}
+    планировал {{ action.set_plan|date('Y-m-d') }}
+{% endif %}
+
+{% if action.set_removed_plan %}
+    удаленная дата плана
+{% endif %}
+
+{% if action.set_priority and not action.set_pchelomatka_id %}
+    изменен приоритет на {{ paseka_matkas_childmatka_priority(action.set_priority) }}
+{% endif %}
+
+{% if action.set_status %}
+
+    изменен статус на {{ paseka_matkas_childmatka_status(action.set_status) }}
+{% endif %}
+
+{% if action.set_type and not action.set_pchelomatka_id %}
+    изменен тип облета на {{ paseka_matkas_childmatka_type(action.set_type) }}
+{% endif %}

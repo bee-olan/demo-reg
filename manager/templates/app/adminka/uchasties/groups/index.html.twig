@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Группы{% endblock %}
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Главная</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka') }}">Админка</a></li>
+		<li class="breadcrumb-item"><a href="{{ path('adminka.uchasties') }}">Участники</a></li>
+        <li class="breadcrumb-item active">Группы</li>
+    </ol>
+{% endblock %}
+
+{% block body %}
+
+{{ include('app/adminka/uchasties/groups/_tabs.html.twig') }}
+
+    <div class="controls">
+        <a href="{{ path('adminka.uchasties.groups.create') }}" class="btn btn-success">Добавить группу</a>
+    </div>
+
+    <div class="box">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th> Название </th>
+                    <th> Кол-во участников </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% set token = csrf_token('delete') %}
+                {% for group in groups %}
+                    <tr>
+                        <td>
+                            {% if group.uchasties %}
+                                <a href="{{ path('adminka.uchasties', {'form': {'group': group.id}}) }}">{{ group.name }}</a>
+                            {% else %}
+                                {{ group.name }}
+                            {% endif %}
+                        </td>
+                        <td>        
+                                {{ group.uchasties }}
+                        </td>
+                       
+                        <td>
+                            <div class="d-flex flex-row">
+                                <a href="{{ path('adminka.uchasties.groups.edit', {'id': group.id}) }}" class="btn btn-sm btn-primary mr-1"><span class="fa fa-pencil"></span></a>
+                                <form action="{{ path('adminka.uchasties.groups.delete', {'id': group.id}) }}" method="post" onsubmit="return confirm('Удалить? Вы уверены?')">
+                                    <input type="hidden" name="token" value="{{ token }}" />
+                                    <button type="submit" class="btn btn-sm btn-danger"><span class="fa fa-trash"></span></button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

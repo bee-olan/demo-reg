@@ -1,0 +1,61 @@
+<aside class="sidebarr">
+
+    <div class="sidebarr__header">
+        <div class="logo_es"></div>
+    </div>
+
+
+    <div class="sidebarr__content">
+        <div class="profilee">
+
+            <div class="person-wse"></div>
+
+            <div class="profilee__header">
+                <div class="profilee__name"> Иформация </div>
+                <div class="profilee__prof"> Где и как используется ПерсонНомер </div>
+            </div>
+            <ul >    
+                <ol>-- При регистрации ПлемМаток</ol>
+                <ol>-- При регистрации ТестМаток</ol>
+                <ol>-- Поиск Маток по ПерсонНомеру</ol>
+                <ol >--  ...</ol>
+                {# <ol>-- Поиск участнков по НомерМесту</ol> #}
+                <ol>-- Анализ результатов по ПерсонНомеру</ol>
+            </ul>
+        {% if personanom %} 
+            <div class="profilee__text">
+                <div class="profilee__header">           
+                    <div class="profilee__name">
+                        <strong class = "strongo strongo--krox"  >Поздравляю! </strong>
+                    </div>
+                    <div class="profilee__prof"> Вы выбрали ПерсонНомер. <br>
+                        Эти данные записаны  в <br> <strong class = "strongo strongo--krox"  >Базу Данных</strong>
+                    </div>
+                </div>
+            </div>     
+        {% else %}
+            <div class="profilee__text">
+                <div class="profilee__header">           
+                    <div class="profilee__name"> Внимание! </div>
+                    <div class="profilee__prof">  ПерсонНомер - обязательная опция при  
+                     регистрации пчеловода для участия в проекте </div>
+                </div>
+            </div>  
+        {% endif %}
+    </div><!-- /.profile -->
+    
+       
+    </div><!-- /.sidebar__content -->
+    {# <div class="sidebarr__footer-text">
+        <div class="sidebarr__footer">       
+            <form class="searchh"  method="get">
+                <input class="searchh__input" type="text" placeholder="Поиск по проекту">
+            </form>
+            <div class="sidebarr__lupa">
+                    <img src="{{ asset('assets/proekt/images/lupa.png') }}" alt="">
+            </div>
+       </div>
+   </div> #}
+		
+
+</aside>

@@ -1,0 +1,11 @@
+{% if rasstojan == '1' %}
+    <span class="badge badge-danger">до  0.5 км</span>
+{% elseif rasstojan == '2' %}
+    <span class="badge badge-primary">0.5 - 1 км</span>
+{% elseif rasstojan == '3' %}
+    <span class="badge badge-success">1 - 1.5 км</span>
+{% elseif rasstojan == '4' %}
+    <span class="badge badge-warning">1.5 - 2.5 км</span>
+{% elseif rasstojan == '5' %}
+    <span class="badge badge-secondary">больше 3 км</span>
+{% endif %}

@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Участники{% endblock %}
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Главная</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka') }}">Админка</a></li>
+        <li class="breadcrumb-item active">Участники!</li>
+    </ol>
+{% endblock %}
+
+
+{% block body %}
+
+ {{ include('app/adminka/uchasties/_tabs.html.twig') }}
+
+    <div class="card">
+        <div class="card-body">
+
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-2">{{ form_widget(form.nike) }}</div>
+                <div class="col-md-2">{{ form_widget(form.email) }}</div>
+                <div class="col-md-2">{{ form_widget(form.group) }}</div>
+                <div class="col-md-2">{{ form_widget(form.status) }}</div>
+                <div class="col-md-2 ">
+                    <button type="submit" class="btn btn-primary">Filter</button>
+
+                </div>
+                <div class="col-md-2 ">
+
+                    <a href="{{ path('adminka.uchasties') }}" class="btn btn-outline-secondary">Сбросить</a>
+                </div>
+            </div>
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+
+    <div class="box">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>{{ knp_pagination_sortable(pagination, 'Ник', 'nike') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'Email', 'email') }}</th>
+{#                <th>Сезонов</th>#}
+                <th>ПлемМатки</th>
+                <th>{{ knp_pagination_sortable(pagination, 'Группа', 'group') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'Статус', 'status') }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for uchastie in pagination %}
+                <tr>
+                    <td><a href="{{ path('adminka.uchasties.show', {'id': uchastie.id}) }}">{{ uchastie.nike }}</a></td>
+                    <td>{{ uchastie.email }}</td>
+{#                     <td>{{ uchastie.uchasgodas_count }}</td>#}
+                    <td>{{ uchastie.uchastniks_count }}</td>
+                    <td>{{ uchastie.group }}</td>
+                    <td>{{ uchastie_status(uchastie.status) }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+{% endblock %}

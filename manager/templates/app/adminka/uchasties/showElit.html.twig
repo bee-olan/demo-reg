@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Участник{% endblock %}
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Главная</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka') }}">Админка</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka.uchasties') }}">Участники</a></li>
+
+        <li class="breadcrumb-item active">{{ uchastie.nike }}</li>
+    </ol>
+{% endblock %}
+
+{% block body %}
+
+    {{ include('app/adminka/uchasties/_tabs.html.twig') }}
+
+    <div class="controls">
+        <a href="{{ path('users.show', {'id': uchastie.id}) }}" class="btn btn-primary">Смотреть как User</a>
+    </div>
+
+    <div class="box">
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>Ник</th>
+                    <td>{{ uchastie.nike }}</td>
+                   
+					<td>
+						<a href="{{ path('adminka.uchasties.edit', {'id': uchastie.id}) }}" class="btn btn-primary">Редактировать</a>
+					</td>
+                </tr>
+               
+                 <tr>
+                    <th>Email</th>
+                    <td>{{ uchastie.email.value }}</td>
+					<td>---</td>
+                </tr>
+                <tr>
+                    <th>Group</th>
+                    <td>{{ uchastie.group.name }}</td>
+					 <td>
+						<a href="{{ path('adminka.uchasties.move', {'id': uchastie.id}) }}"
+						class="btn btn-primary">Перевести в другую группу</a>
+					</td>
+                </tr>
+                <tr>
+                    <th>Дата создания</th>
+                    <td>{{ uchastie.date|date('Y-m-d H:i:s') }}</td>
+                </tr>
+                <tr>
+                     <th>Статус</th>
+                    <td>{{ uchastie_status(uchastie.status.name) }}</td>
+					 <td>
+						{% if uchastie.active and uchastie.id.value != app.user.id %}
+							<form action="{{ path('adminka.uchasties.archive', {'id': uchastie.id}) }}" method="post" onsubmit="return confirm('Отправить в архив?')">
+								<input type="hidden" name="token" value="{{ csrf_token('archive') }}" />
+								<button type="submit" class="btn-my btn-danger">Архив</button>
+							</form>
+						{% endif %}
+						{% if uchastie.archived %}
+							<form action="{{ path('adminka.uchasties.reinstate', {'id': uchastie.id}) }}" method="post" onsubmit="return confirm('Are you sure?')">
+								<input type="hidden" name="token" value="{{ csrf_token('reinstate') }}" />
+								<button type="submit" class="btn btn-success">Активизировать</button>
+							</form>
+						{% endif %}
+					</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    {% if periods %}
+        <div class="box">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>ПлемМатка</th>
+                    <th>Сезон</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for period in periods %}
+                    <tr>
+                        <td>
+                            {{ period.elitmatka_name }}
+                            <a href="{{ path('adminka.elitmatkas.elitmatka.redaktors', {'id': period.elitmatka_id}) }}">{{ period.elitmatka_name }}</a>
+                        </td>
+                        <td>{{ period.period_name }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+{% endblock %}

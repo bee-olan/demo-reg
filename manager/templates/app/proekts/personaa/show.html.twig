@@ -1,0 +1,33 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}Персональный номер{% endblock %}
+
+{#{% block menupro %}#}
+{#    {{ include('app/proekts/_tabs.html.twig') }}#}
+{#{% endblock %}#}
+{% block menupro %}
+    {{ include('app/proekts/page_glavas/uchastieGl/_tabs.html.twig') }}
+{% endblock %}
+
+{% block kroxii %}
+    <a href="{{ path('app.proekts.basepro') }}">Главная</a>
+    <span class="aktiv">ПевсонНомер????</span>
+    <span class="aktiv">Диапозон</span>
+{% endblock %}
+
+{% block bodyy %}
+
+ <h2 class = "person__title ">Персональные   номера участников проекта !!!!!!!!</h2>
+ <div class="person">
+
+	{% for persona in fetcher %}
+        <div class = "person-nomer">		
+		    {{ persona.nomer  }} 
+        </div>
+	{% endfor %}
+</div>
+    <h2 class = "person__title ">Ваш персональный   номер участника </h2>
+    <div class = "person-nomer">
+        {{ persona.nomer }}
+    </div>
+{% endblock %}

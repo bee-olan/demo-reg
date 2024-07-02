@@ -1,0 +1,7 @@
+{% if status == 'active' %}
+    <span class="badge badge-primary">Активная</span>
+{% elseif status == 'archived' %}
+    <span class="badge badge-danger">Архив</span>
+{% elseif status == 'ojidaet' %}
+    <span class="badge badge-warning">Ожидает</span>
+{% endif %}

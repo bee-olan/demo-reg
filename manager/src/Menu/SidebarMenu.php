@@ -36,14 +36,6 @@ class SidebarMenu
             ->setAttribute('class', 'nav-item')
             ->setLinkAttribute('class', 'nav-link');
 
-//        $menu->addChild('Projects', ['route' => 'work.projects'])
-//            ->setExtra('routes', [
-//                ['route' => 'work.projects'],
-//                ['pattern' => '/^work\.projects\..+/']
-//            ])
-//            ->setExtra('icon', 'nav-icon icon-briefcase')
-//            ->setAttribute('class', 'nav-item')
-//            ->setLinkAttribute('class', 'nav-link');
 
 //        if ($this->auth->isGranted('ROLE_WORK_MANAGE_MEMBERS')) {
 //            $menu->addChild('Members', ['route' => 'work.members'])
@@ -82,6 +74,40 @@ class SidebarMenu
             ->setExtra('icon', 'nav-icon icon-briefcase')
             ->setAttribute('class', 'nav-item')
             ->setLinkAttribute('class', 'nav-link');
+
+        $menu->addChild('Зарегистрированы')
+            ->setAttribute('class', 'nav-title')
+            ->setAttribute('class', 'nav-item')
+            ->setLinkAttribute('class', 'nav-link');
+
+
+        if ($this->auth->isGranted('ROLE_MANAGE_USERS')) {
+            $menu->addChild('Пользователи', ['route' => 'users'])
+                ->setExtra('icon', 'nav-icon icon-people')
+                ->setExtra(
+                    'routes',
+                    [
+                        ['route' => 'users'],
+                        ['pattern' => '/^users\..+/']
+                    ]
+                )
+                ->setAttribute('class', 'nav-item')
+                ->setLinkAttribute('class', 'nav-link');
+        }
+
+        if ($this->auth->isGranted('ROLE_ADMINKA_MANAGE_UCHASTIES')) {
+            $menu->addChild('Участники!', ['route' => 'adminka.uchasties'])
+                ->setExtra('icon', 'nav-icon icon-people')
+                ->setExtra(
+                    'routes',
+                    [
+                        ['route' => 'adminka.uchasties'],
+                        ['pattern' => '/^adminka\.uchasties\..+/']
+                    ]
+                )
+                ->setAttribute('class', 'nav-item')
+                ->setLinkAttribute('class', 'nav-link');
+        }
 
         $menu->addChild('Профиль', ['route' => 'profile'])
             ->setExtra('icon', 'nav-icon icon-user')

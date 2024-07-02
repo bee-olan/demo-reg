@@ -1,0 +1,76 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}Информация {% endblock %}
+
+{% block sidebarr %}
+    {{ include('app/proekts/personaa/side/_sideinform.html.twig') }}
+{% endblock %}
+
+{% block menupro %}
+    {{ include('app/proekts/_tabs.html.twig') }}
+
+    {{ include('app/proekts/page_glavas/uchastieGl/_tabs.html.twig') }}
+{% endblock %}
+
+{% block kroxii %}
+    <a href="{{ path('app.proekts.basepro') }}">Главная</a>
+{#    <span class="aktiv">ПерсонНомер</span>#}
+{#    <a href="{{ path('app.proekts.personaa.diapazon') }}"> Выбрать ПерсонНомер</a>#}
+    <span class="aktiv">Инфа о ПерсонНомерах</span>
+{% endblock %}
+
+
+{% block bodyy %}
+
+    <div class="proekts">
+        <div class="wstavka">
+            <div class="wstavka__title nav-teni">
+                Персональные Номера участников проекта
+            </div>
+        </div>
+        {% if personas %}
+            <h2 class="pagee__title ">Все выбраные ПерсонНомера </h2>
+
+            <div class="proekts-plr">
+                <div class="ramka">
+                    {% for persona in personas %}
+                        <div class="personaa-nomer">
+                            {{ persona.nomer }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        {% endif %}
+
+        <div class="mestoo__linia-top"></div>
+        {% if personanom %}
+            <div class="proekts-plr">
+                <div class="ramka">
+                    <h2 class="personaa__title "><strong class="strongo--name-nike">{{ last }}, </strong> Ваш
+                        ПерсонНомер </h2>
+                    <div class="personaa-nomer">
+                        <strong class="strongo--name-nike">{{ personanom.nomer }}</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="proekts-plr">
+                <div class="wstavka wstavka--uch back-color-uch">
+                    <h2 class="personaa__title    ">Стать участником !!! </h2>
+                    <a class="btnn btnn--ml btnn--pt btnn--col-uchas"
+                       href="{{ path('app.proekts.pasekas.uchasties.uchastiee') }}">
+                        продолжить
+                    </a>
+                </div>
+            </div>
+        {% else %}
+
+            <h2 class="pagee__title ">Вам, для участия в проекте, нужно выбрать ПерсонНомер. <br>
+                Можно отсюда <a href="/app/proekts/personaa/diapazon"> <strong class="strongo"> Перейти </strong>
+                </a>
+                или <br>
+                в верхнем меню нажать на кнопку: <strong class="strongo">Выбрать ПерсонНомер</strong>
+            </h2>
+        {% endif %}
+    </div>
+{% endblock %}

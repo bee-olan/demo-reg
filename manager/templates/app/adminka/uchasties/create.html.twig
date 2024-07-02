@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Участники{% endblock %}
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Главная</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka') }}">Админка</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka.uchasties') }}">Участники</a></li>
+
+        <li class="breadcrumb-item active">Создать участника</li>
+    </ol>
+{% endblock %}
+
+{% block body %}
+
+    {{ include('app/adminka/uchasties/_tabs.html.twig') }}
+
+    <div class="card">
+        <div class="card-body">
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit" class="btn btn-primary">Создать участника</button>
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}Диапазон{% endblock %}
+
+{% block sidebarr %}
+    {{ include('app/proekts/personaa/side/_sidediapaz.html.twig') }}
+{% endblock %}
+
+{% block menupro %}
+    {{ include('app/proekts/_tabs.html.twig') }}
+
+    {{ include('app/proekts/page_glavas/uchastieGl/_tabs.html.twig') }}
+{% endblock %}
+
+{% block kroxii %}
+    <a href="{{ path('app.proekts.basepro') }}">Главная</a>
+{#    <span class="aktiv ">Участие</span>#}
+
+{#    <a href="{{ path('app.proekts.personaa.diapazon') }}"> ПерсонНомер </a>#}
+{#    <a href="{{ path('app.proekts.personaa.inform') }}">Инфа о ПерсонНомерах</a>#}
+    <span class="aktiv">Выбор Диапазона</span>
+{% endblock %}
+
+{% block bodyy %}
+
+    <div class="proekts">
+
+        {% include('app/proekts/personaa/_personas-includ.html.twig') %}
+
+        <h2 class="pagee__title ">Выбираем подходящий диапазон для ПерсонНомера </h2>
+        <div class="personaa-form">
+            <table width="100%">
+                <tr>
+                    <td class="td-width">
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                    </td>
+                    <td class="td-width">
+                        <button type="submit" class="btnn-pers">Смотрим ПерсонНомерА</button>
+
+                        {{ form_end(form) }}
+                    </td>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+{% endblock %}
