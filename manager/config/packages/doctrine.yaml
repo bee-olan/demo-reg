@@ -32,6 +32,12 @@ doctrine:
             comment_comment_id: 'App\Model\Comment\Entity\Comment\IdType'
             comment_comment_author_id: 'App\Model\Comment\Entity\Comment\AuthorIdType'
 
+            admin_uchasties_group_id: 'App\Model\Adminka\Entity\Uchasties\Group\IdType'
+            admin_uchasties_uchastie_id: 'App\Model\Adminka\Entity\Uchasties\Uchastie\IdType'
+            admin_uchasties_uchastie_status: 'App\Model\Adminka\Entity\Uchasties\Uchastie\StatusType'
+            admin_uchasties_uchastie_email: 'App\Model\Adminka\Entity\Uchasties\Uchastie\EmailType'
+            adminka_uchasties_persona_id: 'App\Model\Adminka\Entity\Uchasties\Personas\IdType'
+
     orm:
         auto_generate_proxy_classes: true
         naming_strategy: doctrine.orm.naming_strategy.underscore
@@ -55,4 +61,10 @@ doctrine:
                 dir: '%kernel.project_dir%/src/Model/Comment/Entity'
                 prefix: 'App\Model\Comment\Entity'
                 alias: User
+            Adminka:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Model/Adminka/Entity'
+                prefix: 'App\Model\Adminka\Entity'
+                alias: Adminka
 

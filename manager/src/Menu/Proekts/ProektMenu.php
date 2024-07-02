@@ -71,23 +71,23 @@ class ProektMenu
 
         $menu
             ->addChild('Участие', ['route' => 'app.proekts.page_glavas.uchastieGl'])
-//            ->setExtra(
-//                'routes',
-//                [
+            ->setExtra(
+                'routes',
+                [
 //                    ['route' => 'app.proekts.page_glavas.uchastieGl'],
 //                    ['route' => 'app.proekts.pasekas.uchasties.uchastiee'],
 //                    ['route' => 'app.proekts.pasekas.uchasties.spisok'],
 //                    ['route' => 'app.proekts.pasekas.uchasties.groupas'],
 //                    ['route' => 'app.proekts.personaa'],
-//                    ['route' => 'app.proekts.mestos'],
+                    ['route' => 'app.proekts.mestos'],
 //                    ['pattern' => '/^app.proekts.page_glavas.uchastieGl\..+/'],
 //                    ['pattern' => '/^app.proekts.pasekas.uchasties.uchastiee\..+/'],
 //                    ['pattern' => '/^app.proekts.pasekas.uchasties.spisok\..+/'],
 //                    ['pattern' => '/^app.proekts.pasekas.uchasties.groupas\..+/'],
 //                    ['pattern' => '/^app.proekts.personaa\..+/'],
-//                    ['pattern' => '/^app.proekts.mestos\..+/']
-//                ]
-//            )
+                    ['pattern' => '/^app.proekts.mestos\..+/']
+                ]
+            )
             ->setAttribute('class', 'nav_pro-item ')
             ->setLinkAttribute('class', 'nav_pro-link nav_pro-link--glav');
 
