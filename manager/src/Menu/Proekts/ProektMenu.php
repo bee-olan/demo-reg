@@ -26,15 +26,15 @@ class ProektMenu
 
         $menu
             ->addChild('Главная', ['route' => 'proekt'])
-//            ->setExtra(
-//                'routes',
-//                [
-//                    ['route' => 'proekt'],
-//                    ['route' => 'app.proekts.basepro'],
-//                    ['pattern' => '/^proekt\..+/'],
-//                    ['pattern' => '/^app.proekts.basepro\..+/']
-//                ]
-//            )
+            ->setExtra(
+                'routes',
+                [
+                    ['route' => 'proekt'],
+                    ['route' => 'app.proekts.basepro'],
+                    ['pattern' => '/^proekt\..+/'],
+                    ['pattern' => '/^app.proekts.basepro\..+/']
+                ]
+            )
             ->setAttribute('class', 'nav_pro-item')
             ->setLinkAttribute('class', 'nav_pro-link nav_pro-link--glav');
 
@@ -74,17 +74,17 @@ class ProektMenu
             ->setExtra(
                 'routes',
                 [
-//                    ['route' => 'app.proekts.page_glavas.uchastieGl'],
-//                    ['route' => 'app.proekts.pasekas.uchasties.uchastiee'],
-//                    ['route' => 'app.proekts.pasekas.uchasties.spisok'],
-//                    ['route' => 'app.proekts.pasekas.uchasties.groupas'],
-//                    ['route' => 'app.proekts.personaa'],
+                    ['route' => 'app.proekts.page_glavas.uchastieGl'],
+                    ['route' => 'app.proekts.pasekas.uchasties.uchastiee'],
+                    ['route' => 'app.proekts.pasekas.uchasties.spisok'],
+                    ['route' => 'app.proekts.pasekas.uchasties.groupas'],
+                    ['route' => 'app.proekts.personaa'],
                     ['route' => 'app.proekts.mestos'],
-//                    ['pattern' => '/^app.proekts.page_glavas.uchastieGl\..+/'],
-//                    ['pattern' => '/^app.proekts.pasekas.uchasties.uchastiee\..+/'],
-//                    ['pattern' => '/^app.proekts.pasekas.uchasties.spisok\..+/'],
-//                    ['pattern' => '/^app.proekts.pasekas.uchasties.groupas\..+/'],
-//                    ['pattern' => '/^app.proekts.personaa\..+/'],
+                    ['pattern' => '/^app.proekts.page_glavas.uchastieGl\..+/'],
+                    ['pattern' => '/^app.proekts.pasekas.uchasties.uchastiee\..+/'],
+                    ['pattern' => '/^app.proekts.pasekas.uchasties.spisok\..+/'],
+                    ['pattern' => '/^app.proekts.pasekas.uchasties.groupas\..+/'],
+                    ['pattern' => '/^app.proekts.personaa\..+/'],
                     ['pattern' => '/^app.proekts.mestos\..+/']
                 ]
             )

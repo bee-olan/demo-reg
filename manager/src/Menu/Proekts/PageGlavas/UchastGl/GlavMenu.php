@@ -29,11 +29,11 @@ class GlavMenu
             ->addChild('Участие', ['route' => 'app.proekts.page_glavas.uchastieGl'])
             ->setExtra('routes', [
                 ['route' => 'app.proekts.page_glavas.uchastieGl'],
-//                ['route' => 'app.proekts.personaa.create'],
-//                ['route' => 'app.proekts.mestos.okrugs'],
+                ['route' => 'app.proekts.personaa.create'],
+                ['route' => 'app.proekts.mestos.okrugs'],
                 ['pattern' => '/^app.proekts.page_glavas.uchastieGl\..+/'],
-//                ['pattern' => '/^app.proekts.personaa.create\..+/'],
-//                ['pattern' => '/^app.proekts.mestos.okrugs\..+/']
+                ['pattern' => '/^app.proekts.personaa.create\..+/'],
+                ['pattern' => '/^app.proekts.mestos.okrugs\..+/']
             ])
             ->setAttribute('class', 'nav_pro-item')
             ->setLinkAttribute('class', 'nav_pro-link');
@@ -65,14 +65,6 @@ class GlavMenu
             ->setAttribute('class', 'nav_pro-item')
             ->setLinkAttribute('class', 'nav_pro-link');
 
-//        $menu
-//            ->addChild('Список ', ['route' => 'app.proekts.pasekas.matkas.plemmatkas.creates'])
-//            ->setExtra('routes', [
-//                ['route' => 'app.proekts.pasekas.matkas.plemmatkas.creates'],
-//                ['pattern' => '/^app.proekts.pasekas.matkas.plemmatkas.creates\..+/']
-//            ])
-//            ->setAttribute('class', 'nav_pro-item')
-//            ->setLinkAttribute('class', 'nav_pro-link');
 
 
         $menu

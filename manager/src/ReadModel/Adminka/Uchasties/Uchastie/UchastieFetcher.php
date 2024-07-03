@@ -28,7 +28,8 @@ class UchastieFetcher
 
     public function find(string $id): ?Uchastie
     {
-        return $this->repository->find($id);
+        return $this->find($id);
+//        return $this->repository->find($id);
     }
 
 
@@ -44,6 +45,61 @@ class UchastieFetcher
             ->execute();
 
         return $stmt->fetchAll(\PDO::FETCH_KEY_PAIR);
+    }
+    /**
+     * @param Filter $filter
+     * @param int $page
+     * @param int $size
+     * @param string $sort
+     * @param string $direction
+     * @return PaginationInterface
+     */
+    public function allProekt(Filter $filter, int $page, int $size, string $sort, string $direction): PaginationInterface
+    {
+
+        $qb = $this->connection->createQueryBuilder()
+            ->select(
+                'm.id',
+//                'TRIM(CONCAT( m.name_nike)) AS name',
+                'm.email',
+                'm.nike',
+                'g.name as group',
+                'm.status',
+                'n.nomer AS mesto',
+                'p.nomer AS persona'
+//                '(SELECT COUNT(*) FROM admin_matkas_plemmatka_uchastnik_departments d WHERE  d.uchastnik_id = m.id) as sezon_count',
+//                '(SELECT COUNT(*) FROM adminka_matkas_plemmatka_uchastniks ms WHERE ms.uchastie_id = m.id) as uchastniks_count')
+//                '(SELECT COUNT(*) FROM admin_sezons_uchasgodas ug WHERE  ug.uchastie_id = m.id) as uchasgodas_count')
+//                '(SELECT COUNT(*) FROM paseka_sezons_uchasgodas ug WHERE ug.uchastie_id = m.id) as uchasgodas_count'            )
+            )
+            ->from('admin_uchasties_uchasties', 'm')
+            ->innerJoin('m', 'admin_uchasties_groups', 'g', 'm.group_id = g.id')
+            ->innerJoin('m', 'mesto_mestonomers', 'n', 'm.id = n.id')
+            ->innerJoin('m', 'adminka_uchasties_personas', 'p', 'm.id = p.id');
+
+        if ($filter->nike) {
+            $qb->andWhere($qb->expr()->like('LOWER( m.nike))', ':nike'));
+            $qb->setParameter(':nike', '%' . mb_strtolower($filter->nike) . '%');
+        }
+
+
+        if ($filter->status) {
+            $qb->andWhere('m.status = :status');
+            $qb->setParameter(':status', $filter->status);
+        }
+
+        if ($filter->group) {
+            $qb->andWhere('m.group_id = :group');
+            $qb->setParameter(':group', $filter->group);
+        }
+
+
+        if (!\in_array($sort, ['nike', 'email', 'group', 'status'], true)) {
+            throw new \UnexpectedValueException('Cannot sort by ' . $sort);
+        }
+        $qb->orderBy('"' . $sort . '"', $direction === 'desc' ? 'desc' : 'asc');
+
+        return $this->paginator->paginate($qb, $page, $size);
     }
 
     /**
@@ -63,10 +119,10 @@ class UchastieFetcher
                 'm.email',
                 'm.nike',
                 'g.name as group',
-                'm.status',
-                'ug.uchastie_id AS uchgod',
-                '(SELECT COUNT(*) FROM adminka_matkas_plemmatka_uchastniks ms WHERE ms.uchastie_id = m.id) as uchastniks_count',
-                '(SELECT COUNT(*) FROM admin_sezons_uchasgodas ug WHERE  uchgod = m.id) as uchasgodas_count'
+                'm.status'
+//                'ug.uchastie_id AS uchgod',
+//                '(SELECT COUNT(*) FROM adminka_matkas_plemmatka_uchastniks ms WHERE ms.uchastie_id = m.id) as uchastniks_count',
+//                '(SELECT COUNT(*) FROM admin_sezons_uchasgodas ug WHERE  uchgod = m.id) as uchasgodas_count'
             )
             ->from('admin_uchasties_uchasties', 'm')
             ->innerJoin('m', 'admin_uchasties_groups', 'g', 'm.group_id = g.id');
@@ -97,7 +153,6 @@ class UchastieFetcher
             throw new \UnexpectedValueException('Cannot sort by ' . $sort);
         }
         $qb->orderBy('"' . $sort . '"', $direction === 'desc' ? 'desc' : 'asc');
-//        $qb->orderBy($sort, $direction === 'desc' ? 'desc' : 'asc');
 
         return $this->paginator->paginate($qb, $page, $size);
     }

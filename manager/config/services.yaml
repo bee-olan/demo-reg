@@ -78,6 +78,8 @@ services:
     App\Menu\Proekts\PageGlavas\UchastGl\GlavMenu:
         tags: [{ name: knp_menu.menu_builder, method: build, alias: proekt_page_uchast_glav }]
 
+
+
     Symfony\Component\HttpFoundation\Session\Session:
         alias: Symfony\Component\HttpFoundation\Session\SessionInterface
 
