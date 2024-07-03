@@ -1,0 +1,132 @@
+.mestoo {
+    
+    padding: .3rem 3rem .4rem 5rem;
+    overflow: hidden; // в рамках размера -все лишнее скрылось overflow
+
+    position: relative;// относительно этого будем делать
+
+    background-color: transparent;
+    transition: box-shadow .2s linear;
+    border-radius: 5px;
+
+    &:hover {
+        box-shadow: 0 5px 22px rgba($white, .35); 
+    }
+
+    &--okru {
+        //padding: .8rem 6rem ;
+        //  width: 33%;
+        padding-left: 1rem;
+     }
+
+    &--obla {
+        padding-left: 10rem;
+        
+    }
+
+    &--raio {
+        padding-left: 22rem;
+        // max-width: 33%;
+    }
+    //
+    //@include breakpoint($tablet-bp) {
+    //
+    //    padding: .3rem .3rem .4rem .5rem;
+    //
+    //    &--obla {
+    //        padding-left: .2rem;
+    //    }
+    //    &--raio {
+    //        padding-left: .3rem;
+    //
+    //    }
+    //}
+ }
+
+.mestoo__raspol {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; // выравнивание по вертикали    
+} 
+
+.mestoo__title {
+    display: flex; // добавляем т.к добаилась li-шка
+    align-items: center;
+    color: $color-text;
+    //line-height: 1.6;
+    font-size: 1.6rem;
+    padding-right: 1rem ;
+   
+    a {    
+        text-decoration: none;
+        color: inherit; // что бы изменить цвет ссылки - на родительский ...        
+        font-size: 1.4rem;
+    }
+}
+
+.mestoo__title-item {
+    padding: 0 1rem 0 1rem;
+
+}
+
+
+.mestoo__nomer-red{
+    font-size: 1.4rem;
+    color: $red; 
+    //@include breakpoint($tablet-bp){
+    //    font-size: 2.1rem;
+    //}
+}
+.mestoo__nomer-text{
+    font-size: 1.4rem;
+    color: $text; 
+}
+
+.mestoo__name-text {
+    font-size: 1.4rem;
+    color: $border-lin-nav;
+
+    //@include breakpoint($tablet-bp){
+    //    display: none;
+    //}
+}
+
+.mestoo__name {
+    display: flex;
+    align-items: center; // выравнивание по вертикали
+
+   // margin-bottom: .5rem;
+
+    font-size: 1.4rem;
+    color: $color-text; 
+
+    border-bottom: 1px solid #beba97;
+}
+
+.mestoo__linia-top {
+    max-width: 34%;
+    border-top: 1px solid #beba97;
+    margin-left: 0;
+    padding-bottom: 1rem;
+
+    //@include breakpoint($tablet-bp){
+    //    padding: 0;
+    //}
+
+}
+.mestoo-ml20{
+    margin-left: 10rem;
+
+    //@include breakpoint($tablet-bp){
+    //    margin-left: 0;
+    //}
+}
+.mestoo-ml40{
+    margin-left: 22rem;
+
+    //@include breakpoint($tablet-bp){
+    //    margin-left: 0;
+    //}
+}
+
+

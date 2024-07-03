@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Controller\Proekt\Mestoo;
 
-use App\Annotation\Guid;
+//use App\Annotation\Guid;
 //use App\ReadModel\Mesto\Oblasts\CommentFetcher;
 use App\ReadModel\Mesto\Oblasts\CommentOblFetcher;
 use App\ReadModel\Mesto\Oblasts\OblastFetcher;
-//use App\Model\Comment\UseCase\Comment;
+use App\Model\Comment\UseCase\Comment;
 
 use App\Controller\ErrorHandler;
 use App\Model\Mesto\Entity\Okrugs\Okrug;
@@ -39,39 +39,39 @@ class OblastsController extends AbstractController
      * @param Okrug $okrug
      * @param OblastFetcher $oblasts
      * @param CommentOblFetcher $comments
-//     * @param Comment\AddMesto\Handler $commentHandler
+     * @param Comment\AddMesto\Handler $commentHandler
      * @return Response
      */ 
     public function oblasts(Request $request, Okrug $okrug,
                             OblastFetcher $oblasts,
-                            CommentOblFetcher $comments
-//                            Comment\AddMesto\Handler $commentHandler
+                            CommentOblFetcher $comments,
+                            Comment\AddMesto\Handler $commentHandler
                              ): Response
     {
-        //$this->denyAccessUnlessGranted(OkrugAccess::MANAGE_MEMBERS, $okrug);
-//        $commentCommand = new Comment\AddMesto\Command(
-//            $this->getUser()->getId(),
-//            Okrug::class,
-//            $okrug->getId()->getValue()
-//        );
+//        $this->denyAccessUnlessGranted(OkrugAccess::MANAGE_MEMBERS, $okrug);
+        $commentCommand = new Comment\AddMesto\Command(
+            $this->getUser()->getId(),
+            Okrug::class,
+            $okrug->getId()->getValue()
+        );
 
-//        $commentForm = $this->createForm(Comment\AddMesto\Form::class, $commentCommand);
-//        $commentForm->handleRequest($request);
-//        if ($commentForm->isSubmitted() && $commentForm->isValid()) {
-//            try {
-//                $commentHandler->handle($commentCommand);
-//                return $this->redirectToRoute('app.proekts.mestos.oblasts', ['okrug_id' => $okrug->getId()]);
-//            } catch (\DomainException $e) {
-//                $this->errors->handle($e);
-//                $this->addFlash('error', $e->getMessage());
-//            }
-//        }
+        $commentForm = $this->createForm(Comment\AddMesto\Form::class, $commentCommand);
+        $commentForm->handleRequest($request);
+        if ($commentForm->isSubmitted() && $commentForm->isValid()) {
+            try {
+                $commentHandler->handle($commentCommand);
+                return $this->redirectToRoute('app.proekts.mestos.oblasts', ['okrug_id' => $okrug->getId()]);
+            } catch (\DomainException $e) {
+                $this->errors->handle($e);
+                $this->addFlash('error', $e->getMessage());
+            }
+        }
 
         return $this->render('app/proekts/mestos/oblasts.html.twig', [
             'okrug' => $okrug,
             'oblasts' => $oblasts->allOfOkrug($okrug->getId()->getValue()),
-//            'comments' => $comments->allForOblast($okrug->getId()->getValue()),
-//            'commentForm' => $commentForm->createView(),
+            'comments' => $comments->allForOblast($okrug->getId()->getValue()),
+            'commentForm' => $commentForm->createView(),
         ]);
     }
 }

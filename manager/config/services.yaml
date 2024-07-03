@@ -79,18 +79,17 @@ services:
         tags: [{ name: knp_menu.menu_builder, method: build, alias: proekt_page_uchast_glav }]
 
 
-
     Symfony\Component\HttpFoundation\Session\Session:
         alias: Symfony\Component\HttpFoundation\Session\SessionInterface
 
     cebe\markdown\MarkdownExtra:
 
-#    App\Service\Work\Processor\Driver\:
-#        resource: '../src/Service/Work/Processor/Driver/*Driver.php'
-#        tags: ['app.twig.work_processor.driver']
-#
-#    App\Service\Work\Processor\Processor:
-#        arguments: [!tagged app.twig.work_processor.driver]
+    App\Service\Adminka\Processor\Driver\:
+        resource: '../src/Service/Adminka/Processor/Driver/*Driver.php'
+        tags: ['app.twig.adminka_processor.driver']
+
+    App\Service\Adminka\Processor\Processor:
+        arguments: [!tagged app.twig.adminka_processor.driver]
 
 #    App\Service\Uploader\FileUploader:
 #        arguments: ['@default.storage', '%env(STORAGE_BASE_URL)%']

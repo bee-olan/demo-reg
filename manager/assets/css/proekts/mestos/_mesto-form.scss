@@ -1,0 +1,97 @@
+.form__title {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+
+    font-size: 1.2rem;
+    color: $beloe;
+    //font-weight: 500;
+}
+.mesto-form__header{
+    margin: 0 0 2.5rem 0;
+  }
+
+.mesto-form{
+    margin-right: 4rem;
+
+    form {
+        div {                           
+            div {
+                display: flex;
+                justify-content: flex-start;
+                align-items: baseline; // выравнивание по вертикали
+                margin-bottom: .6rem;
+            
+                .form__group {
+                    margin-bottom: 1.5rem;
+                    position: relative;
+
+                   
+                }
+                    
+                .form__control {
+                    display: block;
+                    width: 100%;
+                    padding: .5rem 0;
+                
+                    background: none;
+                    border: none;
+                    border-bottom: 1px solid #3F3F3F;
+                    border-radius: 0;
+                    box-shadow: none;
+                
+                    font-family: inherit;
+                    font-size: 1.4rem;
+                    color: $white;
+                
+                    &::placeholder {
+                        color: rgba($white, .2);
+                    }
+
+                    //@include breakpoint($tablet-bp){
+                    //    padding-right: 0;
+                    //    padding-left: 0;
+                    //}
+                                                               
+                }               
+                    
+                label{
+                    min-width: 10%;
+                    // margin-left: 2rem;
+                    // margin-right: 1.5rem;
+                    font-size: 1.2rem;
+                    color: $border-kroxi; 
+
+                    //@include breakpoint($tablet-bp){
+                    //
+                    //    padding-right: 5rem;
+                    //     padding-left: 0;
+                    //}
+                }
+
+                textarea {
+                    min-width: 90%;
+                    height: 50px;
+                    background: rgba($white, .2);
+                    border: 1px solid #d2d6de;
+                    border-radius: 5px;
+                    margin-left: 2rem;
+                    color: #444444;
+                    overflow: hidden;
+                    resize: none;
+
+                        //@include breakpoint($tablet-bp){
+                        //    padding-right: 0;
+                        //    padding-left: 0;
+                        //}
+                    }
+            }                    
+        }
+    } 
+    
+    //@include breakpoint($tablet-bp) {
+    //    padding-right: 0;
+    //    padding-left: 0;
+    //}
+}       
+
+
