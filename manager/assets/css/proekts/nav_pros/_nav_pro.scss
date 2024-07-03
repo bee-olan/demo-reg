@@ -10,7 +10,7 @@
   a {
     // color: inherit;
     color: $grad1;
-    opacity: 0.8;
+    opacity: .95;
     transition: opacity .2s linear;
 
     &:hover {
@@ -58,10 +58,10 @@
 
     @include hover-focus {
       //border-color: $nav-tabs-link-hover-border-color;
-      border-top-color: #afa970;
-      border-right-color: $lini-prof;
-      border-bottom-color: $grad4;
-      border-left-color: $lini-prof;
+      border-top-color: $border-linia-nav;
+      border-right-color: $border-linia-nav;
+      border-bottom-color: $grad2;
+      border-left-color: $border-linia-nav;
 
     }
     &--glav{
@@ -81,15 +81,20 @@
     //color: $nav-tabs-link-active-color;
     //color: $lini-prof;
     // color: $red2;
-    color: $beloe-new;
-    background-color: $grad1;
+    color: $red;
+    //background-color: $grad1;
+    background-color: transparent;
+    box-shadow: inset 0 5px 22px rgba($border-linia-nav, .55);
     //background-color: $nav-tabs-link-active-bg;
     //border-color: $nav-tabs-link-active-border-color;
-
-    border-top-color:  $lini-prof;
-    border-right-color: $lini-prof;
-    border-bottom-color: $grad1;
-    border-left-color: $lini-prof;
+    border-top-color:  $border-linia-nav;
+    border-right-color: $border-linia-nav;
+    border-bottom-color: $grad2;
+    border-left-color: $border-linia-nav;
+    //border-top-color:  $lini-prof;
+    //border-right-color: $lini-prof;
+    //border-bottom-color: $grad2;
+    //border-left-color: $lini-prof;
   }
 
   .dropdown-menu {

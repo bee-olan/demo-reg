@@ -13,8 +13,8 @@
 {% endblock %}
 
 {% block kroxii %}
-{#    <a href="{{ path('app.proekts.basepro') }}">Главная</a>#}
-    <span class="aktiv ">Участие</span>
+    <a href="{{ path('app.proekts.basepro') }}">Главная</a>
+
     <a href="{{ path('app.proekts.mestos.okrugs') }}">Место</a>
 {#    <a href="{{ path('app.proekts.mestos.inform') }}">Информация</a>#}
     <span class="aktiv ">Выбрать Округ</span>
@@ -24,12 +24,13 @@
 {% block bodyy %}
 
 
-    <div class="proekts">
+    <div class="proekts pro-mesto">
 
-        <div class="wstavka">
-            <div class="wstavka__title nav-teni">
-                Место расположения пасеки: Округ
-            </div>
+        <div class="wstavka nav-teni">
+{#            <div class="  ">#}
+                Место расположения пасеки:
+                Округ
+{#            </div>#}
         </div>
 
         <h2 class="pagee__title ">Выбираем свой Округ </h2>

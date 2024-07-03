@@ -2,11 +2,11 @@
 .kroxii-gradien {
   background-image: linear-gradient(
                   to bottom,
-                  rgba($gradien, 0),
-                  rgba($gradien, .2) 25%,
-                  rgba($gradien, .3) 50%,
-                  rgba($gradien, .1) 75%,
-                  rgba($gradien, 0)
+                  rgba($border-linia-nav, 0),
+                  rgba($border-linia-nav, .2) 25%,
+                  rgba($border-linia-nav, .3) 50%,
+                  rgba($border-linia-nav, .1) 75%,
+                  rgba($border-linia-nav, 0)
   );
 }
 
@@ -50,9 +50,10 @@
   display: flex;
   flex-wrap: wrap;
   counter-reset: flag;
-  margin: 0 0 10px 0;
+  margin: 0 0 2rem 0;
 
-
+  //box-shadow: inset 0 5px 22px rgba($border-linia-nav, .55);
+  //box-shadow: inset 0 0 20px rgba($border-linia-nav, .55);
 }
 
 
@@ -65,28 +66,28 @@
   outline: none;
 
   line-height: 24px;
-  padding: 0 20px 0 20px;
+  padding: 5px 20px 5px 20px;
   position: relative;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 
-  box-shadow: 0 10px 15px rgba($black, .2); //тень
-
-  border: 1px solid $kroxii;
+  box-shadow: 0 10px 15px rgba($black, .2),
+   inset 0 5px 15px rgba($border-linia-nav, .55);
+  border: 1px solid $border-linia-nav;
   border-right: 0;
   margin: 1px 0;
-  border-radius: 3px 0 0 3px;
+  border-radius: 4px 0 0 4px;
   opacity: 1;
 }
 
 .kroxii-xl .aktiv {
-  // background: #f1e9c2;
-  color: $red2;
+  font-size: 1.2rem;
+  color: $red;
   // opacity: .5;
 }
 
 .aktiv-kras {
-
-  color: $red2;
+  font-size: 1.2rem;
+  color: $red;
 
 }
 
@@ -114,13 +115,13 @@
   content: '';
   position: absolute;
   top: 0;
-  right: -10px;
-  width: 24px;
-  height: 24px;
+  right: -17px;
+  width: 34px;
+  height: 34px;
   //  box-shadow: 0 10px 15px rgba($black, .45); //тень
   transform: scale(0.7) rotate(45deg);
   z-index: 1;
-  box-shadow: 1px -1px 0 1px $lini-prof; //$header-color;
+  box-shadow: 1px -1px 0 1px $border-linia-nav; //$header-color;
   border-radius: 0 5px 0 50px;
   background: $kroxii;
   transition: all 0.5s;

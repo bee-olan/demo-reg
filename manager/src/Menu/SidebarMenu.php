@@ -75,6 +75,18 @@ class SidebarMenu
             ->setAttribute('class', 'nav-item')
             ->setLinkAttribute('class', 'nav-link');
 
+        $menu->addChild('Список заявок', ['route' => 'mesto.actions'])
+            ->setExtra(
+                'routes',
+                [
+                    ['route' => 'mesto.okrug'],
+                    ['pattern' => '/^mesto\.okrug\..+/']
+                ]
+            )
+            ->setExtra('icon', 'nav-icon icon-briefcase')
+            ->setAttribute('class', 'nav-item')
+            ->setLinkAttribute('class', 'nav-link');
+
         $menu->addChild('Зарегистрированы')
             ->setAttribute('class', 'nav-title')
             ->setAttribute('class', 'nav-item')

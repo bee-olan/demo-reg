@@ -21,11 +21,13 @@
     0 .4px 0 rgba(255,255,255,1),
     0 .5px .8px rgba(255,255,255,0.2);
    
-     &--em4{
-       font-size: 3.750em;
-    
-     }
-   
+       &--em4{
+         font-size: 3.750em;
+       }
+
+      &--px32 {
+        font-size: 2rem;
+      }
      //@include breakpoint($tablet-bp) {
      //  font-size: 3.25em;
      //

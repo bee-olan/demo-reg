@@ -117,7 +117,7 @@
                                 </div>
                                 <img class="direct-chat-img" src="{{ gravatar(comment.author_email, 40) }}" alt="">
                                 <div class="direct-chat-text">
-                                    {{ comment.text|markdown|purify|adminka_processor }}
+{#                                    {{ comment.text|markdown|purify|adminka_processor }}#}
                                     {% if is_granted('manage', comment) %}
                                         <div class="controls-m">
                                             <a href="{{ path('app.proekts.mestos.commentr.edit', {'oblast_id': oblast.id, 'id': comment.id}) }}"

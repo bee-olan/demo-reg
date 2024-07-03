@@ -1,0 +1,96 @@
+.wstavka {
+    display: flex;   
+    //font-size: 1.4rem;
+    text-align: center; 
+    align-items: center;
+
+    margin-bottom: 2rem;
+    padding: .7rem 0 .7rem 10rem;
+    box-shadow: inset 0 5px 22px rgba($white, .35);
+    //border-bottom: 1px solid  $lini-prof; // linia
+
+    &--uch{
+        box-shadow: 0 5px 22px rgba($black, .35);
+    }
+}
+
+.wstavka__title {
+    width: calc(100% - #{80px});
+    font-size: 1.6rem;
+    color: $lini-prof;
+ // color: $head-col-tem;
+}
+
+
+.wstavka__kartinka {
+    flex-grow: 1;
+    // padding-left: 11rem;
+
+    img {
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.wstavka-stories {
+    display: grid; //
+    grid-template-columns: 80px ;// делаем 4-е одинаковых кол-ки
+    grid-template-rows: 64px; // высота колонок
+
+    &--person{
+        grid-template-columns: 64px ;
+    }
+}
+
+.wstavka-stories__item {
+   background-color: silver;
+    overflow: hidden; // скрываем все что выходит за пределы ячейки
+    position: relative;// относительно этого будем делать
+    //абсолютное позиционирование дочернего блока stories__preview
+
+    border-radius: 3px; //скруляеm картинку
+    box-shadow: 0 5px 15px rgba($blue, .2);// эффект тень
+    cursor: pointer;
+
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        background-image: linear-gradient( 
+           to bottom, 
+           rgba($blue, .6),
+           rgba($blue, 0) 50%, 
+           rgba($blue, .6) 
+        );
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+// // при наведении картинка приближается
+    &:hover {
+       .wstavka-stories__preview {
+           transform: scale(1.3);
+           transition-duration: 2s; //  замедление на 2 сек
+       }
+   }
+}
+
+.wstavka-stories__preview {
+   display: block;
+   // растягивает\сжимает картину по размерам блока
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+
+   position: absolute;
+   top: 0; // начальная позиция
+   left: 0;
+   z-index: 1;
+
+//     transform: scale(1.05);
+    transition: transform 1s ease-in-out;
+}
