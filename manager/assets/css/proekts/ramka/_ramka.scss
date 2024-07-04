@@ -1,0 +1,44 @@
+.ramka {
+    //background-color: #588557;
+      margin-bottom: 1rem;
+  
+      display: flex;
+      //justify-content: space-around;
+      justify-content: flex-start;
+      align-items: center;
+  
+      flex-direction: row;
+      flex-wrap: wrap;
+  
+      width: 100%;
+      background: transparent;
+      padding: 5px; 
+  }
+.mb0{
+    margin-bottom: 0;
+}
+.ramka__mesto-nomer {
+    width: 8.5rem;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    background: transparent;
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 10px;
+    padding: .5rem  0  .5rem  .7rem;
+
+    transition: box-shadow .2s linear;
+
+}
+
+.ramka__persona-nomer {
+    width: 4rem;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    background: transparent;
+    font-size: 1.2rem;
+    //color: #fff;
+    margin: 10px;
+    padding: .5rem .5rem  .5rem  1.7rem;
+
+    transition: box-shadow .2s linear;
+
+}

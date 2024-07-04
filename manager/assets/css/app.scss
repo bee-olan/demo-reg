@@ -43,6 +43,19 @@ main {
     }
 }
 
+a {
+    color: inherit;
+    opacity: 0.8;
+    background-color: transparent;
+    transition: opacity .2s linear;
+
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+        opacity: 1;
+    }
+}
+
 .box {
     background: #fff;
     box-shadow: 0 0 2px rgba(0,0,0,0.1);
@@ -149,6 +162,7 @@ pre {
 @import "proekts/personaa/personaa";
 @import "proekts/personaa/personaa-form";
 @import "proekts/profiles/profile";
+@import "proekts/ramka/ramka";
 
 @import "proekts/paseka/inklud/inklud";
 @import "proekts/paseka/inklud/tabs-inkl";

@@ -8,7 +8,6 @@
 
 {% block menupro %}
     {{ include('app/proekts/_tabs.html.twig') }}
-
     {{ include('app/proekts/page_glavas/uchastieGl/_tabs.html.twig') }}
 {% endblock %}
 
@@ -24,8 +23,12 @@
 
 {% block bodyy %}
 
-    <div class="proekts">
-        {% include('app/proekts/personaa/_personas-includ.html.twig') %}
+    <div class="proekts pro-mesto">
+
+        <div class="wstavka nav-teni">
+            Выбираем  персональный номер
+        </div>
+
         <div class="personaa-ramka">
             <h2 class="personaa__title ">Вы выбрали персональный номер : </h2>
             <div class="personaa-nomer">
@@ -34,14 +37,14 @@
 
             {{ form_start(form) }}
             {{ form_widget(form) }}
-            <button type="submit" class="btnn-pers">Сохранить в БД</button>
+            <button type="submit" class="btnn btnn-pers">Сохранить в БД</button>
             {{ form_end(form) }}
         </div>
         <div class="mestoo__linia-top"></div>
         <div class="personaa">
             <h2 class="pagee__title "> Если ошиблись - вернитель на страничку
                 <a href="{{ path('app.proekts.personaa', { 'itogo': itogo} ) }}">
-                    <strongo class="strongo"> ПерсонНомера</strongo>
+                    <span class="strongo"> ПерсонНомера</span>
                 </a>
             </h2>
         </div>

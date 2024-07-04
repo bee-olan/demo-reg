@@ -52,6 +52,8 @@ class UchastieControllr extends AbstractController
     {
         $idUser = $this->getUser()->getId();
 
+        $uchastie = $uchasties->find($idUser);
+        dd($uchastie);
         $persona = $personas->find($idUser);
 
         $mestoNomer = $mestoNomers->find($idUser);

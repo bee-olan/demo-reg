@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controller\Proekt\Personaa;
 
 use App\Controller\ErrorHandler;
+use App\Model\Adminka\Entity\Uchasties\Personas\PersonaRepository;
 use App\Model\User\Entity\User\User;
 use App\ReadModel\User\UserFetcher;
 
