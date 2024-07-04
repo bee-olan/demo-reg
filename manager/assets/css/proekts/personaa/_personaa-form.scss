@@ -1,0 +1,37 @@
+
+.personaa-form{
+    div {
+        legend {
+            padding: 1rem 2rem 0 3rem;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: $lini-prof;
+        }
+        div {
+
+            div {
+                display: flex;
+                justify-content: flex-start;
+                align-items: baseline; // выравнивание по вертикали
+                margin-bottom: .6rem;
+
+
+
+                label{
+                    margin-left: 5rem;
+                    font-size: 1.2rem;
+                    color: $lini-prof;
+                }
+                
+                input{
+                    margin-left: 16rem;
+                    box-sizing: border-box;
+                    height: 20px; 
+                    width: 20px;
+                }
+
+            }
+
+        }
+    }   
+}

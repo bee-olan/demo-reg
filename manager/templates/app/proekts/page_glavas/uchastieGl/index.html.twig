@@ -5,18 +5,44 @@
 
 {% block menupro %}
     {{ include('app/proekts/_tabs.html.twig') }}
-{#{% endblock %}#}
+    {#{% endblock %}#}
 
-{#{% block menupro %}#}
- {{ include('app/proekts/page_glavas/uchastieGl/_tabs.html.twig') }}
+    {#{% block menupro %}#}
+    {{ include('app/proekts/page_glavas/uchastieGl/_tabs.html.twig') }}
 {% endblock %}
 
-{#{% block kroxii %}#}
-{#    <a href="{{ path('app.proekts.basepro') }}">Главная</a>#}
-{#    <span class="aktiv ">Участие</span>#}
-{#{% endblock %}#}
+{% block kroxii %}
+    <a href="{{ path('app.proekts.basepro') }}">Главная</a>
+    <span class="aktiv ">Что делать</span>
+{% endblock %}
 
 {% block bodyy %}
+    <div class="proekts pro-mesto">
 
-    Это body=======!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        <div class="wstavka nav-teni">
+            Участие : в любой последовательности - выполнить
+        </div>
+
+{#        <div class="mestoo ">#}
+            <div class="mestoo__raspol">
+                <ul class="mestoo__title">
+                    <li class="mestoo__title-item mestoo__nomer-red">
+                        <a href="{{ path('app.proekts.mestos.okrugs') }}">1. </a>
+                    </li>
+                    <li class="mestoo__title-item mestoo__nomer">
+                        <a href="{{ path('app.proekts.mestos.okrugs') }}">Выбрать номер места </a>
+                    </li>
+
+                    <li class="mestoo__title-item ">
+                        <a href="{{ path('app.proekts.mestos.okrugs') }}">
+                            <div class="mesto-m"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+{#        </div>#}
+
+
+
+    </div>
 {% endblock %}

@@ -12,9 +12,9 @@ body {
     //"Apple Color Emoji", "Segoe UI Emoji",
     //"Segoe UI Symbol", "Noto Color Emoji";
 
-    font-size: 1.0rem;
+    font-size: 1.2rem;
     line-height: 1.5;
-    color: $border-linia;
+    color: $border-linia-nav;
 }
 main {
     & > .container {
@@ -122,6 +122,7 @@ pre {
 
 @import "chat";
 @import "auth/zagolov";
+@import "foto-fon-help/uchasties/uchastie";
 @import "sdwig-pa-ma/sdvig";
 @import "knopkas/knopka";
 @import "kroxis/kroxii";
@@ -145,6 +146,8 @@ pre {
 @import "proekts/mestos/mesto";
 @import "proekts/mestos/mesto-form";
 @import "proekts/nav_pros/nav_pro";
+@import "proekts/personaa/personaa";
+@import "proekts/personaa/personaa-form";
 @import "proekts/profiles/profile";
 
 @import "proekts/paseka/inklud/inklud";

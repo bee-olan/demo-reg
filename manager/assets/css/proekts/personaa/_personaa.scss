@@ -1,0 +1,118 @@
+.personaa {
+  background-color: #588557;
+	margin-bottom: 2rem;
+
+	display: flex;
+	//justify-content: space-around;
+	justify-content: flex-start;
+	align-items: center;
+
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	width: 100%;
+	background: transparent;
+	padding-left: 5px;
+
+}
+
+.person__avatar {
+	display: block; // блочная
+	width: 6rem;  // 70х60
+	height: 7rem;
+	margin: 2rem auto 2rem;// выравниваем по центру
+	position: relative; //чтобы бордер не исчезал  под картинкой
+
+	border: 2px solid $border-foto;
+	box-shadow: 0 7px 20px rgba(0, 0, 0, .25);
+	border-radius: 10%;
+
+	//@include breakpoint($tablet-bp) {
+	//   width: 6rem;
+	//   height: 5.5rem;
+   //
+	//   border: 1px solid $border-foto;
+	//
+	//   margin-left: 0;
+	//   position: absolute; /// ---1 что бы фото и надпись были не в столбик
+	//   left: 0;
+   //}
+}
+
+.personaa-nomer {
+	width: 4rem;
+	box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+	background: transparent;
+	font-size: 1.4rem;
+	color: #fff;
+	margin:   1rem 0 0 2rem;
+	padding: .5rem .8rem  .5rem  1.2rem;
+
+	transition: box-shadow .2s linear;
+
+}
+
+.personaa__title {
+	margin-top: 1.5rem;
+	margin-bottom: 1rem;
+	padding-left: 2rem;
+	font-size: 1.2rem;
+	color: $beloe;
+
+	&--center {
+		text-align: center;
+	}
+	
+	&--uchast {
+		color: $col-uchastie;;
+	}
+}
+
+.personaa-ramka {
+    background-color: #588557;
+      margin-bottom: 2rem;
+  
+      display: flex;
+      //justify-content: space-around;
+      justify-content: flex-start;
+      align-items: center;
+  
+      flex-direction: row;
+      flex-wrap: wrap;
+  
+      width: 100%;
+      background: transparent;
+      padding: 0 5px;
+  
+  }
+
+.personaa-vibor {
+	width: 4rem;
+	box-shadow: 5px 0 15px rgba(65, 60, 31, 0.3);
+
+	background: transparent;
+	font-size: 1.2rem;
+	color: #fff;
+	margin: 10px;
+	padding: .5rem .5rem  .5rem  1.2rem;
+
+	transition: box-shadow .2s linear;
+
+	&:hover {
+		box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+  }
+}
+
+
+//legend {
+//	padding: 0 2rem;
+//	//font-size: 1.8rem;
+//	//margin-bottom: 1.5rem;
+//	color: $border-kroxi;
+//}
+//.lege{
+//	font-size: 1.8rem;
+//	margin-bottom: 1.5rem;
+//}
+
+

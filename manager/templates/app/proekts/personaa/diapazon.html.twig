@@ -14,22 +14,21 @@
 
 {% block kroxii %}
     <a href="{{ path('app.proekts.basepro') }}">Главная</a>
-{#    <span class="aktiv ">Участие</span>#}
-
-{#    <a href="{{ path('app.proekts.personaa.diapazon') }}"> ПерсонНомер </a>#}
 {#    <a href="{{ path('app.proekts.personaa.inform') }}">Инфа о ПерсонНомерах</a>#}
     <span class="aktiv">Выбор Диапазона</span>
 {% endblock %}
 
 {% block bodyy %}
 
-    <div class="proekts">
+    <div class="proekts pro-mesto">
 
-        {% include('app/proekts/personaa/_personas-includ.html.twig') %}
+        <div class="wstavka nav-teni">
+            Выбираем  персональный номер
+        </div>
 
-        <h2 class="pagee__title ">Выбираем подходящий диапазон для ПерсонНомера </h2>
+        <h2 class="pagee__title ">Подходящий диапазон для ПерсонНомера </h2>
         <div class="personaa-form">
-            <table width="100%">
+            <table class="tabl">
                 <tr>
                     <td class="td-width">
                         {{ form_start(form) }}
