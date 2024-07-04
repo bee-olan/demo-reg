@@ -13,140 +13,151 @@
 {% endblock %}
 
 {% block kroxii %}
-<span class="aktiv ">Место</span> 
-           <a href="{{ path('app.proekts.mestos.inform') }}">Информация</a>
-            <a href="{{ path('app.proekts.mestos.okrugs', {'okrug_id': okrug.id} ) }}">Номера Округов</a>
-            <a href="{{ path('app.proekts.mestos.oblasts', {'oblast_id': oblast.id, 'okrug_id': okrug.id} ) }}">Номера Регионов/Областей</a>
-        
-            <span class="aktiv" >Номера Районов</span> 
+    <a href="{{ path('app.proekts.basepro') }}">Главная</a>
+    <a href="{{ path('app.proekts.mestos.inform') }}">Информация</a>
+    <a href="{{ path('app.proekts.mestos.okrugs') }}">Место</a>
+    <a href="{{ path('app.proekts.mestos.okrugs', {'okrug_id': okrug.id} ) }}">Номера Округов</a>
+    <a href="{{ path('app.proekts.mestos.oblasts', {'oblast_id': oblast.id, 'okrug_id': okrug.id} ) }}">Номера
+        Регионов/Областей</a>
+
+    <span class="aktiv">Номера Районов</span>
 {% endblock %}
 
 
 {% block bodyy %}
 
-<div  class="proekts ">
+    <div class="proekts pro-mesto">
 
-    <div class="wstavka">
-        <div class="wstavka__title nav-teni">
-            Место расположения пасеки:  Район
-        </div>
-    </div>
-   
-            <ul class="mestoo__title mestoo--okru">
-
-                 <li class="mestoo__title-item mestoo__nomer-text">{{ okrug.nomer }}</li>
-                <li class="mestoo__title-item "> {{ okrug.name }} </li>
-                <li>
-                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                    </svg>
-                </li>
-            </ul>
- 
- <div class = "mestoo__linia-top "></div>
-
-                <ul class="mestoo__title mestoo--obla">
-                    <li class="mestoo__title-item mestoo__nomer-text">{{ oblast.nomer }}</li>
-                    <li class="mestoo__title-item ">{{ oblast.name }} </li>           
-                
-                    <li>
-                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check2-all" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                              d="M12.354 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                            <path d="M6.25 8.043l-.896-.897a.5.5 0 1 0-.708.708l.897.896.707-.707zm1 2.414l.896.897a.5.5 0 0 0 .708 0l7-7a.5.5 0 0 0-.708-.708L8.5 10.293l-.543-.543-.707.707z"/>
-                        </svg>
-                    </li>      
-                </ul>
-
-<div class = "mestoo__linia-top mestoo-ml"></div>
-
-  <h2 class = "pagee__title pagee__title--raio ">
-    Название Вашего района  -  выбираем </h2>
-    {% for raion in raions %}
-        <div class="mestoo  mestoo--raio">
-            <div class="mestoo__raspol">
-                <ul class="mestoo__title">
-                    <li class="mestoo__title-item mestoo__nomer-red">
-                        <a href="{{ path('app.proekts.mestos.mesto', {'raion_id': raion.id  }) }}">
-                            {{ raion.mesto }}
-                        </a>
-
-                    </li>
-                    <li class="mestoo__title-item ">
-                        <a href="{{ path('app.proekts.mestos.mesto', {'raion_id': raion.id  }) }}">
-                            {{ raion.name }}
-                        </a>
-                    </li>
-                </ul>
+        <div class="wstavka">
+            <div class=" nav-teni">
+                Место расположения пасеки: Район
             </div>
         </div>
-    {% endfor %}
 
+        <ul class="mestoo__title mestoo--okru">
 
-    <div class = "mestoo__linia-top mestoo-ml"></div>
+            <li class="mestoo__title-item mestoo__nomer-text">{{ okrug.nomer }}</li>
+            <li class="mestoo__title-item "> {{ okrug.name }} </li>
+            <li>
+                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </li>
+        </ul>
 
-    <div  class="proekts proekts-plr">
-        <h3 class="form__title">Написать запрос на недостающие название   Района</h3>
+        <div class="mestoo__linia-top "></div>
 
-        <div class="mesto-form__header  ">
-            <div class="mesto-form ">
-                {{ form_start(commentForm) }}
+        <ul class="mestoo__title mestoo--obla">
+            <li class="mestoo__title-item mestoo__nomer-text">{{ oblast.nomer }}</li>
+            <li class="mestoo__title-item ">{{ oblast.name }} </li>
 
-                {{ form_widget(commentForm) }}
+            <li>
+                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check2-all" fill="currentColor"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                          d="M12.354 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                    <path d="M6.25 8.043l-.896-.897a.5.5 0 1 0-.708.708l.897.896.707-.707zm1 2.414l.896.897a.5.5 0 0 0 .708 0l7-7a.5.5 0 0 0-.708-.708L8.5 10.293l-.543-.543-.707.707z"/>
+                </svg>
+            </li>
+        </ul>
 
-                <button type="submit" class="btnn  btnn--mb0 btnn--pt">Отправить</button>
-                {{ form_end(commentForm) }}
+        <div class="mestoo__linia-top mestoo-ml"></div>
 
+        <h2 class="pagee__title pagee__title--raio ">
+            Название Вашего района - выбираем </h2>
+        {% for raion in raions %}
+            <div class="mestoo  mestoo--raio">
+                <div class="mestoo__raspol">
+                    <ul class="mestoo__title">
+                        <li class="mestoo__title-item mestoo__nomer-red">
+                            <a href="{{ path('app.proekts.mestos.mesto', {'raion_id': raion.id  }) }}">
+                                {{ raion.mesto }}
+                            </a>
+
+                        </li>
+                        <li class="mestoo__title-item ">
+                            <a href="{{ path('app.proekts.mestos.mesto', {'raion_id': raion.id  }) }}">
+                                {{ raion.name }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </div>
-{# ----------------------- #}
-    <div  class="proekts proekts-plr">
-        <div class="card-mesto">
-         <h3 class="form__title">Запросы на недостающие названия   Районов</h3>
-        {% if comments|length %}
-           <div class="card-body">
-                <div class="direct-chat">
-                    <div class="direct-chat-messages">
-                        {% for comment in comments %}
-                            <div class="direct-chat-msg">
-                                <div class="direct-chat-info clearfix">
-                                    <span class="direct-chat-name pull-left">{{ comment.author_name }}</span>
-                                    <span class="direct-chat-timestamp pull-right">{{ comment.date|date('Y-m-d H:i:s') }}</span>
-                                </div>
-                                <img class="direct-chat-img" src="{{ gravatar(comment.author_email, 40) }}" alt="">
-                                <div class="direct-chat-text">
-{#                                    {{ comment.text|markdown|purify|adminka_processor }}#}
-                                    {% if is_granted('manage', comment) %}
-                                        <div class="controls-m">
-                                            <a href="{{ path('app.proekts.mestos.commentr.edit', {'oblast_id': oblast.id, 'id': comment.id}) }}"
-                                               class="btnn btnn--mb0 btnn--pt btnn--col-child">
-                                                <div class="karandash karandash--child">
-                                                    <div class="karanda-kar"></div>
-                                                </div>
-                                            </a>
-                                            <form action="{{ path('app.proekts.mestos.commentr.delete', {'oblast_id': oblast.id, 'id': comment.id}) }}" method="post" onsubmit="return confirm('Are you sure?')">
-                                                <input type="hidden" name="token" value="{{ csrf_token('delete-comment') }}" />
-                                                <button type="submit"  class="btnn  btnn--ml3 btnn--pt btnn--col-child">
+        {% endfor %}
 
-{#                                                    <div class="karandash karandash--child">#}
-                                                        <div class="delit-kar"></div>
-{#                                                    </div>#}
-                                                </button>
-                                            </form>
-                                        </div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        {% endfor %}
+    </div>
+
+
+        <div class="proekts pro-mesto">
+            <div class="proekts-plr">
+                <h3 class="form__title">Написать запрос на недостающие название Района</h3>
+
+                <div class="mesto-form__header  ">
+                    <div class="mesto-form ">
+                        {{ form_start(commentForm) }}
+
+                        {{ form_widget(commentForm) }}
+
+                        <button type="submit" class="btnn  btnn--mb0 btnn--pt">Отправить</button>
+                        {{ form_end(commentForm) }}
+
                     </div>
                 </div>
-           </div>
-        {% endif %}
-    </div>
-</div>
+            </div>
+        </div>
+        {# ----------------------- #}
+        <div class="proekts pro-mesto">
+            <div class="proekts-plr">
+                <div class="card-mesto">
+                    <h3 class="form__title">Запросы на недостающие названия Районов</h3>
+                    {% if comments|length %}
+                        <div class="card-body">
+                            <div class="direct-chat">
+                                <div class="direct-chat-messages">
+                                    {% for comment in comments %}
+                                        <div class="direct-chat-msg">
+                                            <div class="direct-chat-info clearfix">
+                                                <span class="direct-chat-name pull-left">{{ comment.author_name }}</span>
+                                                <span class="direct-chat-timestamp pull-right">{{ comment.date|date('Y-m-d H:i:s') }}</span>
+                                            </div>
+                                            <img class="direct-chat-img" src="{{ gravatar(comment.author_email, 40) }}"
+                                                 alt="">
+                                            <div class="direct-chat-text">
+                                                {#                                    {{ comment.text|markdown|purify|adminka_processor }}#}
+                                                {% if is_granted('manage', comment) %}
+                                                    <div class="controls-m">
+                                                        <a href="{{ path('app.proekts.mestos.commentr.edit', {'oblast_id': oblast.id, 'id': comment.id}) }}"
+                                                           class="btnn btnn--mb0 btnn--pt btnn--col-child">
+                                                            <div class="karandash karandash--child">
+                                                                <div class="karanda-kar"></div>
+                                                            </div>
+                                                        </a>
+                                                        <form action="{{ path('app.proekts.mestos.commentr.delete', {'oblast_id': oblast.id, 'id': comment.id}) }}"
+                                                              method="post" onsubmit="return confirm('Are you sure?')">
+                                                            <input type="hidden" name="token"
+                                                                   value="{{ csrf_token('delete-comment') }}"/>
+                                                            <button type="submit"
+                                                                    class="btnn  btnn--ml3 btnn--pt btnn--col-child">
+
+                                                                {#                                                    <div class="karandash karandash--child">#}
+                                                                <div class="delit-kar"></div>
+                                                                {#                                                    </div>#}
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
 
 
-</div>
- {% endblock %}
+{% endblock %}

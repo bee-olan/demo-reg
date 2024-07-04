@@ -13,21 +13,20 @@
 {% endblock %}
 
 {% block kroxii %}
-    <span class="aktiv ">Участие</span>
+    <a href="{{ path('app.proekts.basepro') }}">Главная</a>
+    <a href="{{ path('app.proekts.mestos.inform') }}">Информация</a>
     <a href="{{ path('app.proekts.mestos.okrugs') }}">Место</a>
-    {#    <a href="{{ path('app.proekts.mestos.inform') }}">Информация</a>#}
     <a href="{{ path('app.proekts.mestos.okrugs', {'okrug_id': okrug.id} ) }}">Номера Округов</a>
-
     <span class="aktiv">Номера Регионов/Областей</span>
 {% endblock %}
 
 
 {% block bodyy %}
 
-    <div class="proekts">
+    <div class="proekts pro-mesto">
 
         <div class="wstavka">
-            <div class="wstavka__title nav-teni">
+            <div class=" nav-teni">
                 Место расположения пасеки: Регион/Область
             </div>
         </div>
@@ -75,18 +74,21 @@
 
 
 
-    <div class="proekts proekts-plr">
-        <h3 class="form__title">Написать запрос на недостающие название Республики / Края / Области + Района</h3>
+    <div class="proekts pro-mesto">
+        <div class=" proekts-plr">
+            <h3 class="form__title">
+                Написать запрос на недостающие название Республики / Края / Области + Района
+            </h3>
 
-        <div class="mesto-form__header  ">
-            <div class="mesto-form ">
-                {{ form_start(commentForm) }}
+            <div class="mesto-form__header  ">
+                <div class="mesto-form ">
+                    {{ form_start(commentForm) }}
 
-                {{ form_widget(commentForm) }}
+                    {{ form_widget(commentForm) }}
 
-                <button type="submit" class="btnn  btnn--mb0 btnn--pt">Отправить</button>
-                {{ form_end(commentForm) }}
-
+                    <button type="submit" class="btnn  btnn--mb0 btnn--pt">Отправить</button>
+                    {{ form_end(commentForm) }}
+                </div>
             </div>
         </div>
     </div>
@@ -94,7 +96,8 @@
 
 
     {# ----------------------- #}
-    <div class="proekts proekts-plr">
+    <div class="proekts pro-mesto">
+    <div class="proekts-plr">
         <div class="card-mesto">
             <h3 class="form__title">Запросы на недостающие названия Республик / Края / Областей + Районов</h3>
             {% if comments|length %}
@@ -109,7 +112,7 @@
                                     </div>
                                     <img class="direct-chat-img" src="{{ gravatar(comment.author_email, 40) }}" alt="">
                                     <div class="direct-chat-text">
-{#                                        {{ comment.text|markdown|purify|adminka_processor }}#}
+                                        {#                                        {{ comment.text|markdown|purify|adminka_processor }}#}
                                         {% if is_granted('manage', comment) %}
                                             <div class="controls-m ">
                                                 <a href="{{ path('app.proekts.mestos.comment.edit',
@@ -126,9 +129,9 @@
                                                     <button type="submit"
                                                             class="btnn  btnn--ml3 btnn--pt btnn--col-child">
 
-{#                                                        <div class="karandash karandash--child">#}
-                                                            <div class="delit-kar"></div>
-{#                                                        </div>#}
+                                                        {#                                                        <div class="karandash karandash--child">#}
+                                                        <div class="delit-kar"></div>
+                                                        {#                                                        </div>#}
                                                     </button>
                                                 </form>
                                             </div>
@@ -141,5 +144,6 @@
                 </div>
             {% endif %}
         </div>
+    </div>
     </div>
 {% endblock %}

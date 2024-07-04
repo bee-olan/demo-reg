@@ -8,23 +8,21 @@
 
 {% block menupro %}
     {{ include('app/proekts/_tabs.html.twig') }}
-
     {{ include('app/proekts/page_glavas/uchastieGl/_tabs.html.twig') }}
 {% endblock %}
 
 {% block kroxii %}
     <a href="{{ path('app.proekts.basepro') }}">Главная</a>
-    <span class="aktiv ">Участие</span>
     <a href="{{ path('app.proekts.mestos.okrugs') }}">Место</a>
     <span class="aktiv">Информация</span>
 {% endblock %}
 
 {% block bodyy %}
 
-    <div class="proekts">
+    <div class="proekts pro-mesto">
 
         <div class="wstavka">
-            <div class="wstavka__title nav-teni">
+            <div class=" nav-teni">
                 Номера мест расположения пасек участников проекта
             </div>
         </div>
