@@ -16,6 +16,24 @@
   //  box-shadow: inset 0 0 10px rgba($body-bg, 0.7);
   //}
 }
+
+.btnn--uchas {
+    background-color: $col-uchastie;
+    box-shadow: inset 0 0 10px rgba($beloe, 0.9);
+    border: 1px solid $beloe;
+    //font-size: 1.2rem;
+    color: $beloe;
+
+    &:hover {
+      border: 1px solid $col-uchastie;
+      box-shadow: inset 0 0 10px rgba($col-uchastie, 0.8);
+      //background: none;
+      text-decoration: none;
+      color: $col-uchastie;
+      background-color: $beloe;
+    }
+  }
+
 .btnn-pers {
   color: $beloe;
   border: 1px solid $beloe;

@@ -1,0 +1,30 @@
+.card-mesto {
+    margin-bottom: 1.5rem;
+  }
+  .card-mesto {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    // text-align: center;
+    // background-color: #fff;
+    background-clip: border-box;
+    
+    // border: 1px solid $plem-color;;
+    // border-radius: .25rem;
+  }
+  .card-header-mesto {
+    padding: 1.2rem .7rem;
+    margin-bottom: 0;
+    // background-color: #f0f3f5;
+    box-shadow: inset 0 0 10px rgba($white, 0.9);
+    border-bottom: 1px solid $white;
+  }
+  
+// .pull-left {
+//     float: left;
+//   }
+.pull-right {
+    float: right;
+  }  

@@ -4,34 +4,32 @@
 
 {% block menupro %}
     {{ include('app/proekts/_tabs.html.twig') }}
-
     {{ include('app/proekts/page_glavas/uchastieGl/_tabs.html.twig') }}
 {% endblock %}
 
 
-{#{% block kroxii %}#}
-{#    <a href="{{ path('app.proekts.basepro') }}">Главная</a>#}
-{#    <span class="aktiv ">Участие</span> #}
-{#    <a href="{{ path('app.proekts.personaa.inform') }}">ПерсонНомер</a>#}
-{#    <a href="{{ path('app.proekts.mestos.inform') }}">Инфа место</a>#}
-{#    <a href="{{ path('app.proekts.pasekas.uchasties.groupas') }}">Группы</a>#}
-{#    <a href="{{ path('app.proekts.pasekas.uchasties.spisok') }}">Список Участников</a>#}
-{#    <span class="aktiv">Стать участником</span>#}
-{#{% endblock %}#}
+{% block kroxii %}
+    <a href="{{ path('app.proekts.basepro') }}">Главная</a>
+    <span class="aktiv ">Участие</span>
+    <a href="{{ path('app.proekts.personaa.inform') }}">ПерсонНомер</a>
+    <a href="{{ path('app.proekts.mestos.inform') }}">Инфа место</a>
+    <a href="{{ path('app.proekts.pasekas.uchasties.groupas') }}">Группы</a>
+    <a href="{{ path('app.proekts.pasekas.uchasties.spisok') }}">Список Участников</a>
+    <span class="aktiv">Стать участником</span>
+{% endblock %}
 
 {% block sidebarr %}
     {{ include('app/proekts/pasekas/uchasties/side/_sideindex.html.twig') }}
 {% endblock %}
 
 {% block bodyy %}
+{#    #}
+    <div class="proekts pro-uhastiee">
 
-    <div class="proekts proekts--uhastiee">
-
-        <div class="wstavka">
-            <div class = "wstavka__title nav-teni">
+        <div class="wstavka nav-teni">
                 Участие в проекте. Дополнительные данные
             </div>
-        </div>
+
 
             <div class="uchastiee__header  ">
 
@@ -58,7 +56,7 @@
                         <li class="uchastiee__name uch-tabl__linia uch-tabl__linia--col" >1. Выбрать для себя персональный номер </li>
                         <li>
                             <a href="{{ path('app.proekts.personaa.diapazon') }}"
-                             class="btnn btnn--ml btnn--pt btnn--col-uchas"> Выбрать ПерсонНомер
+                             class="btnn  btnn--uchas"> Выбрать ПерсонНомер
                             </a>
                         </li>
                     {% endif %}
@@ -79,7 +77,7 @@
                     {% else %}
                         <li class="uchastiee__name  uch-tabl__linia uch-tabl__linia--col" >2. Определиться с номером места расположения пасеки </li>
                         <li>
-                            <a class="btnn btnn--ml btnn--pt btnn--col-uchas" href="{{ path('app.proekts.mestos.okrugs') }}" >
+                            <a class="btnn  btnn--uchas" href="{{ path('app.proekts.mestos.okrugs') }}" >
                                 НомерМеста
                             </a>
                         </li>
@@ -103,7 +101,7 @@
                     {% else %}
                         <li class="uchastiee__name  uch-tabl__linia uch-tabl__linia--col" >3. Подтвердить Ваше участие с заполнением доп. данных</li>
                         <li >
-                            <a class="btnn btnn--ml btnn--pt btnn--col-uchas"  href="{{ path('app.proekts.pasekas.uchasties.uchastiee.create') }}" >
+                            <a class="btnn btnn--uchas"  href="{{ path('app.proekts.pasekas.uchasties.uchastiee.create') }}" >
                                 Продолжаем ...
                             </a>
                         </li>

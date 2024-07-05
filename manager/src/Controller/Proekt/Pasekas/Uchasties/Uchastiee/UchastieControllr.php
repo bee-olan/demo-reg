@@ -50,16 +50,16 @@ class UchastieControllr extends AbstractController
                           PersonaFetcher $personas, MestoNomerFetcher $mestoNomers
                             ): Response
     {
+
         $idUser = $this->getUser()->getId();
 
-        $uchastie = $uchasties->find($idUser);
-        dd($uchastie);
+
         $persona = $personas->find($idUser);
 
         $mestoNomer = $mestoNomers->find($idUser);
 
         $uchastie = $uchasties->find($idUser);
-
+//        dd($uchastie);
         return $this->render('app/proekts/pasekas/uchasties/uchastiee/index.html.twig',
             compact('uchastie', 'persona', 'mestoNomer')
         );
@@ -95,7 +95,7 @@ class UchastieControllr extends AbstractController
 //
 
         $idUser = $this->getUser()->getId();
-        $user = $users->find($idUser);
+        $user = $users->get($idUser);
 //        dd($user);
 // следующие присваения перенести в Handler не можeм т.к. инфа  из $user
         $command = new Create\Command($idUser);

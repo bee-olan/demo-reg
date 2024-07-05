@@ -28,8 +28,8 @@ class UchastieFetcher
 
     public function find(string $id): ?Uchastie
     {
-        return $this->find($id);
-//        return $this->repository->find($id);
+//        return $this->find($id);
+        return $this->repository->find($id);
     }
 
 

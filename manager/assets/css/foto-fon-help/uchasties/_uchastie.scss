@@ -1,21 +1,5 @@
-.mesto {
+.foto {
   display: block; // блочная
-  background-image: url('../../../../assets/images/foto-for-help/mesto-m.png');
-  width: 246px;
-  height: 135px;
-  margin: 2rem auto 1.5rem;
-  position: relative; //чтобы бордер не исчезал  под картинкой
-
-  border: 2px solid $border-foto;
-  box-shadow: 0 7px 20px rgba(0, 0, 0, .25);
-  border-radius: 10%;
-}
-
-.mesto-m {
-  display: block; // блочная
-  background-image: url('../../../../assets/images/foto-for-help/mesto.png');
-  width: 708px;
-  height: 365px;
   margin: 2rem auto 1.5rem;
   position: relative; //чтобы бордер не исчезал  под картинкой
 
@@ -23,3 +7,15 @@
   box-shadow: 0 7px 20px rgba(0, 0, 0, .25);
   border-radius: 5%;
 }
+.persona {
+  background-image: url('../../../../assets/images/foto-for-help/persona.png');
+  width: 678px;
+  height: 377px;
+}
+
+.mestoo {
+  background-image: url('../../../../assets/images/foto-for-help/mestoo.png');
+  width: 663px;
+  height: 295px;
+}
+

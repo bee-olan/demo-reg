@@ -1,0 +1,111 @@
+///////////uchastiee ==========
+.uchastiee {
+  
+  overflow: hidden; // в рамках размера -все лишнее скрылось overflow
+  background-color: $col-uchastie;
+  //background-color: transparent;
+  //box-shadow: 0 15px 25px rgba($black, .35);
+  //border-radius: 5px;
+}
+
+.back-color-uch{
+  background-color: $col-uchastie;
+  color: $white;
+  text-decoration: none;
+}
+
+.uchastiee__header {
+  margin: 0 0 2.5rem 0;
+  padding: 0 1.5rem 0 1.5rem;
+
+  //  @include breakpoint($tablet-bp){
+  //    padding-left: 0;
+  //    margin: 0 0 2.5rem .5rem;
+  //}
+}
+
+.uchastiee__title {
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+
+  // color: $text-uchastie;
+  //font-weight: 500;
+
+  &--mb0 {
+    margin-bottom: 0;
+  }
+}
+
+.uchastiee__data {
+  display: flex; // добавляем т.к добаилась li-шка
+  //justify-content: center;
+  justify-content: space-between;
+  align-items: center; // выравнивание по вертикали
+  list-style: none; // убрала точку у li
+  max-width: 75rem;
+  color: $text-uchastie;
+  line-height: 2.0;
+
+
+  a {
+    padding: .6rem 1.6rem;
+    //color: $col-uchastie;
+
+    opacity: 0.6;
+    transition: opacity .2s linear;
+
+    &:hover {
+      opacity: 1;
+      //color: $beloe;
+      text-decoration: none;
+      background-color: $beloe;
+    }
+  }
+}
+
+.uchastiee__galka {
+
+  //padding: 2rem 0 0 5rem;
+  //margin-left: -10rem;
+  //padding-left: 10rem;
+  margin-top: 1.6rem;
+}
+
+.uchastiee__name {
+  // display: flex; // добавляем т.к добаилась li-шка
+  font-size: 1.4rem;
+  padding: 1.6rem .5rem .3rem .5rem;
+
+
+  &--wid25 {
+    width: 25.0rem;
+  }
+
+  &--wid15 {
+    width: 15.0rem;
+  }
+
+  &--wid5 {
+    width: 5.0rem;
+  }
+}
+
+.uchastiee-nomer {
+  //width: 6rem;
+  box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+  background: transparent;
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 20px 10px 0 10px;
+  padding: 0 1.2rem 0 1.2rem;
+
+  transition: box-shadow .2s linear;
+
+  &--wid8 {
+    width: 8.0rem;
+  }
+
+  &--wid12 {
+    width: 12.0rem;
+  }
+}

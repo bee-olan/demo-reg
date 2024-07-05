@@ -1,0 +1,87 @@
+.comments {
+  margin-top: 5rem;
+
+}
+
+
+
+.comments__item {
+  margin-bottom: 3rem;
+  // если в comments есть вложеный comments, то
+  > .comments {
+    padding-left: 3rem;
+    margin-top: 3rem;
+  }
+}
+
+
+.comments__header {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.comments__avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.comments__author {
+  flex-grow: 1; // будет рости
+  padding-left: 1.5rem;
+
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.comments__name {
+  color: $white;
+  font-weight: 500;
+}
+
+.comments__pubdate {
+  color: #757575;
+}
+
+.comments__text {
+  margin-bottom: 1rem;
+
+  font-size: 1.2rem;
+  line-height: 1.3;
+  color: $white;
+}
+
+.comments__reply {
+  padding: 0;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  color: $grad1;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.post__subtitle {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+
+  font-size: 1.6rem;
+  color: $white;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
