@@ -12,8 +12,9 @@ use App\Model\Adminka\UseCase\Uchasties\Uchastie\Create;
 use App\Model\Adminka\Entity\Uchasties\Uchastie\UchastieRepository;
 
 //use App\Model\User\Entity\User\User;
+use App\Model\User\Entity\User\Id as UserId;
 use App\Model\User\Entity\User\UserRepository;
-use App\ReadModel\Adminka\Matkas\PlemMatka\PlemMatkaFetcher;
+//use App\ReadModel\Adminka\Matkas\PlemMatka\PlemMatkaFetcher;
 use App\ReadModel\Mesto\InfaMesto\MestoNomerFetcher;
 use App\ReadModel\Adminka\Uchasties\PersonaFetcher;
 use App\ReadModel\Adminka\Uchasties\Uchastie\UchastieFetcher;
@@ -69,33 +70,33 @@ class UchastieControllr extends AbstractController
      * @Route("/create", name=".create")
      * @param Request $request
      * @param UserRepository $users
-     * @param PlemMatkaFetcher $plemmatkas
+//     * @param PlemMatkaFetcher $plemmatkas
      * @param Create\Handler $handler
      * @return Response
      */
     public function create( Request $request,
                     UserRepository $users,
-                    PlemMatkaFetcher $plemmatkas,
+//                    PlemMatkaFetcher $plemmatkas,
                     Create\Handler $handler): Response
     {
-        if (!$plemmatkas->existsPerson($this->getUser()->getId())) {
-
-            $this->addFlash('error', 'Внимание!!! Выбрать ПерсонНомер ');
-            return $this->redirectToRoute('app.proekts.personaa.diapazon');
-        }
-
-        if (!$plemmatkas->existsMesto($this->getUser()->getId())) {
-            // dd($this->getUser()->getId());
-           $this->addFlash('error', 'Пожалуйста, определитесь с номером места расположения Вашей пасеки ');
-           return $this->redirectToRoute('app.proekts.mestoo.okrugs');
-       }
+//        if (!$plemmatkas->existsPerson($this->getUser()->getId())) {
+//
+//            $this->addFlash('error', 'Внимание!!! Выбрать ПерсонНомер ');
+//            return $this->redirectToRoute('app.proekts.personaa.diapazon');
+//        }
+//
+//        if (!$plemmatkas->existsMesto($this->getUser()->getId())) {
+//            // dd($this->getUser()->getId());
+//           $this->addFlash('error', 'Пожалуйста, определитесь с номером места расположения Вашей пасеки ');
+//           return $this->redirectToRoute('app.proekts.mestoo.okrugs');
+//       }
 
 
         $idUser = $this->getUser()->getId();
 //
 
         $idUser = $this->getUser()->getId();
-        $user = $users->get($idUser);
+        $user = $users->get(new UserId($idUser));
 //        dd($user);
 // следующие присваения перенести в Handler не можeм т.к. инфа  из $user
         $command = new Create\Command($idUser);
