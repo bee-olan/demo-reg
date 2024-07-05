@@ -10,6 +10,7 @@ class Role
 {
     public const USER = 'ROLE_USER';
     public const ADMIN = 'ROLE_ADMIN';
+    public const MODERATOR = 'ROLE_MODERATOR';
 
     private $name;
 
@@ -17,6 +18,7 @@ class Role
     {
         Assert::oneOf($name, [
             self::USER,
+            self::MODERATOR,
             self::ADMIN,
         ]);
 
@@ -33,6 +35,11 @@ class Role
         return new self(self::ADMIN);
     }
 
+    public static function moderator(): self
+    {
+        return new self(self::MODERATOR);
+    }
+
     public function isUser(): bool
     {
         return $this->name === self::USER;
@@ -41,6 +48,11 @@ class Role
     public function isAdmin(): bool
     {
         return $this->name === self::ADMIN;
+    }
+
+    public function isModerator(): bool
+    {
+        return $this->name === self::MODERATOR;
     }
 
     public function isEqual(self $role): bool

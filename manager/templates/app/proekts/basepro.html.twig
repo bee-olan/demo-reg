@@ -8,11 +8,45 @@
  {{ include('app/proekts/_tabs.html.twig') }}
 {% endblock %}
 
-{#{% block kroxii %}#}
-{#    <span class="aktiv ">Главная</span>#}
-{#{% endblock %}#}
+{% block kroxii %}
+    <a href="{{ path('app.proekts.basepro') }}">Главная</a>
+    <span class="aktiv ">С чего начать</span>
+{% endblock %}
 
 {% block bodyy %}
+    <div class="proekts pro-mesto">
 
-    Это body=====================
+        <div class="wstavka nav-teni">
+            С чего начать
+        </div>
+
+        <ul class="mestoo__title">
+            <li class="mestoo__title-item mestoo__nomer-red">
+                <a href="{{ path('app.proekts.page_glavas.uchastieGl') }}">1. </a>
+            </li>
+            <li class="mestoo__title-item mestoo__nomer">
+                <a href="{{ path('app.proekts.page_glavas.uchastieGl') }}">Стать участником проекта </a>
+            </li>
+
+            <li class="mestoo__title-item ">
+                <a href="{{ path('app.proekts.page_glavas.uchastieGl') }}">
+                    <div class="foto uchastie-f"></div>
+                </a>
+            </li>
+        </ul>
+        <ul class="mestoo__title">
+            <li class="mestoo__title-item mestoo__nomer-red">
+                <a href="{{ path('app.proekts.personaa.diapazon') }}">2. </a>
+            </li>
+            <li class="mestoo__title-item mestoo__nomer">
+                <a href="{{ path('app.proekts.personaa.diapazon') }}">----- </a>
+            </li>
+
+            <li class="mestoo__title-item ">......
+{#                <a href="{{ path('app.proekts.personaa.diapazon') }}">#}
+{#                    <div class="foto persona-f"></div>#}
+{#                </a>#}
+            </li>
+        </ul>
+    </div>
 {% endblock %}

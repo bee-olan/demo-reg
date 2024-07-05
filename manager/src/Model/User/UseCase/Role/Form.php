@@ -13,16 +13,17 @@ class Form extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('role', Type\ChoiceType::class, ['label' => 'Role', 'choices' => [
-                'User' => Role::USER,
-                'Admin' => Role::ADMIN,
+            ->add('role', Type\ChoiceType::class, ['label' => 'Роль', 'choices' => [
+                'Пользователь' => Role::USER,
+                'Модератор' => Role::MODERATOR,
+                'Админ' => Role::ADMIN,
             ]]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults(array(
-            'data_class' => Command::class,
-        ));
+                                   'data_class' => Command::class,
+                               ));
     }
 }
