@@ -30,10 +30,10 @@ class GlavMenu
             ->setExtra('routes', [
                 ['route' => 'app.proekts.page_glavas.uchastieGl'],
                 ['route' => 'app.proekts.personaa.create'],
-                ['route' => 'app.proekts.mestos.okrugs'],
+//                ['route' => 'app.proekts.mestos.okrugs'],
                 ['pattern' => '/^app.proekts.page_glavas.uchastieGl\..+/'],
                 ['pattern' => '/^app.proekts.personaa.create\..+/'],
-                ['pattern' => '/^app.proekts.mestos.okrugs\..+/']
+//                ['pattern' => '/^app.proekts.mestos.okrugs\..+/']
             ])
             ->setAttribute('class', 'nav_pro-item')
             ->setLinkAttribute('class', 'nav_pro-link');

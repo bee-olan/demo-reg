@@ -30,16 +30,16 @@
   justify-content: space-between;
   margin: 1rem;
 
-  a {
-    font-size: 1.2rem;
-    color: inherit; // что бы изменить цвет ссылки - на родительский post__title
-    text-decoration: none;
-    transition: box-shadow .2s linear;
-
-    &:hover {
-      box-shadow: 0 15px 25px rgba($black, .45);
-    }
-  }
+  //a {
+  //  font-size: 1.2rem;
+  //  color: inherit; // что бы изменить цвет ссылки - на родительский post__title
+  //  text-decoration: none;
+  //  transition: box-shadow .2s linear;
+  //
+  //  &:hover {
+  //    box-shadow: 0 15px 25px rgba($black, .45);
+  //  }
+  //}
 }
 
 .uch-tabl__list-li {

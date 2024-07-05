@@ -80,7 +80,7 @@ class ProektMenu
                     ['route' => 'app.proekts.pasekas.uchasties.groupas'],
                     ['route' => 'app.proekts.personaa'],
                     ['route' => 'app.proekts.mestos'],
-                    ['pattern' => '/^app.proekts.page_glavas.uchastieGl\..+/'],
+//                    ['pattern' => '/^app.proekts.page_glavas.uchastieGl\..+/'],
                     ['pattern' => '/^app.proekts.pasekas.uchasties.uchastiee\..+/'],
                     ['pattern' => '/^app.proekts.pasekas.uchasties.spisok\..+/'],
                     ['pattern' => '/^app.proekts.pasekas.uchasties.groupas\..+/'],

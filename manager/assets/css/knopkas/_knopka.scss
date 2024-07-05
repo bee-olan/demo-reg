@@ -1,9 +1,9 @@
 .btnn {
   display: inline-block; // чтобы падинги корректно работали
-  padding: 0.2rem .6rem 0.2rem .7rem;
+  padding: 0.15rem .7rem 0.15rem .8rem;
   opacity: 1;
   cursor: pointer;
-  border-radius: 1rem;
+  border-radius: 2rem;
   font-family: inherit; //шрифт наследуется у родителя
   text-decoration: none;
   transition: background-color .3s linear;
@@ -17,22 +17,23 @@
   //}
 }
 
-.btnn--uchas {
-    background-color: $col-uchastie;
-    box-shadow: inset 0 0 10px rgba($beloe, 0.9);
-    border: 1px solid $beloe;
-    //font-size: 1.2rem;
-    color: $beloe;
+.btnn-uchas {
+//margin-top: 1rem;
+  background-color: $col-uchastie;
+  box-shadow: inset 0 0 10px rgba($beloe, 0.9);
+  border: 1px solid $beloe;
 
-    &:hover {
-      border: 1px solid $col-uchastie;
-      box-shadow: inset 0 0 10px rgba($col-uchastie, 0.8);
-      //background: none;
-      text-decoration: none;
-      color: $col-uchastie;
-      background-color: $beloe;
-    }
+  color: $beloe;
+
+  &:hover {
+    border: 1px solid $col-uchastie;
+    box-shadow: inset 0 0 10px rgba($col-uchastie, 0.8);
+    //background: none;
+    text-decoration: none;
+    color: $col-uchastie;
+    background-color: $beloe;
   }
+}
 
 .btnn-pers {
   color: $beloe;
@@ -49,12 +50,13 @@
   }
 }
 
-.btnn-log{
+.btnn-log {
   font-size: 1.25rem;
   color: $grad1;
   border: 1px solid $grad1;
   background-color: $body-bg;
   box-shadow: inset 0 0 10px rgba($grad1, 0.7);
+
   &:hover {
     color: $body-bg;
     border: 1px solid $grad1;
@@ -63,7 +65,7 @@
   }
 }
 
-.btnn-reg{
+.btnn-reg {
   font-size: 1.25rem;
   color: $body-bg;
   border: 1px solid $grad1;

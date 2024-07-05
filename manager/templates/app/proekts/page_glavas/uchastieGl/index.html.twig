@@ -2,12 +2,8 @@
 
 {% block title %}ПлемМатка{% endblock %}
 
-
 {% block menupro %}
     {{ include('app/proekts/_tabs.html.twig') }}
-    {#{% endblock %}#}
-
-    {#{% block menupro %}#}
     {{ include('app/proekts/page_glavas/uchastieGl/_tabs.html.twig') }}
 {% endblock %}
 
@@ -23,37 +19,33 @@
             Участие : в любой последовательности - выполнить
         </div>
 
-{#        <div class="mestoo__raspol">#}
-            <ul class="mestoo__title">
-                <li class="mestoo__title-item mestoo__nomer-red">
-                    <a href="{{ path('app.proekts.mestos.okrugs') }}">1. </a>
-                </li>
-                <li class="mestoo__title-item mestoo__nomer">
-                    <a href="{{ path('app.proekts.mestos.okrugs') }}">Выбрать номер места </a>
-                </li>
+        <ul class="mestoo__title">
+            <li class="mestoo__title-item mestoo__nomer-red">
+                <a href="{{ path('app.proekts.mestos.okrugs') }}">1. </a>
+            </li>
+            <li class="mestoo__title-item mestoo__nomer">
+                <a href="{{ path('app.proekts.mestos.okrugs') }}">Выбрать номер места </a>
+            </li>
 
-                <li class="mestoo__title-item ">
-                    <a href="{{ path('app.proekts.mestos.okrugs') }}">
-                        <div class="foto mestoo"></div>
-                    </a>
-                </li>
-            </ul>
-            <ul class="mestoo__title">
-                <li class="mestoo__title-item mestoo__nomer-red">
-                    <a href="{{ path('app.proekts.personaa.diapazon') }}">2. </a>
-                </li>
-                <li class="mestoo__title-item mestoo__nomer">
-                    <a href="{{ path('app.proekts.personaa.diapazon') }}">Выбрать персональный номер </a>
-                </li>
+            <li class="mestoo__title-item ">
+                <a href="{{ path('app.proekts.mestos.okrugs') }}">
+                    <div class="foto mesto-f"></div>
+                </a>
+            </li>
+        </ul>
+        <ul class="mestoo__title">
+            <li class="mestoo__title-item mestoo__nomer-red">
+                <a href="{{ path('app.proekts.personaa.diapazon') }}">2. </a>
+            </li>
+            <li class="mestoo__title-item mestoo__nomer">
+                <a href="{{ path('app.proekts.personaa.diapazon') }}">Выбрать персональный номер </a>
+            </li>
 
-                <li class="mestoo__title-item ">
-                    <a href="{{ path('app.proekts.personaa.diapazon') }}">
-                        <div class="foto persona"></div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-
-{#    </div>#}
+            <li class="mestoo__title-item ">
+                <a href="{{ path('app.proekts.personaa.diapazon') }}">
+                    <div class="foto persona-f"></div>
+                </a>
+            </li>
+        </ul>
+    </div>
 {% endblock %}

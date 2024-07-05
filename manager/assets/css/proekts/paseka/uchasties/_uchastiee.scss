@@ -48,15 +48,12 @@
 
 
   a {
-    padding: .6rem 1.6rem;
-    //color: $col-uchastie;
-
-    opacity: 0.6;
+    //padding: .6rem 1.6rem;
+    opacity: 0.8;
     transition: opacity .2s linear;
 
     &:hover {
       opacity: 1;
-      //color: $beloe;
       text-decoration: none;
       background-color: $beloe;
     }
