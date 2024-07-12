@@ -35,6 +35,21 @@
   }
 }
 
+.btnn-sidebarr {
+  color: $grad1;
+  border: 1px solid $lini-prof;
+  box-shadow: inset 0 0 10px rgba($lini-prof, 0.9);
+  background-color: transparent;
+  border-radius: 3em;
+  margin: 1.5rem 0 0 3rem;
+
+  &:hover {
+    color: $lini-prof;
+    box-shadow: inset 0 0 10px rgba($grad1, 0.9);
+    border: 1px solid $grad1;
+  }
+}
+
 .btnn-pers {
   color: $beloe;
   border: 1px solid $beloe;

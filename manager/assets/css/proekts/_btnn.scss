@@ -176,285 +176,285 @@
 //  }
 //}
 //
-//.btnn {
-//  display: inline-block; // чтобы падинги корректно работали
-//  vertical-align: top;
-//  padding: 1.1em 1.6em;
-//  border: 1px solid $border-kroxi;
-//
-//  cursor: pointer;
-//  border-radius: 3em;
-//  //background: inherit;
-//  background-color: $grad1;
-//  font-family: inherit; //шрифт наследуется у родителя
-//  font-size: 1.2rem;
-//  line-height: 1.1;
-//  font-weight: 500;
-//  color: $border-kroxi;
-//  text-decoration: none;
-//  transition: background-color .3s linear;
-//  margin-bottom: 3rem;
-//  margin-left: 2rem;
-//
-//  margin-top: .5rem;
-//
-//  &:hover {
-//    text-decoration: none;
-//    color: $grad2;
-//  }
-//
-//  &--filtr {
-//    font-size: 1.1rem;
-//  }
-//
-//  &--ojidaet {
-//    background-color: #ffc107;
-//    font-size: 1rem;
-//    border: 1px solid #ffc107;
-//    box-shadow: inset 0 0 10px rgba(#ffc107, 0.9);
-//    color: $primary-modal;
-//
-//    &:hover {
-//      background-color: $grad2;
-//      //border: 1px solid $beloe;
-//      //box-shadow: inset 0 0 10px rgba($beloe, 0.9);
-//      text-decoration: none;
-//      color: #ffc107;
-//    }
-//
-//  }
-//
-//  &--drev {
-//    background-color: $beloe;
-//    font-size: 1rem;
-//    border: 1px solid $sezon-text;
-//    box-shadow: inset 0 0 10px rgba($sezon-text, 0.9);
-//    color: $sezon-text;
-//
-//    &:hover {
-//      background-color: $grad2;
-//      border: 1px solid $beloe;
-//      box-shadow: inset 0 0 10px rgba($beloe, 0.9);
-//      text-decoration: none;
-//      color: #23282c;
-//    }
-//
-//  }
-//
-//  &--drev-es {
-//    background-color: $beloe;
-//    font-size: 1rem;
-//    border: 1px solid $grad1;
-//    box-shadow: inset 0 0 10px rgba($grad1, 0.9);
-//    color: $grad1;
-//
-//    &:hover {
-//      background-color: rgb(123, 165, 215);
-//      border: 1px solid $grad1;
-//      box-shadow: inset 0 0 10px rgba($grad1, 0.9);
-//      text-decoration: none;
-//      color: $beloe;
-//    }
-//  }
-//
-//  &--plus {
-//    line-height: 1.0;
-//    padding: 0 .7rem;
-//    margin: 0;
-//  }
-//
-//  &--break {
-//    // margin: 0 3.5rem -2rem 0;
-//    // vertical-align:text-top;
-//    font-size: 1.8rem;
-//  }
-//
-//  &--col-plemm {
-//    border: 1px solid $grad1;
-//    background-color: $beloe;
-//    box-shadow: inset 0 0 10px rgba($grad1, 0.9);
-//    opacity: 1;
-//    font-size: 1.2rem;
-//    color: $grad1;
-//    transition: background-color .3s linear;
-//
-//    &:hover {
-//      border: 1px solid $beloe;
-//      box-shadow: inset 0 5px 20px 0 rgba($beloe, 0.9);
-//      opacity: .8;
-//      text-decoration: none;
-//      color: $beloe;
-//      background-color: $grad1;
-//    }
-//  }
-//
-//  &--col-golub {
-//    box-shadow: inset 0 0 10px rgba($grad1, 0.9);
-//    border: 1px solid $grad1;
-//    font-size: 1.4rem;
-//
-//    &:hover {
-//      box-shadow: 0 0 10px rgba($grad1, 0.6);
-//      background: none;
-//      text-decoration: none;
-//      color: $grad1;
-//    }
-//  }
-//
-//  &--col-child {
-//    background-color: $text-uchastie;
-//    // box-shadow:  0 0 10px rgba($child-text, 0.5);
-//    box-shadow: inset 0 0 10px rgba($child-text, 0.9);
-//    border: 1px solid $child-text;
-//    color: $child-text;
-//    font-size: 1.2rem;
-//
-//    &:hover {
-//      box-shadow: inset 0 0 10px rgba($text-uchastie, 0.9),
-//      0 0 10px rgba($child-text, 0.9);
-//      // border: 1px solid $text-uchastie;
-//      background: none;
-//      text-decoration: none;
-//      color: $text-uchastie;
-//    }
-//  }
-//
-//
-//  &--col-uchas {
-//    background-color: $col-uchastie;
-//    box-shadow: inset 0 0 10px rgba($beloe, 0.9);
-//
-//    border: 1px solid $beloe;
-//    font-size: 1.2rem;
-//    color: $beloe;
-//
-//    &:hover {
-//      border: 1px solid $col-uchastie;
-//      box-shadow: inset 0 0 10px rgba($col-uchastie, 0.8);
-//      //background: none;
-//      text-decoration: none;
-//      color: $col-uchastie;
-//      background-color: #ffffff;
-//    }
-//  }
-//
-//  &--col-sezon {
-//    box-shadow: inset 0 0 10px rgba($sezon-teni, 0.7);
-//    color: $sezon-teni;
-//    border: 1px solid $sezon-teni;
-//    font-size: 1.2rem;
-//
-//    &:hover {
-//      box-shadow: inset 0 0 10px rgba($beloe, 0.9);
-//      border: 1px solid $beloe;
-//      background: none;
-//      text-decoration: none;
-//      color: $beloe;
-//    }
-//  }
-//
-//  &--col-ras {
-//    border: 1px solid $rasa-color;
-//    background-color: inherit;
-//  }
-//
-//  &--rasa {
-//    border: 1px solid $border-kroxi;
-//    background-color: inherit;
-//    color: inherit;
-//  }
-//
-//  &--mt {
-//    margin-top: 2rem;
-//
-//  }
-//
-//  &--mt0 {
-//    margin-top: 0;
-//
-//  }
-//
-//  &--ml3 {
-//    margin-bottom: 0;
-//    margin-left: 2rem;
-//  }
-//
-//  &--ml {
-//
-//    margin-left: 3rem;
-//    margin-bottom: -1.5rem;
-//  }
-//
-//  &--mb1 {
-//    margin-bottom: .6rem;
-//    margin-left: 0;
-//  }
-//
-//  &--pchel {
-//    background-color: $transpar;
-//
-//    border: 1px solid $transpar;
-//    margin-bottom: .6rem;
-//    margin-left: 0;
-//  }
-//
-//  &--mb2 {
-//    margin-bottom: 1.6rem;
-//    margin-left: 0;
-//  }
-//
-//  &--mb0 {
-//    margin-bottom: 0;
-//    margin-left: 0;
-//  }
-//
-//  &--mb-1 {
-//    margin-bottom: -1rem;
-//  }
-//
-//  &--pt {
-//    padding: 0.2rem 1rem 0.3rem 1rem;
-//  }
-//
-//
-//  &--red {
-//    //background-color: $red;
-//    background: linear-gradient($grad1, $grad2);
-//    box-shadow: 0 7px 17px -10px rgba($red, .6); // тень у кнопки
-//
-//    &:hover,
-//    &:focus {
-//      //darken  затемнение цвета при наведении
-//      background: linear-gradient($grad1-o, $grad2-o);
-//      //background-color: darken($red, 5%);
-//    }
-//  }
-//
-//  &--blue {
-//    background-color: $blue;
-//    box-shadow: 0 7px 17px -10px rgba($blue, .3);
-//
-//    &:hover,
-//    &:focus {
-//      background-color: darken($blue, 15%);
-//    }
-//  }
-//
-//  // скругление в form
-//  &--rounded {
-//    border-radius: 0.41em;
-//  }
-//
-//  // уменьшаем кнопку
-//
-//  //@include breakpoint($mobile-bp){
-//  //
-//  //    &:hover {
-//  //        background: linear-gradient( $grad1-o, $grad2-o);
-//  //        text-decoration: none;
-//  //
-//  //         color: $red;
-//  //    }
-//  //
-//  //}
-//}
+.btnn {
+  display: inline-block; // чтобы падинги корректно работали
+  vertical-align: top;
+  padding: 1.1em 1.6em;
+  border: 1px solid $border-kroxi;
+
+  cursor: pointer;
+  border-radius: 3em;
+  //background: inherit;
+  background-color: $grad1;
+  font-family: inherit; //шрифт наследуется у родителя
+  font-size: 1.2rem;
+  line-height: 1.1;
+  font-weight: 500;
+  color: $border-kroxi;
+  text-decoration: none;
+  transition: background-color .3s linear;
+  margin-bottom: 3rem;
+  margin-left: 2rem;
+
+  margin-top: .5rem;
+
+  &:hover {
+    text-decoration: none;
+    color: $grad2;
+  }
+
+  &--filtr {
+    font-size: 1.1rem;
+  }
+
+  &--ojidaet {
+    background-color: #ffc107;
+    font-size: 1rem;
+    border: 1px solid #ffc107;
+    box-shadow: inset 0 0 10px rgba(#ffc107, 0.9);
+    color: $primary-modal;
+
+    &:hover {
+      background-color: $grad2;
+      //border: 1px solid $beloe;
+      //box-shadow: inset 0 0 10px rgba($beloe, 0.9);
+      text-decoration: none;
+      color: #ffc107;
+    }
+
+  }
+
+  &--drev {
+    background-color: $beloe;
+    font-size: 1rem;
+    border: 1px solid $sezon-text;
+    box-shadow: inset 0 0 10px rgba($sezon-text, 0.9);
+    color: $sezon-text;
+
+    &:hover {
+      background-color: $grad2;
+      border: 1px solid $beloe;
+      box-shadow: inset 0 0 10px rgba($beloe, 0.9);
+      text-decoration: none;
+      color: #23282c;
+    }
+
+  }
+
+  &--drev-es {
+    background-color: $beloe;
+    font-size: 1rem;
+    border: 1px solid $grad1;
+    box-shadow: inset 0 0 10px rgba($grad1, 0.9);
+    color: $grad1;
+
+    &:hover {
+      background-color: rgb(123, 165, 215);
+      border: 1px solid $grad1;
+      box-shadow: inset 0 0 10px rgba($grad1, 0.9);
+      text-decoration: none;
+      color: $beloe;
+    }
+  }
+
+  &--plus {
+    line-height: 1.0;
+    padding: 0 .7rem;
+    margin: 0;
+  }
+
+  &--break {
+    // margin: 0 3.5rem -2rem 0;
+    // vertical-align:text-top;
+    font-size: 1.8rem;
+  }
+
+  &--col-plemm {
+    border: 1px solid $grad1;
+    background-color: $beloe;
+    box-shadow: inset 0 0 10px rgba($grad1, 0.9);
+    opacity: 1;
+    font-size: 1.2rem;
+    color: $grad1;
+    transition: background-color .3s linear;
+
+    &:hover {
+      border: 1px solid $beloe;
+      box-shadow: inset 0 5px 20px 0 rgba($beloe, 0.9);
+      opacity: .8;
+      text-decoration: none;
+      color: $beloe;
+      background-color: $grad1;
+    }
+  }
+
+  &--col-golub {
+    box-shadow: inset 0 0 10px rgba($grad1, 0.9);
+    border: 1px solid $grad1;
+    font-size: 1.4rem;
+
+    &:hover {
+      box-shadow: 0 0 10px rgba($grad1, 0.6);
+      background: none;
+      text-decoration: none;
+      color: $grad1;
+    }
+  }
+
+  &--col-child {
+    background-color: $text-uchastie;
+    // box-shadow:  0 0 10px rgba($child-text, 0.5);
+    box-shadow: inset 0 0 10px rgba($child-text, 0.9);
+    border: 1px solid $child-text;
+    color: $child-text;
+    font-size: 1.2rem;
+
+    &:hover {
+      box-shadow: inset 0 0 10px rgba($text-uchastie, 0.9),
+      0 0 10px rgba($child-text, 0.9);
+      // border: 1px solid $text-uchastie;
+      background: none;
+      text-decoration: none;
+      color: $text-uchastie;
+    }
+  }
+
+
+  &--col-uchas {
+    background-color: $col-uchastie;
+    box-shadow: inset 0 0 10px rgba($beloe, 0.9);
+
+    border: 1px solid $beloe;
+    font-size: 1.2rem;
+    color: $beloe;
+
+    &:hover {
+      border: 1px solid $col-uchastie;
+      box-shadow: inset 0 0 10px rgba($col-uchastie, 0.8);
+      //background: none;
+      text-decoration: none;
+      color: $col-uchastie;
+      background-color: #ffffff;
+    }
+  }
+
+  &--col-sezon {
+    box-shadow: inset 0 0 10px rgba($sezon-teni, 0.7);
+    color: $sezon-teni;
+    border: 1px solid $sezon-teni;
+    font-size: 1.2rem;
+
+    &:hover {
+      box-shadow: inset 0 0 10px rgba($beloe, 0.9);
+      border: 1px solid $beloe;
+      background: none;
+      text-decoration: none;
+      color: $beloe;
+    }
+  }
+
+  &--col-ras {
+    border: 1px solid $rasa-color;
+    background-color: inherit;
+  }
+
+  &--rasa {
+    border: 1px solid $border-kroxi;
+    background-color: inherit;
+    color: inherit;
+  }
+
+  &--mt {
+    margin-top: 2rem;
+
+  }
+
+  &--mt0 {
+    margin-top: 0;
+
+  }
+
+  &--ml3 {
+    margin-bottom: 0;
+    margin-left: 2rem;
+  }
+
+  &--ml {
+
+    margin-left: 3rem;
+    margin-bottom: -1.5rem;
+  }
+
+  &--mb1 {
+    margin-bottom: .6rem;
+    margin-left: 0;
+  }
+
+  &--pchel {
+    background-color: $transpar;
+
+    border: 1px solid $transpar;
+    margin-bottom: .6rem;
+    margin-left: 0;
+  }
+
+  &--mb2 {
+    margin-bottom: 1.6rem;
+    margin-left: 0;
+  }
+
+  &--mb0 {
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+
+  &--mb-1 {
+    margin-bottom: -1rem;
+  }
+
+  &--pt {
+    padding: 0.2rem 1rem 0.3rem 1rem;
+  }
+
+
+  &--red {
+    //background-color: $red;
+    background: linear-gradient($grad1, $grad2);
+    box-shadow: 0 7px 17px -10px rgba($red, .6); // тень у кнопки
+
+    &:hover,
+    &:focus {
+      //darken  затемнение цвета при наведении
+      background: linear-gradient($grad1-o, $grad2-o);
+      //background-color: darken($red, 5%);
+    }
+  }
+
+  &--blue {
+    background-color: $blue;
+    box-shadow: 0 7px 17px -10px rgba($blue, .3);
+
+    &:hover,
+    &:focus {
+      background-color: darken($blue, 15%);
+    }
+  }
+
+  // скругление в form
+  &--rounded {
+    border-radius: 0.41em;
+  }
+
+  // уменьшаем кнопку
+
+  //@include breakpoint($mobile-bp){
+  //
+  //    &:hover {
+  //        background: linear-gradient( $grad1-o, $grad2-o);
+  //        text-decoration: none;
+  //
+  //         color: $red;
+  //    }
+  //
+  //}
+}

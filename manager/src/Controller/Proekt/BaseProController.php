@@ -16,7 +16,7 @@ class BaseProController extends AbstractController
      */
     public function basepro(): Response
     {
-//        return $this->redirectToRoute('app/proekts/base-pro');
+
         return $this->render('app/proekts/basepro.html.twig');
     }
 }
