@@ -2,8 +2,10 @@
 
 
 .osnowa {
-  padding-bottom: 2rem;
-  margin-top: 3rem;
+  //padding-bottom: 2rem;
+  //margin-top: 3rem;
+  box-shadow: 0 10px 15px rgba($black, .2),
+  inset 0 5px 15px rgba($border-linia-nav, .55);
   background-color: rgb(119, 122, 77);
   background: -webkit-linear-gradient(-45deg,
           rgb(119, 122, 77) 25%,
@@ -13,12 +15,13 @@
           rgb(119, 122, 77) 75%,
           rgb(175, 169, 112) 75%);
   background-size: 4px 4px;
+  border-radius: 6px;
 }
 
 .storie-teni {
   text-align: center;
   font-family: 'Oleo Script', cursive;
-  font-size: 6.250em;
+  font-size: 5rem;
   color: transparent; /*это скроет текст*/
   letter-spacing: 0.1em;
   text-shadow: 0 1px 5px #ccb44b,
@@ -33,7 +36,7 @@
   }
 
   &--em3 {
-    font-size: 2.25em;
+    font-size: 3.125rem;
 
   }
 

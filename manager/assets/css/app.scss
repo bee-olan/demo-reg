@@ -27,7 +27,9 @@ main {
         padding: 0 20px;
     }
 }
-
+button, input {
+    line-height: inherit;
+}
 .controls {
     display: flex;
     flex-direction: row;
