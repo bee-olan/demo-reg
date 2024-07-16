@@ -29,6 +29,7 @@ class FacebookController extends AbstractController
      */
     public function check(): Response
     {
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('proekt');
+//        return $this->redirectToRoute('home');
     }
 }

@@ -31,7 +31,7 @@ class SidebarMenu
 
 //        $menu->addChild('Work')->setAttribute('class', 'nav-title');
 
-        $menu->addChild('Меню Проекта', ['route' => 'app.proekts.basepro'])
+        $menu->addChild('Меню Проекта', ['route' => 'proekt'])
             ->setExtra('icon', 'nav-icon icon-speedometer')
             ->setAttribute('class', 'nav-item')
             ->setLinkAttribute('class', 'nav-link');
