@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace App\Model\Adminka\UseCase\PcheloMatkas\PcheloMatka\Pchelosezon\Edit;
 
-use App\Model\Adminka\Entity\Matkas\PlemMatka\Department\Department;
-use App\Model\Adminka\Entity\Matkas\PlemMatka\PlemMatka;
-
+use App\Model\Adminka\Entity\PcheloMatkas\PcheloMatka\PcheloMatka;
+use App\Model\Adminka\Entity\PcheloMatkas\PcheloMatka\Pchelosezon\Pchelosezon;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class Command
@@ -14,7 +13,7 @@ class Command
     /**
      * @Assert\NotBlank()
      */
-    public $plemmatka;
+    public $pchelomatka;
     /**
      * @Assert\NotBlank()
      */
@@ -24,15 +23,15 @@ class Command
      */
     public $name;
 
-    public function __construct(string $plemmatka, string $id)
+    public function __construct(string $pchelomatka, string $id)
     {
-        $this->plemmatka = $plemmatka;
+        $this->pchelomatka = $pchelomatka;
         $this->id = $id;
     }
 
-    public static function fromDepartment(PlemMatka $plemmatka, Department $department): self
+    public static function fromPchelosezon(PcheloMatka $pchelomatka, Pchelosezon $department): self
     {
-        $command = new self($plemmatka->getId()->getValue(), $department->getId()->getValue());
+        $command = new self($pchelomatka->getId()->getValue(), $department->getId()->getValue());
         $command->name = $department->getName();
         return $command;
     }
