@@ -38,6 +38,13 @@ doctrine:
             admin_uchasties_uchastie_email: 'App\Model\Adminka\Entity\Uchasties\Uchastie\EmailType'
             adminka_uchasties_persona_id: 'App\Model\Adminka\Entity\Uchasties\Personas\IdType'
 
+            admin_pchel_kategoria_id: 'App\Model\Adminka\Entity\PcheloMatkas\Kategoria\IdType'
+            admin_pchel_kategoria_permissions: 'App\Model\Adminka\Entity\PcheloMatkas\Kategoria\PermissionsType'
+
+            admin_pchelomat_id: 'App\Model\Adminka\Entity\PcheloMatkas\PcheloMatka\IdType'
+            admin_pchelomat_status: 'App\Model\Adminka\Entity\PcheloMatkas\PcheloMatka\StatusType'
+            admin_pchelomat_pchelosezon_id: 'App\Model\Adminka\Entity\PcheloMatkas\PcheloMatka\Pchelosezon\IdType'
+
     orm:
         auto_generate_proxy_classes: true
         naming_strategy: doctrine.orm.naming_strategy.underscore
