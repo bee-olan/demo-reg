@@ -31,6 +31,9 @@ services:
     App\Model\Adminka\Entity\Uchasties\Uchastie\UchastieRepository: ~
     App\Model\Adminka\Entity\Uchasties\Personas\PersonaRepository: ~
 
+    App\Model\Adminka\Entity\PcheloMatkas\Kategoria\KategoriaRepository: ~
+    App\Model\Adminka\Entity\PcheloMatkas\PcheloMatka\PcheloMatkaRepository: ~
+
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
     App\Controller\:
@@ -74,6 +77,15 @@ services:
 
     App\Menu\Proekts\ProektMenu:
         tags: [{ name: knp_menu.menu_builder, method: build, alias: proekt_menu }]
+
+    App\Menu\Adminka\PcheloMainMenu:
+        tags: [{ name: knp_menu.menu_builder, method: build, alias: adminka_pchelo_main }]
+
+    App\Menu\Adminka\DrevMainMenu:
+        tags: [{ name: knp_menu.menu_builder, method: build, alias: admin_drew_main }]
+
+    App\Menu\Drevos\RodosMenu:
+        tags: [{ name: knp_menu.menu_builder, method: build, alias: drevos_rodos }]
 
     App\Menu\Proekts\PageGlavas\UchastGl\GlavMenu:
         tags: [{ name: knp_menu.menu_builder, method: build, alias: proekt_page_uchast_glav }]

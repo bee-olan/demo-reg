@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Model\Adminka\Entity\PcheloMatkas\PcheloMatka;
 
+use App\Model\Adminka\Entity\PcheloMatkas\Kategoria\Id AS KategoriaId;
 use App\Model\EntityNotFoundException;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -19,6 +20,17 @@ class PcheloMatkaRepository
     {
         $this->repo = $em->getRepository(PcheloMatka::class);
         $this->em = $em;
+    }
+
+    public function hasPchelMatkaWithKategor(KategoriaId $id): bool
+    {
+        return $this->repo->createQueryBuilder('p')
+                ->select('COUNT(p.id)')
+//                ->innerJoin('p.pchelomatka', 'ms')
+                ->innerJoin('p.kategoria', 'r')
+                ->andWhere('r.id = :kategoria')
+                ->setParameter(':kategoria', $id->getValue())
+                ->getQuery()->getSingleScalarResult() > 0;
     }
 
     public function get(Id $id): PcheloMatka

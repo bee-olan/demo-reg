@@ -41,30 +41,57 @@ class PcheloMatkaFetcher
             ->execute()->fetch()['m'];
     }
 
+    /**
+     * @param Filter $filter
+     * @param int $page
+     * @param int $size
+     * @param string $sort
+     * @param string $direction
+     * @return PaginationInterface
+     */
+    public function allPagin(Filter $filter, int $page, int $size, ?string $sort, string $direction): PaginationInterface
+    {
+        $qb = $this->connection->createQueryBuilder()
+            ->select(
+                'em.id',
+                'em.name',
+//                'em.persona',
+                'em.status'
+//                'dm.sort',
+//                'pe.nomer as persona'
+//                '(SELECT COUNT(*) FROM admin_elitmat_periods s WHERE s.pchelomatka_id = em.id) AS periods_count'
+            )
+            ->from('admin_pchelomatka', 'em')
+//            ->innerJoin('em', 'adminka_uchasties_personas', 'pe', 'em.persona_id = pe.id')
 
-//    public function getMaxSortPerson(int $persona): int
-//    {
-//        return (int)$this->connection->createQueryBuilder()
-//            ->select('MAX(p.sort) AS m')
-//            ->from('admin_matkas_pchelomatkas', 'p')
-//            ->andWhere('persona = :personas')
-//            ->setParameter(':personas', $persona)
-//            ->execute()->fetch()['m'];
-//    }
+        ;
+//        if ($filter->uchastie) {
+//            $qb->andWhere('EXISTS (
+//                SELECT ms.uchastie_id FROM adminka_matkas_plemmatka_uchastniks ms WHERE ms.plemmatka_id = p.id AND ms.uchastie_id = :uchastie
+//            )');
+//            $qb->setParameter(':uchastie', $filter->uchastie);
+//        }
 
-//    public function allList(): array
-//    {
-//        $stmt = $this->connection->createQueryBuilder()
-//            ->select(
-//                'id',
-//                'name'
-//            )
-//            ->from('admin_pchelomats')
-//            ->orderBy('sort')
-//            ->execute();
-//
-//        return $stmt->fetchAll(\PDO::FETCH_KEY_PAIR);
-//    }
+
+        if ($filter->name) {
+            $qb->andWhere($qb->expr()->like('em.name', ':name'));
+            $qb->setParameter(':name', '%' . mb_strtolower($filter->name) . '%');
+        }
+
+//        if ($filter->status) {
+//            $qb->andWhere('em.status = :status');
+//            $qb->setParameter(':status', $filter->status);
+//        }
+
+        if (!\in_array($sort, ['name', 'status',  'persona'], true)) {
+            throw new \UnexpectedValueException('Cannot sort by ' . $sort);
+        }
+
+        $qb->orderBy($sort, $direction === 'desc' ? 'desc' : 'asc');
+
+        return $this->paginator->paginate($qb, $page, $size);
+    }
+
 
     public function existsPerson(string $id): bool
     {
@@ -85,18 +112,6 @@ class PcheloMatkaFetcher
                 ->setParameter(':id', $id)
                 ->execute()->fetchColumn() > 0;
     }
-
-//    public function exists(int $sort): bool
-//    {
-//       // dd($sort);
-//        return $this->connection->createQueryBuilder()
-//                ->select('COUNT (sort)')
-//                ->from('admin_pchelomats')
-//                ->where('sort = :sort')
-//                ->setParameter(':sort', $sort)
-//                ->execute()->fetchColumn() > 0;
-//    }
-
 
     /**
      * @param Filter $filter

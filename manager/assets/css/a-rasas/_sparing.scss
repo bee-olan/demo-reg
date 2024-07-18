@@ -1,0 +1,54 @@
+.sparing {
+    margin: 6rem -1rem  2rem -1rem;
+    padding: 1.5rem 1.5rem;
+    overflow: hidden; // в рамках размера -все лишнее скрылось overflow
+    background-color: #4362a3 ;
+    //background-color: transparent;
+    box-shadow: 0 15px 25px rgba($black, .35);
+    border-radius: 5px;
+}
+
+
+
+.sparing__data {
+     display: flex; // добавляем т.к добаилась li-шка
+     //justify-content: center;
+    // justify-content: space-between;
+     align-items: center; // выравнивание по вертикали
+
+     width: 100%;
+     color: $col-text;
+     line-height: 2.0;
+     a { 
+        padding:  .6rem 1.6rem; 
+        color: inherit;
+
+        opacity: 0.6;
+        transition: opacity .2s linear;
+
+        &:hover {
+            opacity: 1;
+            text-decoration: none;
+            background-color: sandybrown;
+        }
+     }
+
+}
+
+.sparing__name {
+    // display: flex; // добавляем т.к добаилась li-шка
+    width: 7.0rem;
+     color: $col-text;
+     padding:  .6rem; 
+   
+    border-bottom: 1px solid $col-text; // linia
+
+    &--wi10 {
+        width: 10.0rem;
+    }
+
+    &--wi25 {
+        width: 25.0rem;
+    }
+}
+

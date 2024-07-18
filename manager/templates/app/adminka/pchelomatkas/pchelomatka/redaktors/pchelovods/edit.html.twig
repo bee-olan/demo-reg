@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ elitmatka.name }}{% endblock %}
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Главная</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka') }}">Пасека</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka.matkas') }}">ПлемМатки</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka.matkas.plemmatka.show', {'id': plemmatka.id}) }}">{{ plemmatka.name }}</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka.matkas.plemmatka.redaktors', {'plemmatka_id': plemmatka.id}) }}">Редактирование</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka.matkas.plemmatka.redaktors.uchasties', {'plemmatka_id': plemmatka.id}) }}">Участие</a></li>
+        <li class="breadcrumb-item active">{{ uchastnik.uchastie.name.full }}</li>
+    </ol>
+{% endblock %}
+
+{% block body %}
+
+    {% include 'app/adminka/elitmatkas/elitmatka/_tabs.html.twig' %}
+
+    {% include 'app/adminka/elitmatkas/elitmatka/redaktors/_tabs.html.twig' %}
+
+
+    <div class="card">
+        <div class="card-body">
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+
+{% endblock %}

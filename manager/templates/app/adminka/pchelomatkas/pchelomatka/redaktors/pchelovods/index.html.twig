@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ elitmatka.name }}{% endblock %}
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Главная</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka') }}">Пасека</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka.matkas') }}">ПлемМатки</a></li>
+        <li class="breadcrumb-item"><a
+                    href="{{ path('adminka.matkas.elitmatka.show', {'id': elitmatka.id}) }}">{{ elitmatka.name }}</a>
+        </li>
+        <li class="breadcrumb-item"><a
+                    href="{{ path('adminka.matkas.elitmatka.redaktors', {'elitmatka_id': elitmatka.id}) }}">Редактирование</a>
+        </li>
+        <li class="breadcrumb-item active">Участие</li>
+    </ol>
+{% endblock %}
+
+{% block body %}
+
+    {{ include('app/adminka/elitmatkas/_tabs.html.twig') }}
+
+    {% include 'app/adminka/elitmatkas/elitmatka/redaktors/_tabs.html.twig' %}
+
+
+    {% if  elitmatka.archived %}
+        <div class="controls">
+            ... Добавить участника нельзя т.к. статус --- {{ plemmatka_status(elitmatka.status.name) }}
+        </div>
+    {% endif %}
+    {% if elitmatka.active %}
+        <div class="controls">
+            <a href="{{ path('adminka.elitmatkas.elitmatka.redaktors.sostavs.assign', {'elitmatka_id': elitmatka.id}) }}"
+               class="btn btn-success">Матковод ЭлитМатки {{ elitmatka.name }}</a>
+            {#        <a href="{{ path('adminka.matkas.roles') }}" class="btn btn-primary">Роли</a>#}
+        </div>
+    {% endif %}
+
+    <div class="box">
+        {% if sostavs %}
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>Ник ( Имя )</th>
+                <th>Сезон</th>
+                <th>Роль</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% set token = csrf_token('revoke') %}
+
+
+                {% for sostav in sostavs %}
+                    <tr>
+                        <td>
+                            <a href="{{ path('adminka.uchasties.show', {'uchastie_id': sostav.uchastie.id}) }}"
+                               target="_blank" class="pull-right"><span class="fa fa-external-link"></span></a>
+                            {{ sostav.uchastie.nike }} ( {{ sostav.uchastie.name.full }} )
+                        </td>
+                        <td>
+                            <ul class="list-unstyled my-0">
+                                {% for period in sostav.periods %}
+                                    <li>{{ period.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="d-flex flex-row">
+                                <a href="{{ path('adminka.elitmatkas.elitmatka.redaktors.sostavs.edit', {'elitmatka_id': elitmatka.id, 'uchastie_id': sostav.uchastie.id}) }}"
+                                   class="btn btn-sm btn-primary mr-1"><span class="fa fa-pencil"></span></a>
+                                <form action="{{ path('adminka.elitmatkas.elitmatka.redaktors.sostavs.revoke', {'elitmatka_id': elitmatka.id, 'uchastie_id': sostav.uchastie.id}) }}"
+                                      method="post" onsubmit="return confirm('Are you sure?')">
+                                    <input type="hidden" name="token" value="{{ token }}"/>
+                                    <button type="submit" class="btn btn-sm btn-danger"><span
+                                                class="fa fa-times"></span></button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        {% else %}
+            Нет участника
+        {% endif %}
+    </div>
+
+{% endblock %}

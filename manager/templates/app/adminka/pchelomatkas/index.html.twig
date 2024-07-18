@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Пчело-Матка{% endblock %}
+
+{% block breadcrumbs %}
+    {#    <ol class="breadcrumb">#}
+    {#        <li class="breadcrumb-item"><a href="{{ path('home') }}">Главная</a></li>#}
+    {#        <li class="breadcrumb-item"><a href="{{ path('adminka.pchelomatkas') }}">Админка</a></li>#}
+    {#        <li class="breadcrumb-item active">Пчело-Матка!</li>#}
+    {#    </ol>#}
+{% endblock %}
+
+{% block body %}
+
+    <div class="ma-to-2">
+        {{ include('app/adminka/pchelomatkas/_tabs.html.twig') }}
+    </div>
+
+{#    <div class="controls">#}
+{#        <a href="{{ path('adminka.pchelomatkas.create') }}" class="btn btn-success">Добавить Пчело - Матку</a>#}
+{#    </div>#}
+
+
+
+    <div class="card">
+        <div class="card-body">
+
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-2">{{ form_widget(form.name) }}</div>
+                {#                <div class="col-md-2">{{ form_widget(form.persona) }}</div>#}
+                {#                <div class="col-md-2">{{ form_widget(form.status) }}</div>#}
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary">Фильтр</button>
+                </div>
+                <div class="col-md-2">
+                    <a href="{{ path('adminka.pchelomatkas') }}" class="btn btn-outline-secondary">Сброс</a>
+                </div>
+            </div>
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+
+    <div class="box">
+        {#        <table class="table table-bordered table-hover">#}
+        {#            <thead>#}
+        {#            <tr>#}
+        {#                <th></th>#}
+        {#                <th>{{ knp_pagination_sortable(pagination, 'Название', 'name') }}</th>#}
+        {#                <th> Сезоны/дочки</th>#}
+        {#                <th>Категория</th>#}
+        {#                <th>{{ knp_pagination_sortable(pagination, 'ПерсонНомер', 'persona') }}</th>#}
+        {#                <th>{{ knp_pagination_sortable(pagination, 'Статус', 'status') }}</th>#}
+        {#            </tr>#}
+        {#            </thead>#}
+        {#            <tbody>#}
+        {#            {% set token = csrf_token('delete') %}#}
+        {#            {% for pchelomatka in pagination %}#}
+        {#                <tr>#}
+        {#                    <td><strong class="strongo strongo--kras">{{ pchelomatka.id }}  </strong></td>#}
+        {#                    <td>#}
+        {#                        <a href="{{ path('adminka.pchelomatkas.pchelomatka.redaktors', {'pchelomatka_id': pchelomatka.id}) }}">#}
+        {#                            {{ pchelomatka.name }}#}
+        {#                        </a>#}
+        {#                    </td>#}
+        {#                    <td>- ожидает!?????#}
+        {#                        {{ pchelomatka.sezonpchelos_count }}#}
+        {#                        {% if pchelomatka.sezonpchelos_count < 1 %}#}
+        {#                            - ожидает!#}
+        {#                        {% else %}#}
+        {#                            ---------------#}
+        {#                            /  {{ pchelomatka.child_count }}#}
+        {#                        {% endif %}#}
+
+        {#                    </td>#}
+        {#                    <td> {{ pchelomatka_kategoria(pchelomatka.kategoria) }}</td>#}
+        {#                    <td>{{ pchelomatka.persona }}</td>#}
+        {#                    <td>{{ plemmatka_status(pchelomatka.status) }}</td>#}
+        {#                    <td>#}
+        {#                        <a href="{{ path('adminka.matkas.pchelomatka.redaktors', {'pchelomatka_id': pchelomatka.id}) }}"#}
+        {#                           class="btn-my btn-my--smm"><span class="fa fa-pencil"></span></a>#}
+        {#                    </td>#}
+
+        {#                </tr>#}
+        {#            {% endfor %}#}
+        {#            </tbody>#}
+        {#        </table>#}
+    </div>
+
+    {#    <div class="navigation">#}
+    {#        {{ knp_pagination_render(pagination) }}#}
+    {#    </div>#}
+
+{% endblock %}

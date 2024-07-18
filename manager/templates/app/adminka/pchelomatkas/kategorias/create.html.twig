@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Категории{% endblock %}
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Главная</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka') }}">Пасека</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka.pchelomatkas') }}">ПлемМатки</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka.pchelomatkas.kategorias') }}">Категории</a></li>
+        <li class="breadcrumb-item active">Создать</li>
+    </ol>
+{% endblock %}
+
+{% block body %}
+
+    <div class="ma-to-2">
+        {{ include('app/adminka/pchelomatkas/_tabs.html.twig') }}
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit" class="btn btn-primary">Создать</button>
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+
+{% endblock %}

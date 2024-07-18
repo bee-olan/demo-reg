@@ -1,0 +1,155 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Раса{% endblock %}
+
+
+    {% block kroxii %}
+        <a href="{{ path('home') }}">Главная</a>
+        <a href="{{ path('drevos.rass') }}">Р-Л-В-Н</a>
+        <span class="aktiv ">Расы==</span>
+    {% endblock %}
+
+{% block body %}
+
+    {{ include('app/adminka/_tabs.html.twig') }}
+
+    <article class="rasa">
+
+        <div class="rasa__header  ">
+            <h3 class="rasa__title  ">BR Расы зарегистрированные в БД </h3>
+
+            <ul class="rasa__data">
+                <li class="rasa__name rasa__name--wid15 "> Название расы  </li>
+                <li class="rasa__name  "> Кратко </li>
+                <li class="rasa__name  "> Кол-во линий </li>
+                <li class=" rasa__name--wid15 td_cent">
+                    Смотреть\добавить
+                </li>
+                <li class=" rasa__name--wid5 ">
+                    ред-вать
+                </li>
+                <li class="rasa__name--wid5">
+                    удалить
+                </li>
+            </ul>
+
+            {% set token = csrf_token('delete') %}
+            {% for rasa in rasas %}
+
+                <ul class="rasa__data">
+                    <li class="rasa__name rasa__name--wid15 ">  {{ rasa.title }}  </li>
+                    <li class="rasa__name  ">{{ rasa.name }}  </li>
+                    <li class="rasa__name td_cent ">{{ rasa.kol_linis }} </li>
+                    <li class=" rasa__name--wid15 td_cent">
+                        <a href="{{ path('drevos.rass.linibrs',{'id': rasa.id}) }}"
+                           class="btnn btnn--mb0 btnn-brend  ">Линии
+
+                        </a>
+                    </li>
+                    <li class=" rasa__name--wid5 ">
+                        <a href="{{ path('drevos.rass.edit', {'id': rasa.id}) }}"
+                           class="btnn btnn--mb0 btnn--pt "><span class="fa fa-pencil"></span></a>
+                    </li>
+                    <li class="rasa__name--wid5">
+                        <form action="{{ path('drevos.rass.delete', {'id': rasa.id}) }}"
+                              method="post" onsubmit="return confirm('Подтверждаете - удалить?')">
+                            <input type="hidden" name="token" value="{{ token }}" />
+                            <button type="submit" class="btnn btnn--mb0 btnn--pt  "><span class="fa fa-trash"></span></button>
+                        </form>
+                    </li>
+
+
+                </ul>
+            {% endfor %}
+        </div>
+
+        <div class = "rasa__content"  >
+            <a href="{{ path('drevos.rass.create') }}"
+               class="btnn btnn--mb0 btnn--pt btnn--rasa">Добавить название другой <strong class=" strongo--kras"> расы </strong>  в БД</a>
+        </div>
+    </article><!-- rasas -->
+
+{% endblock %}
+
+{#{% extends 'base.html.twig' %}#}
+
+{#{% block title %}Раса{% endblock %}#}
+
+
+
+
+{#{% block body %}#}
+
+{#    {{ include('app/drevos/_tabs.html.twig') }}#}
+
+
+
+{#    {% set token = csrf_token('delete') %}#}
+
+{#    <div class="box">#}
+{#       #}
+{#        <b class="dre_title  ">BR Расы зарегистрированные в БД </b>#}
+{#        <table class="table table-bordered table-hover">#}
+{#            <thead>#}
+{#            <tr>#}
+
+{#                <th> Название расы</th>#}
+{#                <th>Сокращено</th>#}
+{#                <th colspan="2"> редак-ть / удалить</th>#}
+{#                <th colspan="3">Родословные (к-во)</th>#}
+
+
+{#            </tr>#}
+{#            </thead>#}
+{#            <tbody>#}
+{#            {% for raca in rasas %}#}
+{#                <tr>#}
+{#                {% if  raca.name != "-- нет нужной"  %}#}
+
+{#                    <td>{{ raca.title }}</td>#}
+
+{#                    <td>{{ raca.name }}</td>#}
+
+{#                    <td> <a href="{{ path('drevos.rass.edit', {'id': raca.id}) }}"#}
+{#                            class="btnn btnn--mb0 btnn--pt btnn--rasa"><span class="fa fa-pencil"></span></a>#}
+{#                    </td>#}
+{#                    <td>#}
+{#                        <form action="{{ path('drevos.rass.delete', {'id': raca.id}) }}"#}
+{#                              method="post" onsubmit="return confirm('Подтверждаете - удалить?')">#}
+{#                            <input type="hidden" name="token" value="{{ token }}" />#}
+{#                            <button type="submit" class="btnn btnn--mb0 btnn--pt btnn--rasa "><span class="fa fa-trash"></span></button>#}
+{#                        </form>#}
+{#                    </td>#}
+{#                    <td> ( {{ raca.rodos }} )</td>#}
+{#                    <td>#}
+{#                        <a href="{{ path('drevos.rass.rods', {'id': raca.id}) }}">Смотреть</a>#}
+{#                    </td>#}
+{#                    <td>#}
+{#                        <a href="{{ path('drevos.rass.rods.create', {'id': raca.id}) }}">Начать ввод паспортных данных</a>#}
+{#                    </td>#}
+{#                {% else %}#}
+{#                    <td>{{ raca.title }}</td>#}
+{#                    <td>{{ raca.name }}</td>#}
+{#                    <td colspan="5"></td>#}
+{#                {% endif %}#}
+{#                </tr>#}
+
+{#            {% endfor %}#}
+{#            </tbody>#}
+{#        </table>#}
+{#    </div>#}
+
+{#    <div class="box">#}
+{#        <table>#}
+{#            <tr>#}
+{#                <th>#}
+{#                    <a href="{{ path('drevos.rass.create') }}"#}
+{#                       class="btnn btnn--mb0 btnn--pt btnn--rasa">Добавить название другой <strong class=" strongo--kras">#}
+{#                            расы </strong>  в БД</a>#}
+{#                </th>#}
+{#            </tr>#}
+{#        </table>#}
+{#    </div>#}
+
+
+{#{% endblock %}#}

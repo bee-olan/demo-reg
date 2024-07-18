@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Controller\Adminka\PcheloMatkas;
 
-use App\Annotation\Guid;
+//use App\Annotation\Guid;
 
 use App\Model\Adminka\Entity\PcheloMatkas\PcheloMatka\PcheloMatka;
-use App\Model\Adminka\Entity\PcheloMatkas\PcheloMatka\Id;
+//use App\Model\Adminka\Entity\PcheloMatkas\PcheloMatka\Id;
 
 use App\Model\Adminka\UseCase\PcheloMatkas\PcheloMatka\Remove;
 use App\ReadModel\Adminka\PcheloMatkas\PcheloMatka\Filter;
@@ -52,16 +52,16 @@ class PcheloMatkasController extends AbstractController
         $form = $this->createForm(Filter\Form::class, $filter);
         $form->handleRequest($request);
 
-        $pagination = $fetcher->allPagin(
-            $filter,
-            $request->query->getInt('page', 1),
-            self::PER_PAGE,
-            $request->query->get('sort', 'name', 'status',  'persona'),
-            $request->query->get('direction', 'asc')
-        );
+//        $pagination = $fetcher->allPagin(
+//            $filter,
+//            $request->query->getInt('page', 1),
+//            self::PER_PAGE,
+//            $request->query->get('sort', 'name', 'status'),
+//            $request->query->get('direction', 'asc')
+//        );
 
         return $this->render('app/adminka/pchelomatkas/index.html.twig', [
-            'pagination' => $pagination,
+//            'pagination' => $pagination,
             'form' => $form->createView(),
         ]);
     }

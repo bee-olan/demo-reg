@@ -1,0 +1,22 @@
+.box {
+  margin-top: 2rem;
+
+  background: $beloe;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.box-edit{
+  margin-top: .4rem;
+  margin-bottom: 1rem;
+  padding: .8rem 0 .8rem 1rem;
+  background: $fon-ser;
+  //box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.box-smotrim{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: .8rem 0 .4rem 0;
+  background: $beloe;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}

@@ -24,20 +24,49 @@ class SidebarMenu
         $menu = $this->factory->createItem('root')
             ->setChildrenAttributes(['class' => 'nav']);
 
-        $menu->addChild('Меню Админки', ['route' => 'home'])
-            ->setExtra('icon', 'nav-icon icon-speedometer')
-            ->setAttribute('class', 'nav-item')
-            ->setLinkAttribute('class', 'nav-link');
+        $menu->addChild('Меню')->setAttribute('class', 'nav-title');
 
-//        $menu->addChild('Work')->setAttribute('class', 'nav-title');
-
-        $menu->addChild('Меню Проекта', ['route' => 'proekt'])
+        $menu->addChild(' Админки', ['route' => 'home'])
             ->setExtra('icon', 'nav-icon icon-speedometer')
             ->setAttribute('class', 'nav-item')
             ->setLinkAttribute('class', 'nav-link');
 
 
-//        if ($this->auth->isGranted('ROLE_WORK_MANAGE_MEMBERS')) {
+
+        $menu->addChild(' Проекта', ['route' => 'proekt'])
+            ->setExtra('icon', 'nav-icon icon-speedometer')
+            ->setAttribute('class', 'nav-item')
+            ->setLinkAttribute('class', 'nav-link');
+
+        $menu->addChild('Матки')->setAttribute('class', 'nav-title');
+
+//        $menu->addChild('Элит')->setAttribute('class', 'nav-title')
+//            ->setAttribute('class', 'nav-item')
+//            ->setLinkAttribute('class', 'nav-link');
+//
+//        $menu->addChild('Бренд')->setAttribute('class', 'nav-title')
+//            ->setAttribute('class', 'nav-item')
+//            ->setLinkAttribute('class', 'nav-link');
+//
+//
+//        $menu->addChild('Пчело')->setAttribute('class', 'nav-title')
+//            ->setAttribute('class', 'nav-item')
+//            ->setLinkAttribute('class', 'nav-link');
+
+
+
+        $menu->addChild('Пчело-Матка', ['route' => 'adminka.pchelomatkas'])
+            ->setExtra(
+                'routes',
+                [
+                    ['route' => 'adminka.pchelomatkas'],
+                    ['pattern' => '/^adminka\.pchelomatkas\..+/']
+                ]
+            )
+            ->setAttribute('class', 'nav-item')
+            ->setLinkAttribute('class', 'nav-link');
+
+        //        if ($this->auth->isGranted('ROLE_WORK_MANAGE_MEMBERS')) {
 //            $menu->addChild('Members', ['route' => 'work.members'])
 //                ->setExtra('routes', [
 //                    ['route' => 'work.members'],

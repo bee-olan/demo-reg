@@ -12,14 +12,14 @@ use App\Model\Adminka\Entity\PcheloMatkas\Kategoria\Id;
 class Handler
 {
     private $kategorias;
-    private $plemmatkas;
+    private $pchelomatkas;
     private $flusher;
 
-    public function __construct(KategoriaRepository $kategorias, PcheloMatkaRepository $plemmatkas, Flusher $flusher)
+    public function __construct(KategoriaRepository $kategorias, PcheloMatkaRepository $pchelomatkas, Flusher $flusher)
     {
 
         $this->kategorias = $kategorias;
-        $this->plemmatkas = $plemmatkas;
+        $this->pchelomatkas = $pchelomatkas;
         $this->flusher = $flusher;
     }
 
@@ -27,9 +27,9 @@ class Handler
     {
         $kategoria = $this->kategorias->get(new Id($command->id));
 
-//        if ($this->plemmatkas->hasUchastiesWithKategoria($kategoria->getId())) {
-//            throw new \DomainException('Роль содержит участников.');
-//        }
+        if ($this->pchelomatkas->hasPchelMatkaWithKategor($kategoria->getId())) {
+            throw new \DomainException('Категория  содержится в  пчело - матке.');
+        }
 
         $this->kategorias->remove($kategoria);
 

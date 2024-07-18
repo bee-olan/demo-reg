@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Раса{% endblock %}
+
+
+    {% block kroxii %}
+        <a href="{{ path('home') }}">Главная</a>
+        <a href="{{ path('drevos.rass') }}">Родословная</a>
+        <span class="aktiv ">Расы</span>
+    {% endblock %}
+
+{% block body %}
+
+
+
+    <div class="ma-to-2">
+        {{ include('app/drevos/_tabs.html.twig') }}
+    </div>
+
+    {% set token = csrf_token('delete') %}
+
+    <div class="box">
+       
+        <span class="dre_title  ">Расы зарегистрированные в БД </span>
+        <table class="table table-bordered table-hover ma-to-2">
+            <thead>
+            <tr>
+
+                <th> Название расы</th>
+                <th>Сокращено</th>
+                <th colspan="2"> редак-ть / удалить</th>
+                <th colspan="3">Родословные (к-во)</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for raca in rasas %}
+                <tr>
+                {% if  raca.name != "-- нет нужной"  %}
+
+                    <td>{{ raca.title }}</td>
+
+                    <td>{{ raca.name }}</td>
+
+                    <td> <a href="{{ path('drevos.rass.edit', {'id': raca.id}) }}"
+                            class="btnn  btnn-rasa"><span class="fa fa-pencil"></span></a>
+                    </td>
+                    <td>
+                        <form action="{{ path('drevos.rass.delete', {'id': raca.id}) }}"
+                              method="post" onsubmit="return confirm('Подтверждаете - удалить?')">
+                            <input type="hidden" name="token" value="{{ token }}" />
+                            <button type="submit" class="btnn  btnn-rasa "><span class="fa fa-trash"></span></button>
+                        </form>
+                    </td>
+                    <td> ======
+{#                        ( {{ raca.rodos }} )#}
+                    </td>
+                    <td>--------
+{#                        <a href="{{ path('drevos.rass.rods', {'id': raca.id}) }}">Смотреть</a>#}
+                    </td>
+                    <td>///
+{#                        <a href="{{ path('drevos.rass.rods.create', {'id': raca.id}) }}">Начать ввод паспортных данных</a>#}
+                    </td>
+                {% else %}
+                    <td>{{ raca.title }}</td>
+                    <td>{{ raca.name }}</td>
+                    <td colspan="5"></td>
+                {% endif %}
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="box">
+        <table>
+            <tr>
+                <th>
+                    <a href="{{ path('drevos.rass.create') }}"
+                       class="btnn  btnn-rasa">Добавить название другой <strong class=" strongo--kras">
+                            расы </strong>  в БД</a>
+                </th>
+            </tr>
+        </table>
+    </div>
+
+
+{% endblock %}

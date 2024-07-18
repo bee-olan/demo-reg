@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ПлемМатка{% endblock %}
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Главная</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka') }}">Пасека</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka.matkas') }}">ПлемМатки</a></li>
+{#        <li class="breadcrumb-item"><a href="{{ path('adminka.elitmatkas.elitmatka.show', {'id': elitmatka.id}) }}">{{ elitmatka.name }}</a></li>#}
+        <li class="breadcrumb-item active">Редактировать!!!</li>
+    </ol>
+{% endblock %}
+
+{% block body %}
+
+
+    <div class="ma-to-2">
+        {{ include('app/adminka/pchelomatkas/_tabs.html.twig') }}
+    </div>
+
+    {{ include('app/adminka/elitmatkas/_tabs.html.twig') }}
+
+{{ include ('app/adminka/elitmatkas/elitmatka/redaktors/_tabs.html.twig') }}
+
+    <div class="controls">
+        <a href="{{ path('adminka.elitmatkas.elitmatka.redaktors.edit', {'elitmatka_id': elitmatka.id}) }}" class="btn btn-primary">Редактировать?</a>
+        {% if elitmatka.active and elitmatka.id.value != app.user.id %}
+            <form action="{{ path('adminka.elitmatkas.elitmatka.redaktors.archive', {'elitmatka_id': elitmatka.id}) }}" method="post" onsubmit="return confirm('Отправить в архив? Вы уверены?')">
+                <input type="hidden" name="token" value="{{ csrf_token('archive') }}" />
+                <button type="submit" class="btn btn-danger">Архивировать?</button>
+            </form>
+        {% endif %}
+        {% if elitmatka.archived %}
+            <form action="{{ path('adminka.elitmatkas.elitmatka.redaktors.reinstate', {'elitmatka_id': elitmatka.id}) }}" method="post" onsubmit="return confirm('Достать из архива? Вы уверены??')">
+                <input type="hidden" name="token" value="{{ csrf_token('reinstate') }}" />
+                <button type="submit" class="btn btn-success">Разархивировать</button>
+            </form>
+        {% endif %}
+        <form action="{{ path('adminka.elitmatkas.delete', {'id': elitmatka.id}) }}" method="post" onsubmit="return confirm('Вы уверенны?')">
+            <input type="hidden" name="token" value="{{ csrf_token('delete') }}" />
+            <button type="submit" class="btn btn-danger">Удалить?</button>
+        </form>
+
+
+        <a href="{{ path('adminka.elitmatkas.elitmatka.redaktor.periods', {'elitmatka_id': elitmatka.id}) }}"
+                class="btn btn-primary">Смотреть СЕЗОНЫ===</a>
+{#        <a href="{{ path('adminka.matkas.elitmatka.redaktors.uchasties', {'elitmatka_id': elitmatka.id}) }}"#}
+{#                class="btn btn-primary">Привязать участника</a>#}
+
+    </div>
+
+    <div class="box">
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                <tr>
+                    <th>Название</th>
+                    <td> {{ elitmatka.name }} </td>
+                </tr>
+                <tr>
+                    <th>Статус</th>
+                    <td>{{ plemmatka_status(elitmatka.status.name) }}</td>
+                </tr>
+
+{#                    <td>{{ elitmatka_kategoria(elitmatka.nameKateg) }}</td>#}
+                    <td></td>
+                    <td>----</td>
+{#                </tr>#}
+                <tr>
+
+                    <th>...</th>
+                    <td>
+                        <table class="table table-bordered">
+                            <tbody>
+                            {% for period in periods %}
+                            <tr>
+                                <th>сезон</th>
+                                <td>{{period.name }}</td>
+                                <th>Status</th>
+                                <td>{{ plemmatka_status(elitmatka.status.name) }}</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Раса{% endblock %}
+
+{% block kroxii %}
+    <a href="{{ path('home') }}">Главная</a>
+    <a href="{{ path('drevos.rass') }}">Родословная</a>
+    <span class="aktiv ">Раса - добавить </span>
+{% endblock %}
+
+
+{% block body %}
+
+{#    {{ include('app/drevos/_tabs.html.twig') }}#}
+
+    <div class="box">
+    <b class="dre_title  ">Добавление названия другой расы </b>
+
+        <div class="box-edit">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit" class="btnn  btnn-rasa">Добавить в БД</button>
+            <a href="{{ path('drevos.rass') }}"
+                class="btnn  btnn-rasa"> Выйти из режима "Добавить"</a>
+            {{ form_end(form) }}
+        </div>
+</div>
+
+
+
+{% endblock %}

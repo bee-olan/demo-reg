@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Сезоны{% endblock %}
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Главная</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka') }}">Пасека</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka.elitmatkas') }}">ПлемМатки</a></li>
+{#        <li class="breadcrumb-item"><a href="{{ path('adminka.elitmatkas.elitmatka.show', {'id': elitmatka.id}) }}">{{ elitmatka.name }}</a></li>#}
+        <li class="breadcrumb-item"><a href="{{ path('adminka.elitmatkas.elitmatka.redaktors', {'elitmatka_id': elitmatka.id}) }}">Редактирование</a></li>
+        <li class="breadcrumb-item active">Сезон</li>
+    </ol>
+{% endblock %}
+
+{% block body %}
+
+    {{ include('app/adminka/elitmatkas/_tabs.html.twig') }}
+
+    {{ include ('app/adminka/elitmatkas/elitmatka/redaktors/_tabs.html.twig') }}
+
+    {% if  elitmatka.archived %}
+        <div class="controls">
+        ... Добавить сезон нельзя т.к. статус --- {{ plemmatka_status(elitmatka.status.name) }}
+        </div>
+    {% endif %}
+
+
+    {% if elitmatka.active  %}
+        <div class="controls">
+            <a href="{{ path('adminka.elitmatkas.elitmatka.redaktor.periods.create', {'elitmatka_id': elitmatka.id}) }}"
+               class="btn btn-success">Добавить СЕЗОН для Элит Матки {{elitmatka.name  }}</a>
+        </div>
+    {% endif %}
+
+
+
+    <div class="box">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>Сезон</th>
+                <th>Участники</th>
+                <th></th>
+            </tr>
+            <tbody>
+            {% set token = csrf_token('delete') %}
+
+            {% for period in periods %}
+                {% set periodd = period.name +1 %}
+                <tr>
+                    <td>{{ period.name }} - {{ periodd }}</td>
+{#                    <td>{{ period.uchaselit_count }}</td>#}
+                    <td>кол-во уч</td>
+                    <td>
+                        <div class="d-flex flex-row">
+{#                            <a href="{{ path('adminka.elitmatkas.elitmatka.redaktor.periods.edit', {'elitmatka_id': elitmatka.id, 'id': period.id}) }}" class="btn btn-sm btn-primary mr-1"><span class="fa fa-pencil"></span></a>#}
+                            <form action="{{ path('adminka.elitmatkas.elitmatka.redaktor.periods.delete', {'elitmatka_id': elitmatka.id, 'id': period.id}) }}" method="post" onsubmit="return confirm('Are you sure?')">
+                                <input type="hidden" name="token" value="{{ token }}" />
+                                <button type="submit" class="btn btn-sm btn-danger"><span class="fa fa-times"></span></button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

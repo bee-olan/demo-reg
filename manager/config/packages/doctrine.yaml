@@ -38,6 +38,23 @@ doctrine:
             admin_uchasties_uchastie_email: 'App\Model\Adminka\Entity\Uchasties\Uchastie\EmailType'
             adminka_uchasties_persona_id: 'App\Model\Adminka\Entity\Uchasties\Personas\IdType'
 
+            dre_ras_id: 'App\Model\Drevos\Entity\Rass\IdType'
+#            dre_ras_rod_id: 'App\Model\Drevos\Entity\Rass\Rods\IdType'
+#            dre_ras_rod_stranmat_id: 'App\Model\Drevos\Entity\Rass\Rods\StranMats\IdType'
+#            dre_ras_rod_lini_id: 'App\Model\Drevos\Entity\Rass\Rods\Linis\IdType'
+#            dre_ras_rod_lini_wet_id: 'App\Model\Drevos\Entity\Rass\Rods\Linis\Wetkas\IdType'
+#            dre_ras_rod_lini_wet_nomw_id: 'App\Model\Drevos\Entity\Rass\Rods\Linis\Wetkas\NomWets\IdType'
+#            dre_ras_rod_lini_wet_nomw_trut_id: 'App\Model\Drevos\Entity\Rass\Rods\Linis\Wetkas\NomWets\MatTruts\IdType'
+#            dre_ras_rod_lini_wet_nomw_nom_stat: 'App\Model\Drevos\Entity\Rass\Rods\Linis\Wetkas\NomWets\MatTruts\Noms\StatuType'
+#            dre_ras_rod_lini_wet_nomw_nom_id: 'App\Model\Drevos\Entity\Rass\Rods\Linis\Wetkas\NomWets\MatTruts\Noms\IdType'
+#
+#            dre_ras_linibr_id: 'App\Model\Drevos\Entity\Rass\LiniBr\IdType'
+#            dre_ras_linibr_vet_id: 'App\Model\Drevos\Entity\Rass\LiniBr\VetkaBr\IdType'
+#            dre_ras_linibr_vet_nom_id: 'App\Model\Drevos\Entity\Rass\LiniBr\VetkaBr\NomerBr\IdType'
+#            dre_ras_linibr_vet_nom_status: 'App\Model\Drevos\Entity\Rass\LiniBr\VetkaBr\NomerBr\StatusType'
+
+
+
             admin_pchel_kategoria_id: 'App\Model\Adminka\Entity\PcheloMatkas\Kategoria\IdType'
             admin_pchel_kategoria_permissions: 'App\Model\Adminka\Entity\PcheloMatkas\Kategoria\PermissionsType'
 
@@ -75,3 +92,9 @@ doctrine:
                 prefix: 'App\Model\Adminka\Entity'
                 alias: Adminka
 
+            Drevos:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Model/Drevos/Entity'
+                prefix: 'App\Model\Drevos\Entity'
+                alias: Drevos

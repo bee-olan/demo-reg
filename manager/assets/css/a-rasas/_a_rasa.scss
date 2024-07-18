@@ -1,0 +1,139 @@
+///////////Раса ==========
+.rasa {
+  margin: 4rem .5rem .5rem .5rem;
+  padding: .8rem .5rem .5rem 1rem;
+  overflow: hidden; // в рамках размера -все лишнее скрылось overflow
+  background-color: #588557;
+  //background-color: transparent;
+  box-shadow: 0 15px 25px rgba($black, .35);
+  border-radius: 5px;
+}
+
+.rasa__header {
+  margin: 0 0 2.5rem;
+
+  &--preview {
+    margin: -2.5rem -2.5rem 2.5rem; // убираем margin- картинка встанет без отступов
+  }
+}
+
+.rasa__title {
+  margin-bottom: .8rem;
+  font-size: 1.5rem;
+  color: $col-text;
+  //font-weight: 500;
+  a {
+    color: inherit; // что бы изменить цвет ссылки - на родительский post__title
+    text-decoration: none;
+    //  &:hover {
+    //     text-decoration: underline; // при наведении вернуться к подчеркиванию
+    // }
+  }
+
+  &--mb0 {
+    margin-bottom: 0;
+  }
+}
+
+.rasa__data {
+  display: flex; // добавляем т.к добаилась li-шка
+  //justify-content: center;
+  justify-content: space-between;
+  align-items: center; // выравнивание по вертикали
+  list-style: none; // убрала точку у li
+  width: 100%;
+  color: $beloe;
+  line-height: 2.0;
+  font-size: 1.2rem;
+
+  a {
+    padding: .2rem .6rem;
+    color: $grad1;
+
+    opacity: 0.8;
+    transition: opacity .2s linear;
+
+    &:hover {
+      opacity: 1;
+      text-decoration: none;
+      background-color: $transpar;
+    }
+  }
+}
+
+.rasa__name {
+  // display: flex; // добавляем т.к добаилась li-шка
+  width: 10.0rem;
+  color: $beloe;
+  padding: .6rem;
+  border-bottom: 1px solid $col-child; // linia
+
+  &--col {
+    color: $grad1;
+  }
+
+  &--wid25 {
+    width: 25.0rem;
+  }
+
+  &--wid15 {
+    width: 15.0rem;
+  }
+
+  &--wid10 {
+    width: 10.0rem;
+  }
+
+  &--wid5 {
+    width: 5.0rem;
+  }
+}
+
+.rasa__content {
+  margin-bottom: 2rem; // отступ от футора
+}
+
+.linia {
+  //margin: 1rem ;
+  width: 100%;
+  //padding: 1.5rem 1rem  ;
+  padding: .8rem .5rem .5rem 1rem;
+  overflow: hidden; // в рамках размера -все лишнее скрылось overflow
+  background-color: #70a370;
+  //background-color: transparent;
+  box-shadow: 0 15px 25px rgba($black, .35);
+  border-radius: 5px;
+}
+
+.vetka {
+  //margin: 1rem ;
+  width: 100%;
+  padding: .8rem .5rem .5rem 1rem;
+  overflow: hidden; // в рамках размера -все лишнее скрылось overflow
+  background-color: #588557;
+  //background-color: transparent;
+  box-shadow: 0 15px 25px rgba($black, .35);
+  border-radius: 5px;
+}
+
+.nomer {
+  //margin: 1rem;
+  width: 100%;
+  padding: .8rem .5rem .5rem 1rem;
+  overflow: hidden; // в рамках размера -все лишнее скрылось overflow
+  background-color: #7eb47e;
+  //background-color: transparent;
+  box-shadow: 0 15px 25px rgba($black, .35);
+  border-radius: 5px;
+}
+
+.b-color {
+  padding: 0 1rem;
+  // padding-left: 1rem;
+  background-color: #588557;
+  box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+}
+
+// display: inline-block;  по умолч будут блочными
+//font-family: inherit;  шрифт наследуется у родителя
+// box-shadow: 0 7px 17px -10px rgba($blue, .3);  тень для кнопки

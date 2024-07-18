@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace App\Model\Adminka\UseCase\PcheloMatkas\PcheloMatka\Create;
 
-use App\ReadModel\Adminka\Matkas\KategoriaFetcher;
-use App\ReadModel\Drevos\Rass\RasFetcher;
+//use App\ReadModel\Adminka\Matkas\KategoriaFetcher;
+//use App\ReadModel\Drevos\Rass\RasFetcher;
+use App\ReadModel\Adminka\PcheloMatkas\KategoriaFetcher;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -16,10 +17,15 @@ class Form extends AbstractType
     private $kategorias;
     private $rasaFes;
 
-    public function __construct(KategoriaFetcher $kategorias, RasFetcher $rasaFes)
+//    public function __construct(KategoriaFetcher $kategorias, RasFetcher $rasaFes)
+//    {
+//        $this->kategorias = $kategorias;
+//        $this->rasaFes = $rasaFes;
+//    }
+    public function __construct(KategoriaFetcher $kategorias)
     {
         $this->kategorias = $kategorias;
-        $this->rasaFes = $rasaFes;
+
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -43,12 +49,11 @@ class Form extends AbstractType
                 'input' => 'datetime_immutable'
             ])
 
-            ->add('rasa', Type\ChoiceType::class, [
-                'label' => '4. Выбор расы ',
-                'choices' => array_flip($this->rasaFes->assocTitle()),
-//                'expanded' => true,
-                'multiple' => false
-            ])
+//            ->add('rasa', Type\ChoiceType::class, [
+//                'label' => '4. Выбор расы ',
+//                'choices' => array_flip($this->rasaFes->assocTitle()),
+//                'multiple' => false
+//            ])
 
             ->add('kategoria', Type\ChoiceType::class, [
                 'label' => '5. Категория ',

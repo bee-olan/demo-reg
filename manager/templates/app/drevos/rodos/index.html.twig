@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Раса{% endblock %}
+
+  {% block kroxii %}
+      <a href="{{ path('home') }}">Главная</a>
+      <a href="{{ path('drevos.rass') }}">Родословная</a>
+      <span class="aktiv ">Список</span>
+  {% endblock %}
+
+{% block body %}
+
+    {{ include('app/drevos/_tabs.html.twig') }}
+
+
+    <div class="box">
+
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr class="fon_td_es">
+                <th>Раса</th>
+                <th >Матковод(код)</th>
+                <th>Страна</th>
+                <th>Линии</th>
+                <th class="td_cent">Код Материнки</th>
+                <th>Код Материнки трутня</th>
+                <th class="td_cent"> Матка</th>
+                <th>Статус</th>
+                <th> Заказал</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for nom in noms %}
+                <tr>
+                    <td>{{ nom.rasa }}</td>
+                    <td>{{ nom.matkov }} / {{ nom.kod_m }}</td>
+
+                    <td>{{ nom.strana }}</td>
+                    <td>{{ nom.linia }}</td>
+                    <td>
+                        <span class=" strongo">{{ nom.tit_mat }} </span>
+
+                        {{ nom.name_w }}-{{ nom.tit_w }}
+                    </td>
+                    <td class="ot-lin ">{{ nom.trut }}</td>
+                    <td>
+                        {% if nom.status == "ojidaet" %}
+                            <a href="{{ path('app.proekts.pasekas.elitmatkas.elitcreates.elitmatka',{ id: nom.id} ) }}"
+                               class=" btnn-rodos " title="Объявить"> {{ nom.tit }}
+                            </a>
+                        {% endif %}
+                        {% if nom.status == "active" %}
+                            <a href="{{ path('app.proekts.pasekas.elitmatkas.elitcreates.elitmatka',{ id: nom.id} ) }}"
+                               class="btnn-rodos btnn-rodos--smotr " title="Смотреть"> {{ nom.tit }}
+                            </a>
+                        {% endif %}
+                    </td>
+
+                    <td> {{ nom_status(nom.status) }}</td>
+
+                    <td class="ot-lin ">{{ nom.nike }}</td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+{% endblock %}

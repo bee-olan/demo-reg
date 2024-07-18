@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Категории{% endblock %}
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Главная</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka') }}">Пасека</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka.pchelomatkas') }}">ПлемМатки</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('adminka.pchelomatkas.kategorias') }}">Категории</a></li>
+        <li class="breadcrumb-item active">{{ kategoria.name }}</li>
+    </ol>
+{% endblock %}
+
+{% block body %}
+
+
+    <div class="ma-to-2">
+        {{ include('app/adminka/pchelomatkas/_tabs.html.twig') }}
+    </div>
+
+    <div class="controls">
+        <a href="{{ path('adminka.pchelomatkas.kategorias.edit', {'id': kategoria.id}) }}" class="btn btn-primary">Редактировать</a>
+        <form action="{{ path('adminka.pchelomatkas.kategorias.delete', {'id': kategoria.id}) }}" method="post" onsubmit="return confirm('Вы уверены?')">
+            <input type="hidden" name="token" value="{{ csrf_token('delete') }}" />
+            <button type="submit" class="btn btn-danger">Удалить</button>
+        </form>
+        <a href="{{ path('adminka.pchelomatkas.kategorias.copy', {'id': kategoria.id}) }}" class="btn btn-primary">Копировать</a>
+    </div>
+
+    <div class="box">
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>Статус участника</th>
+                    <td>{{ kategoria.name }}</td>
+                </tr>
+                <tr>
+                    <th>Разрешения</th>
+                    <td>
+                        <ul class="list-unstyled my-0">
+                            {% for permission in kategoria.permissions %}
+                                <li>{{ permission.name|trans({}, 'adminka_permissions') }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

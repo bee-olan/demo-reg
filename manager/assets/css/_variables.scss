@@ -2,12 +2,21 @@ $mobile-bp: 575px; // мобильная версия
 $tablet-bp: 991px; // планшетная версия
 
 $body-bg: #f6f6f6;
-$font-size-base: .85rem;
+//$font-size-base: .85rem;
 
 $breadcrumb-margin-bottom: 20px;
 
+$font-size-base: 0.95rem;
+
+$sidebar-width: 250px;
+
 $table-border-color: #e6e6e6;
 $table-cell-padding: 0.55rem;
+
+//==============================
+// fon
+$fon-ser:  rgba(0, 0, 0, 0.1);
+$fon-ser-bor:  rgba(0, 0, 0, 0.5);
 
 $card-border-color: #e6e6e6;
 $card-spacer-x: .7rem;

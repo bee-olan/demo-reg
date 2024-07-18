@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Категория{% endblock %}
+
+
+{% block body %}
+
+
+    <div class="ma-to-2">
+        {{ include('app/adminka/pchelomatkas/_tabs.html.twig') }}
+    </div>
+
+
+    <div class="box">
+
+        <h1 class="dre_title  ">Варианты условных обозначений. Категории для Пчело - Маток </h1>
+        <div class="ma-bo-1 pa-le-1 ">
+            <a href="{{ path('adminka.pchelomatkas.kategorias.create') }}"
+               class="btn btn-success">Добавить условных обозначений
+            </a>
+        </div>
+        <div style="overflow: auto">
+            <table class="table table-bordered table-hover mb-0">
+                <thead>
+                <tr>
+                    <th>.......</th>
+                    {% for kategoria in kategorias %}
+                        <th style="text-align: center">
+                            <a href="{{ path('adminka.pchelomatkas.kategorias.show', {'id': kategoria.id}) }}">{{ kategoria.name }}</a>
+                            {#                                ({{ kategoria.memberships_count }})#}
+                        </th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                {% for permission in permissions %}
+                    <tr>
+                        <td>{{ permission|trans({}, 'adminka_permissions') }}</td>
+                        {% for kategoria in kategorias %}
+                            <td style="text-align: center">
+                                {% if permission in kategoria.permissions %}
+                                    <span class="fa fa-check"></span>
+                                {% endif %}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

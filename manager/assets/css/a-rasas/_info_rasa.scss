@@ -1,0 +1,175 @@
+.info_rasa {
+    margin: 6rem 0 2rem 0;
+    padding: 1rem 1rem;
+    overflow: hidden; // в рамках размера -все лишнее скрылось overflow
+    background-color: #187777c5;
+    //background-color: transparent;
+   // box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    box-shadow: 0 15px 25px rgba($black, .35);
+    border-radius: 5px;
+
+}
+
+.info_rasa__header {
+    margin: 0 0 1rem;
+}
+
+.info_rasa__title {
+    margin-bottom: .5rem;
+    font-size: 1.8rem;
+    //color: $col-text;
+    color: #117575;
+    font-weight: 500;
+}
+
+.info_rasa__ul {
+    display: flex; // добавляем т.к добаилась li-шка
+    //justify-content: center;
+     justify-content: space-between;
+    align-items: center; // выравнивание по вертикали
+    width: 100%;
+    color: $col-text;
+    line-height: 1.5;
+
+}
+
+.rasa__li {
+    width: 18.0rem;
+    padding: .6rem;
+
+    font-size: 1.8rem;
+    color: #117575;
+    //font-weight: 500;
+    //border-top: 2px solid #117575;
+    //border-bottom: 2px solid #117575;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+}
+
+
+.info_linia {
+    //display: flex;
+    // margin: 0.5rem;
+    // margin-bottom: 0.5rem;
+    margin: 1rem .5rem;
+    width: 100%;
+    padding: 0 1rem;
+    overflow: hidden; // в рамках размера -все лишнее скрылось overflow
+    background-color: #187777c2;
+    //background-color: transparent;
+    //box-shadow: 0 15px 25px rgba($black, .35);
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    border-radius: 5px;
+}
+
+
+.linia__li {
+	width: 30.0rem;
+    padding: .6rem;
+
+    font-size: 1.6rem;
+    //color: #187777;
+    border-top: 1px solid #117575;
+    border-bottom: 1px solid #117575;
+}
+
+
+.info_nomer {
+    //display: flex;
+    margin: 1rem .5rem;
+
+    width: 100%;
+    padding: .5rem;
+    overflow: hidden; // в рамках размера -все лишнее скрылось overflow
+    background-color: #187777e5;
+    //background-color: transparent;
+    // box-shadow: 0 15px 25px rgba($black, .35);
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    border-radius: 5px;
+}
+
+.nomer__li {
+	width: 15.0rem;
+    // width: 50%;
+    //color: $col-text;
+    padding: .6rem;
+
+    font-size: 1.4rem;
+    //color: #117575;
+    //font-weight: 500;
+}
+
+
+.info_rasa__name {
+    // display: flex; // добавляем т.к добаилась li-шка
+    //width: 10.0rem;
+    color: $col-text;
+    padding: .6rem;
+
+    // border-bottom: 1px solid $col-text; // linia
+}
+
+.linia-niz {
+    border-bottom: 1px solid $kroxi; // linia
+}
+
+strong {
+    //font-weight: normal;
+    color: $kroxi;
+    //font-weight: 500;
+
+}
+
+.stro {
+    font-weight: 500;
+    color: $kroxi;
+    font-style: italic;
+
+    &--krox {
+        font-size: 1.8rem;
+        color: $kroxi;
+    }
+
+    &--kras {
+        color: $red;
+        font-size: 1.6rem;
+    }
+
+    &--ras {
+        font-size: 1.6rem;
+    }
+
+    &--lin {
+        font-size: 1.4rem;
+
+    }
+
+    &--nom {
+        font-size: 1.2rem;
+    }
+}
+
+.info_rasa__content {
+    margin-bottom: 2rem; // отступ от футора
+}
+
+
+
+.info__ul {
+    display: flex; // добавляем т.к добаилась li-шка
+    //justify-content: center;
+    justify-content: space-between;
+    align-items: center; // выравнивание по вертикали
+
+    width: 100%;
+    color: $col-text;
+    line-height: 2.0;
+
+}
+
+.info-sdvig {
+    padding-left: 5rem;
+}
+
+.info-sdvig10 {
+    padding-left: 10rem;
+}

@@ -12,7 +12,7 @@ use App\Model\Adminka\UseCase\PcheloMatkas\Kategoria\Edit;
 use App\Model\Adminka\UseCase\PcheloMatkas\Kategoria\Remove;
 use App\ReadModel\Adminka\PcheloMatkas\KategoriaFetcher;
 use App\Controller\ErrorHandler;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+//use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,7 +20,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 // * @IsGranted("ROLE_WORK_MANAGE_PROJECTS")
 /**
- * @Route("/adminka/matkas/kategorias", name="adminka.matkas.kategorias")
+ * @Route("/adminka/pchelomatkas/kategorias", name="adminka.pchelomatkas.kategorias")
  */
 class KategoriasController extends AbstractController
 {
@@ -41,7 +41,7 @@ class KategoriasController extends AbstractController
         $kategorias = $fetcher->all();
         $permissions = Permission::names();
 
-        return $this->render('app/adminka/matkas/kategorias/index.html.twig', compact('kategorias', 'permissions'));
+        return $this->render('app/adminka/pchelomatkas/kategorias/index.html.twig', compact('kategorias', 'permissions'));
     }
 
     /**
@@ -60,14 +60,14 @@ class KategoriasController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             try {
                 $handler->handle($command);
-                return $this->redirectToRoute('adminka.matkas.kategorias');
+                return $this->redirectToRoute('adminka.pchelomatkas.kategorias');
             } catch (\DomainException $e) {
                 $this->errors->handle($e);
                 $this->addFlash('error', $e->getMessage());
             }
         }
 
-        return $this->render('app/adminka/matkas/kategorias/create.html.twig', [
+        return $this->render('app/adminka/pchelomatkas/kategorias/create.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -89,14 +89,14 @@ class KategoriasController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             try {
                 $handler->handle($command);
-                return $this->redirectToRoute('adminka.matkas.kategorias.show', ['id' => $kategoria->getId()]);
+                return $this->redirectToRoute('adminka.pchelomatkas.kategorias.show', ['id' => $kategoria->getId()]);
             } catch (\DomainException $e) {
                 $this->errors->handle($e);
                 $this->addFlash('error', $e->getMessage());
             }
         }
 
-        return $this->render('app/adminka/matkas/kategorias/edit.html.twig', [
+        return $this->render('app/adminka/pchelomatkas/kategorias/edit.html.twig', [
             'kategoria' => $kategoria,
             'form' => $form->createView(),
         ]);
@@ -119,14 +119,14 @@ class KategoriasController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             try {
                 $handler->handle($command);
-                return $this->redirectToRoute('adminka.matkas.kategorias');
+                return $this->redirectToRoute('adminka.pchelomatkas.kategorias');
             } catch (\DomainException $e) {
                 $this->errors->handle($e);
                 $this->addFlash('error', $e->getMessage());
             }
         }
 
-        return $this->render('app/adminka/matkas/kategorias/copy.html.twig', [
+        return $this->render('app/adminka/pchelomatkas/kategorias/copy.html.twig', [
             'kategoria' => $kategoria,
             'form' => $form->createView(),
         ]);
@@ -142,7 +142,7 @@ class KategoriasController extends AbstractController
     public function delete(Kategoria $kategoria, Request $request, Remove\Handler $handler): Response
     {
         if (!$this->isCsrfTokenValid('delete', $request->request->get('token'))) {
-            return $this->redirectToRoute('adminka.matkas.kategorias.show', ['id' => $kategoria->getId()]);
+            return $this->redirectToRoute('adminka.pchelomatkas.kategorias.show', ['id' => $kategoria->getId()]);
         }
 
         $command = new Remove\Command($kategoria->getId()->getValue());
@@ -154,7 +154,7 @@ class KategoriasController extends AbstractController
             $this->addFlash('error', $e->getMessage());
         }
 
-        return $this->redirectToRoute('adminka.matkas.kategorias');
+        return $this->redirectToRoute('adminka.pchelomatkas.kategorias');
     }
 
     /**
@@ -164,6 +164,6 @@ class KategoriasController extends AbstractController
      */
     public function show(Kategoria $kategoria): Response
     {
-        return $this->render('app/adminka/matkas/kategorias/show.html.twig', compact('kategoria'));
+        return $this->render('app/adminka/pchelomatkas/kategorias/show.html.twig', compact('kategoria'));
     }
 }
