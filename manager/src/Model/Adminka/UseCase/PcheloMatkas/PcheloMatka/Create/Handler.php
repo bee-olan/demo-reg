@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Model\Adminka\UseCase\PcheloMatkas\PcheloMatka\Create;
 
-use App\Model\Adminka\Entity\Matkas\Kategoria\KategoriaRepository;
-use App\Model\Adminka\Entity\Matkas\Kategoria\Id as KategoriaId;
+use App\Model\Adminka\Entity\PcheloMatkas\Kategoria\KategoriaRepository;
+use App\Model\Adminka\Entity\PcheloMatkas\Kategoria\Id as KategoriaId;
 use App\Model\Adminka\Entity\PcheloMatkas\PcheloMatka\PcheloMatka;
 use App\Model\Adminka\Entity\PcheloMatkas\PcheloMatka\PcheloMatkaRepository;
 use App\Model\Adminka\Entity\PcheloMatkas\PcheloMatka\Id;

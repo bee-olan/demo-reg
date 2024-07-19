@@ -1,46 +1,46 @@
-{% extends 'probase.html.twig' %}
+{#{% extends 'probase.html.twig' %}#}
 
-{% block title %}Пчело-Матки{% endblock %}
+{#{% block title %}Пчело-Матки{% endblock %}#}
 
-{% block sidebarr %}
-    {% include('app/proekts/pasekas/matkas/side/_side_plem_plem.html.twig') %}
-{% endblock %}
+{#{% block sidebarr %}#}
+{#    {% include('app/proekts/pasekas/matkas/side/_side_plem_plem.html.twig') %}#}
+{#{% endblock %}#}
 
-{% block menupro %}
-    {{ include('app/proekts/_tabs.html.twig') }}
-    {{ include('app/proekts/page_glavas/brendmatka/_tabs.html.twig') }}
-{% endblock %}
+{#{% block menupro %}#}
+{#    {{ include('app/proekts/_tabs.html.twig') }}#}
+{#    {{ include('app/proekts/page_glavas/brendmatka/_tabs.html.twig') }}#}
+{#{% endblock %}#}
 
-{% block kroxii %}
-    <a href="{{ path('proekt') }}">Главная</a>
-    <a href="#">Рег-ция Пчело-Матки</a>
-    <a href="{{ path('app.proekts.pasekas.matkas.plemmatkas.creates') }}">Пункты 1-3</a>
-    {#    <a href="{{ path('app.proekts.pasekas.rasas.linias.plemmatka' , {'id': nomer.linia.rasa.id} ) }}">Раса: {{ nomer.linia.title }} : Линии - Ветки</a>#}
-    {#    <a href="{{ path('app.proekts.pasekas.rasas.linias.nomers.plemmatka' , {'linia_id': nomer.linia.id} ) }}">Ветка : {{ nomer.linia.nameStar }}  </a>#}
-    <span class="aktiv ">Пункт 3</span>
-{% endblock %}
+{#{% block kroxii %}#}
+{#    <a href="{{ path('proekt') }}">Главная</a>#}
+{#    <a href="#">Рег-ция Пчело-Матки</a>#}
+{#    <a href="{{ path('app.proekts.pasekas.matkas.plemmatkas.creates') }}">Пункты 1-3</a>#}
+{#    #}{#    <a href="{{ path('app.proekts.pasekas.rasas.linias.plemmatka' , {'id': nomer.linia.rasa.id} ) }}">Раса: {{ nomer.linia.title }} : Линии - Ветки</a>#}
+{#    #}{#    <a href="{{ path('app.proekts.pasekas.rasas.linias.nomers.plemmatka' , {'linia_id': nomer.linia.id} ) }}">Ветка : {{ nomer.linia.nameStar }}  </a>#}
+{#    <span class="aktiv ">Пункт 3</span>#}
+{#{% endblock %}#}
 
-{% block bodyy %}
+{#{% block bodyy %}#}
 
-    <div class="proekts proekts--plemmatka">
+{#    <div class="proekts proekts--plemmatka">#}
 
-        {#    {% include('proekt/pasekas/matkas/plemmatkas/_plemmatka-includ.html.twig') %}#}
+{#        #}{#    {% include('proekt/pasekas/matkas/plemmatkas/_plemmatka-includ.html.twig') %}#}
 
-        <div class="proekts-plr  ">
+{#        <div class="proekts-plr  ">#}
 
-            <h1 class="plem__title  ">Продолжаем регистрацию. Пункт: 3 !</h1>
-            {# <div class = "break-plem-create"> #}
-            <ul class="plem__data">
-                {% if nomer %}
-                    <li>
-                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                  d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                        </svg>
-                    </li>
-                    {#                        {% set rlvn = nomer.linia.rasa.name ~' : ' ~  nomer.linia.name ~ ' : ' ~ nomer.nom_br %}#}
-                    {#                        {% set rlv = nomer.linia.rasa.name ~' : ' ~  nomer.linia.name %}#}
+{#            <h1 class="plem__title  ">Продолжаем регистрацию. Пункт: 3 !</h1>#}
+{#            #}{# <div class = "break-plem-create"> #}
+{#            <ul class="plem__data">#}
+{#                {% if nomer %}#}
+{#                    <li>#}
+{#                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor"#}
+{#                             xmlns="http://www.w3.org/2000/svg">#}
+{#                            <path fill-rule="evenodd"#}
+{#                                  d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>#}
+{#                        </svg>#}
+{#                    </li>#}
+{#                    #}{#                        {% set rlvn = nomer.linia.rasa.name ~' : ' ~  nomer.linia.name ~ ' : ' ~ nomer.nom_br %}#}
+{#                    #}{#                        {% set rlv = nomer.linia.rasa.name ~' : ' ~  nomer.linia.name %}#}
 {#                    {% if nomer.title == '-' %}#}
 {#                        {% set newLin =  linia.name ~' : ' ~  vetka.nomer ~'-'~ vetka.god %}#}
 {#                    {% else %}#}
@@ -50,66 +50,66 @@
 {#                            nomer.linia.rasa.name ~' : ' ~  nomer.linia.name #}
 {#                    {% endif %}#}
 
-                    <li>
-                        <div class="plem-nomer  plem-nomer__wid8">
+{#                    <li>#}
+{#                        <div class="plem-nomer  plem-nomer__wid8">#}
 {#                            {{ rasa.name }} : {{ linia.name }} : {{ vetka.nomer }}-{{ vetka.god }} : <strong#}
-                            {{ rasa.name }} : {{ newLinia }}  : <strong
-                                    class="strongo strongo--kras">{{ nomer.nomBr }}-{{ nomer.god}} </strong>
-                        </div>
-                    </li>
-                    <li class="plem__name  ">1. Как-то так! Это будут базовые данные</li>
-                    <li></li>
+{#                            {{ rasa.name }} : {{ newLinia }}  : <strong#}
+{#                                    class="strongo strongo--kras">{{ nomer.nomBr }}-{{ nomer.god}} </strong>#}
+{#                        </div>#}
+{#                    </li>#}
+{#                    <li class="plem__name  ">1. Как-то так! Это будут базовые данные</li>#}
+{#                    <li></li>#}
 
-                {% endif %}
-            </ul>
+{#                {% endif %}#}
+{#            </ul>#}
 
-            <ul class="plem__data">
-                {% if mesto and persona %}
-                <li>
-                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                              d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                    </svg>
-                </li>
-                <li>
-                    <div class="plem-nomer plem-nomer--wid28">
-                        {{ rasa.name }} : {{ newLinia }} : {{ nomer.nomBr }}-{{ nomer.god}} :
-                        <strong class="strongo strongo--kras">пн-{{ persona.nomer }} : {{ mesto.nomer }} </strong>
-                    </div>
-                </li>
-                <li class="plem__name  ">2. С учетом Ваших данных.</li>
+{#            <ul class="plem__data">#}
+{#                {% if mesto and persona %}#}
+{#                <li>#}
+{#                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor"#}
+{#                         xmlns="http://www.w3.org/2000/svg">#}
+{#                        <path fill-rule="evenodd"#}
+{#                              d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>#}
+{#                    </svg>#}
+{#                </li>#}
+{#                <li>#}
+{#                    <div class="plem-nomer plem-nomer--wid28">#}
+{#                        {{ rasa.name }} : {{ newLinia }} : {{ nomer.nomBr }}-{{ nomer.god}} :#}
+{#                        <strong class="strongo strongo--kras">пн-{{ persona.nomer }} : {{ mesto.nomer }} </strong>#}
+{#                    </div>#}
+{#                </li>#}
+{#                <li class="plem__name  ">2. С учетом Ваших данных.</li>#}
 
-                <li></li>
-
-
-            </ul>
-            <ul class="plem__data">
-                <li>
-                    <a href="{{ path('app.proekts.pasekas.matkas.plemmatkas.creates.create',{'id' : nomer.id}  ) }}"
-                       class="btnn btnn--mb0 btnn--col-plemm"><strong class="strongo strongo--kras"> 3. </strong>
-                        Регистрация
-                    </a>
-                </li>
-                <li class="plem__name">3. Заполняем еще позиции + Отцовские линии
-                    <strong class="strongo strongo--kras"> - или - </strong> Категории.
-                </li>
+{#                <li></li>#}
 
 
-                {% else %}
-                    <li class="plem__name">Упс! Вы не выбрали ПерсонНомера и НомерМеста ?</li>
-                    <li>
-                        <a href="{{ path('app.proekts.pasekas.uchasties.uchastiee') }}"
-                           class="btnn btnn--mb0 btnn--col"> Вернитесь к : <strong class="strongo trongo--kras">Стать
-                                участником </strong>
-                        </a>
-                    </li>
-                {% endif %}
-                <li></li>
-            </ul>
+{#            </ul>#}
+{#            <ul class="plem__data">#}
+{#                <li>#}
+{#                    <a href="{{ path('app.proekts.pasekas.matkas.plemmatkas.creates.create',{'id' : nomer.id}  ) }}"#}
+{#                       class="btnn btnn--mb0 btnn--col-plemm"><strong class="strongo strongo--kras"> 3. </strong>#}
+{#                        Регистрация#}
+{#                    </a>#}
+{#                </li>#}
+{#                <li class="plem__name">3. Заполняем еще позиции + Отцовские линии#}
+{#                    <strong class="strongo strongo--kras"> - или - </strong> Категории.#}
+{#                </li>#}
 
-        </div>
 
-    </div><!-- uchastie -->
+{#                {% else %}#}
+{#                    <li class="plem__name">Упс! Вы не выбрали ПерсонНомера и НомерМеста ?</li>#}
+{#                    <li>#}
+{#                        <a href="{{ path('app.proekts.pasekas.uchasties.uchastiee') }}"#}
+{#                           class="btnn btnn--mb0 btnn--col"> Вернитесь к : <strong class="strongo trongo--kras">Стать#}
+{#                                участником </strong>#}
+{#                        </a>#}
+{#                    </li>#}
+{#                {% endif %}#}
+{#                <li></li>#}
+{#            </ul>#}
 
-{% endblock %}
+{#        </div>#}
+
+{#    </div><!-- uchastie -->#}
+
+{#{% endblock %}#}

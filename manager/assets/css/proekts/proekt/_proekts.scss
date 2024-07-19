@@ -6,9 +6,11 @@
   margin-left: 0;
   overflow: hidden; // в рамках размера -все лишнее скрылось overflow
   background-color: transparent;
-  box-shadow: 0 5px 22px rgba($body-bg, .25);
+  box-shadow: inset 0 5px 22px rgba($body-bg, .25),
+   0 5px 22px rgba($black, .35);
   border-radius: 5px;
 }
+
 .pro-mesto{
   box-shadow: inset 0 5px 22px rgba($body-bg, .25);
 }

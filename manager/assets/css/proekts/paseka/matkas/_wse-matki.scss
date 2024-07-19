@@ -1,0 +1,123 @@
+.matki-form__header {
+  margin: 0 0 2.5rem 0;
+}
+
+.matki-form {
+  margin-right: 4rem;
+
+  form {
+    div {
+      textarea {
+        width: 30rem;
+        height: 30px;
+        padding-left: 1rem;
+        border: none;
+        border-bottom: 1px solid $text-elit-swet;
+        color: inherit;
+        background-color: transparent;
+        overflow: hidden;
+        resize: none;
+
+      }
+
+      fieldset {
+        legend {
+          color: $elit-col-pro7;
+          font-size: 1.3rem;
+        }
+
+        padding-top: 1rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid $text-elit-swet;
+
+        div {
+          display: flex;
+          justify-content: flex-start;
+          align-items: baseline; // выравнивание по вертикали
+          margin-bottom: .6rem;
+
+          div {
+            margin-left: 2rem;
+
+            input {
+              box-sizing: border-box;
+              height: 16px;
+              width: 16px;
+            }
+
+            label {
+              display: block;
+              width: 8rem;
+              font-size: 1.2rem;
+              color: $text-elit-swet;
+            }
+          }
+        }
+      }
+
+
+      div {
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline; // выравнивание по вертикали
+        margin-bottom: .6rem;
+
+        label {
+          display: block;
+          margin-bottom: 1rem;
+          width: 30rem;
+          font-size: 1.3rem;
+          color: $elit-col-pro7;
+
+        }
+
+        input {
+          display: block;
+          width: 20rem;
+
+          background: none; // убираем цвет
+
+          border: none;
+          border-bottom: 1px solid $text-elit-swet; //этот цвет полоски меняется при фокусе
+          border-radius: 0;
+          box-shadow: none;
+
+          font-family: inherit; // наследуемся
+          font-size: 1.3rem;
+          color: $text-elit-swet;
+
+          &::placeholder {
+            color: rgba($elit-col, .7); // непрозрачность
+
+          }
+
+          &--textarea {
+            height: 30px; // уменьшаем текстовое поле по высоте
+            overflow: hidden;
+            resize: none;
+          }
+
+          border-bottom: 1px solid $text-elit-swet;
+        }
+      }
+    }
+  }
+}
+
+.matki_break {
+  display: none;
+
+  //@include breakpoint($spisok-bp) {
+  //  display: block;
+  //  margin-left: -2rem;
+  // }
+}
+
+.matki_break_no {
+  // display: none;
+
+  //@include breakpoint($spisok-bp) {
+  //  display: none;
+  //  // margin-left: -2rem;
+  // }
+}

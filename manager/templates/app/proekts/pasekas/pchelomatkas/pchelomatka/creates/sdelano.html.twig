@@ -11,34 +11,22 @@
     {{ include('app/proekts/page_glavas/pchelomatka/_tabs.html.twig') }}
 {% endblock %}
 
-{#{% block kroxii %}#}
-{#    <a href="{{ path('proekt') }}">Главная</a>#}
-{#    <a href="#">Рег-ция ПлемМатки</a>#}
-{#    <a href="{{ path('app.proekts.pasekas.matkas.plemmatkas.creates') }}">Пункты 1-3</a>#}
-{#    #}{#             <a href="{{ path('app.proekts.pasekas.rasas.plemmatka') }}">Раса_</a>#}
-{#    <span class="aktiv ">Пункт 3</span>#}
-{#    {% if plemmatka %}#}
-{#        <span class="aktiv ">Катеория и внутреняя нумерация</span>#}
-{#        <span style="color: red">Сделано!!!  </span>#}
-{#    {% endif %}#}
-{#{% endblock %}#}
-
 
 {% block bodyy %}
 
-    <div  class=" proekts proekts--pchelomat">
+    <div  class=" proekts pro-pchelomat">
 
 
         <div class="inklud inklud--pchelomat ">
 
             <div class="pchelo-title  pchelo-teni ">
-                Формируем название Пчело-Матки
+               Название Пчело - Матки
             </div>
         </div>
 
         <div class="proekts-plr  ">
 
-            <div class="elit-titul elit-titul--mt3 ">
+            <div class="pchelo-titul  ">
                 {% if pchelomatka %}
 
                     <span class=" pchelo-titul--col ">Ура! Всё получилось! </span>
@@ -53,7 +41,7 @@
 
             {% if pchelomatka %}
 
-                <ul class="plem__data">
+                <ul class="pchelo__data">
 
                     <li>
                         <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor"
@@ -68,7 +56,7 @@
 
                         </div>
                     </li>
-                    <li class="pchelo__name  ">Ваша Пчело-Матка!</li>
+                    <li class="pchelo__name  ">Ваша Пчело - Матка!</li>
                     <li></li>
                 </ul>
                 <ul class="pchelo__data pchelo__data--mt2">

@@ -11,18 +11,10 @@
     {{ include('app/proekts/page_glavas/pchelomatka/_tabs.html.twig') }}
 {% endblock %}
 
-{# {% block kroxii %}#}
-{#            <a href="{{ path('proekt') }}">Главная</a>#}
-{#            <a href="#">Рег-ция ПлемМатки</a>#}
-{#            <a href="{{ path('app.proekts.pasekas.matkas.plemmatkas.creates') }}">Пункты 1-3</a>#}
-{#             <a href="{{ path('app.proekts.pasekas.rasas.plemmatka') }}">Раса_</a>#}
-{#            <span class="aktiv ">Пункт 3</span> #}
-{#            <span class="aktiv ">Катеория и внутреняя нумерация</span> #}
-{#{% endblock %}   #}
 
 {% block bodyy %}
 
-    <div class=" proekts proekts--pchelomat">
+    <div class=" proekts pro-pchelomat">
 
 
         <div class="inklud inklud--pchelomat ">
@@ -35,8 +27,8 @@
 
             <h1 class="pchelo-titul   ">Заполняем позиции: :</h1>
 
-            <div class="elit-form__header  ">
-                <div class="elit-form ">
+            <div class="matki-form__header  ">
+                <div class="matki-form ">
                     {{ form_start(form) }}
                     {{ form_widget(form) }}
                     <ul class="plem__data plem__data--mt2">
@@ -48,15 +40,16 @@
                 </div>
             </div>
         </div>
-
+    </div>
+    <div class=" proekts ">
         <div class="inklud inklud--pchelomat ">
 
             <div class="pchelo-title  pchelo-teni ">
                 Характеристики категорий для регистрации Пчело-Матки&nbsp;
             </div>
         </div>
-    </div><!-- rasas -->
-    {% include('app/proekts/pasekas/pchelomatkas/kategoris/_kategor-includ.html.twig') %}
 
+        {% include('app/proekts/pasekas/pchelomatkas/kategoris/_kategor-includ.html.twig') %}
+    </div>
 
 {% endblock %}
