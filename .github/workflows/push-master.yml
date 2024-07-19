@@ -1,0 +1,97 @@
+name: Pipeline
+
+on:
+    push:
+        branches:
+            - master
+
+env:
+    REGISTRY_HOST: ghcr.io
+    IMAGE_TAG: master-${{ github.run_number }}
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            packages: write
+
+        steps:
+            -   uses: actions/checkout@v4
+
+            -   name: Cache Frontend modules
+                uses: actions/cache@v2
+                with:
+                    path: manager/node_modules
+                    key: yarn-${{ hashFiles('manager/yarn.lock') }}
+
+            -   name: Cache API modules
+                uses: actions/cache@v2
+                with:
+                    path: manager/vendor
+                    key: composer-${{ hashFiles('manager/composer.lock') }}
+
+            -   name: Set registry env
+                run:  echo "REGISTRY_ADDRESS=ghcr.io/${GITHUB_REPOSITORY,,}" >> $GITHUB_ENV
+
+            -   name: Docker login
+                uses: azure/docker-login@v1
+                with:
+                    login-server: ${{ env.REGISTRY_HOST }}
+                    username: ${{ secrets.REGISTRY_USER }}
+                    password: ${{ github.token }}
+
+            -   name: Permissions
+                run: sudo chown -R 1000:1000 .
+
+            -   name: Init
+                run: make init
+
+            -   name: Test
+                run: make manager-test
+
+            -   name: Down
+                run: make down
+
+            -   name: Build
+                run: make build-production
+
+            -   name: Push
+                run: make push-production
+
+    deploy:
+        runs-on: ubuntu-latest
+        needs: build
+        permissions:
+            contents: read
+
+        steps:
+            -   uses: actions/checkout@v4
+
+            -   name: Install SSH key
+                uses: shimataro/ssh-key-action@v2
+                with:
+                    key: ${{ secrets.PRODUCTION_SSH_KEY }}
+                    known_hosts: ${{ secrets.PRODUCTION_HOST }}
+
+            -   name: Set registry env
+                run:  echo "REGISTRY_ADDRESS=${{ env.REGISTRY_HOST }}/${GITHUB_REPOSITORY,,}" >> $GITHUB_ENV
+
+            -   name: Deploy
+                run: make deploy-production
+                env:
+                    BUILD_NUMBER: ${{ github.run_number }}
+                    PRODUCTION_HOST: ${{ secrets.PRODUCTION_HOST }}
+                    PRODUCTION_PORT: ${{ secrets.PRODUCTION_PORT }}
+                    MANAGER_APP_SECRET: ${{ secrets.MANAGER_APP_SECRET }}
+                    MANAGER_DB_PASSWORD: ${{ secrets.MANAGER_DB_PASSWORD }}
+                    MANAGER_REDIS_PASSWORD: ${{ secrets.MANAGER_REDIS_PASSWORD }}
+                    MANAGER_MAILER_URL: ${{ secrets.MANAGER_MAILER_URL }}
+                    MANAGER_OAUTH_FACEBOOK_SECRET: ${{ secrets.MANAGER_OAUTH_FACEBOOK_SECRET }}
+                    STORAGE_BASE_URL: ${{ secrets.STORAGE_BASE_URL }}
+                    STORAGE_FTP_HOST: ${{ secrets.STORAGE_FTP_HOST }}
+                    STORAGE_FTP_USERNAME: ${{ secrets.STORAGE_FTP_USERNAME }}
+                    STORAGE_FTP_PASSWORD: ${{ secrets.STORAGE_FTP_PASSWORD }}
+                    CENTRIFUGO_WS_HOST: ${{ secrets.CENTRIFUGO_WS_HOST }}
+                    CENTRIFUGO_API_KEY: ${{ secrets.CENTRIFUGO_API_KEY }}
+                    CENTRIFUGO_SECRET: ${{ secrets.CENTRIFUGO_SECRET }}
