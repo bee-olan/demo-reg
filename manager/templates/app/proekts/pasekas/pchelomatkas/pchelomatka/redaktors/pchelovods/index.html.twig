@@ -1,0 +1,38 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}{{ pchelomatka.name }}{% endblock %}
+
+{#{% block kroxii %}#}
+{#<a href="{{ path('app.proekts.basepro') }}">Главная</a>#}
+{#<a href="{{ path('app.proekts.pasekas.matkas.pchelomatkas.creates') }}">Рег-ция ПлемМатки</a>#}
+{#<a href="{{ path('app.proekts.pasekas.matkas') }}">Список ПлемМаток</a>#}
+{#<a href="{{ path('app.proekts.pasekas.matkas.pchelomatkas.show', {'pchelomatka_id': pchelomatka.id})  }}">{{ pchelomatka.name }}</a>#}
+{#<a href="{{ path('app.proekts.pasekas.matkas.pchelomatkas.redaktorss.show', {'pchelomatka_id': pchelomatka.id})  }}">Редактировать</a>#}
+{#<span class="aktiv ">Добавить сезон</span>#}
+{#{% endblock %}#}
+
+{% block bodyy %}
+
+    {% block menupro %}
+        {{ include('app/proekts/_tabs.html.twig') }}
+
+        {{ include('app/proekts/page_glavas/pchelomatka/_tabs.html.twig') }}
+    {% endblock %}
+
+    <div  class=" proekts proekts--pchelomat">
+
+
+    <div class="inklud inklud--pchelomat ">
+
+        <div class="pchelo-title  pchelo-teni ">
+            Добавить сезон . Редактировать . Статус (Активная/В архиве)----смотреть или удалить
+        </div>
+    </div>
+
+
+    <div class="proekts-plr">
+    <h1 class="plem__title  "><strong class="strongo ">{{ pchelomatka.name }} </strong> -- ПлемМатка, берём за основу для
+        ТестМаток ?????????????????</h1>
+
+
+{% endblock %}

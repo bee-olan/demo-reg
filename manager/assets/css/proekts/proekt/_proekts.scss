@@ -18,6 +18,21 @@
       box-shadow: 0 5px 22px rgba($black, .35);
     }
 
+.pro-pchelomat {
+    max-width: 100%;
+    color: $white;
+    background-color: $col-kategor ;
+    box-shadow: inset 0 0 14px rgba($white, 0.9), //тень внутри
+    0 5px 22px rgba($black, .35);
+    border-bottom: 1px solid $white; // linia
+  }
+
+.pro-plemmatka {
+    box-shadow: inset 0 0 10px rgba($plem-color, 0.9);
+    color: $plem-color;
+    background-color: $white;
+  }
+
 //.proekts-my {
 //  margin-bottom: 3rem;
 //  padding-bottom: 1rem; // изменила для rasas-ras

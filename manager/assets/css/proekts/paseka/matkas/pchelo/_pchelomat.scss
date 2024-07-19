@@ -1,0 +1,207 @@
+.pchelo-teni {
+  text-align: center;
+  opacity: 1;
+  font-size: 1.875rem;
+  //color: transparent; /*это скроет текст*/
+  letter-spacing: 0.1em;
+
+  text-shadow: 0 1px 5px #1e1010d9,
+  0 1px 0 rgba(238, 231, 231, 0.93),
+  0 -1px 0 rgb(4, 4, 4),
+  0 0.4px 0 #000,
+  0 0.5px 0.8px rgb(0, 0, 0);
+
+  &--em4 {
+    font-size: 1.375rem;
+    margin-left: 1rem;
+  }
+}
+
+.pchelo-titul {
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  color: $text-pchelo;
+
+  &--col {
+    color: $pchelo-col;
+  }
+
+  &--mb0 {
+    margin-bottom: 0;
+  }
+  &--mt3 {
+    margin-top: 3rem;
+  }
+
+  &--mb-3 {
+    margin-bottom: -3rem;
+  }
+}
+
+.pchelo-title {
+  width: calc(100% - #{80px});
+  margin-right: 7rem;
+  padding: .8rem 0;
+
+}
+
+.pchelo {
+  display: flex;
+  align-items: center; // выравнивание по вертикали
+  list-style: none; //
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: $pchelo-col;
+
+  &__jus-st {
+    justify-content: start;
+  }
+
+  &__jus-se {
+    justify-content: space-evenly;
+  }
+
+}
+
+
+.pchelo__data {
+  display: flex; // добавляем т.к добаилась li-шка
+  justify-content: space-between;
+  align-items: center; // выравнивание по вертикали
+  list-style: none; // убрала точку у li
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.4;
+
+  &--mt2 {
+    padding: 2rem 1rem 2rem 0;
+  }
+
+  &--col {
+    color: $text-pchelo;
+  }
+
+  a {
+    padding: .4rem .4rem;
+    color: $text-pchelo-swet;
+    text-decoration: none;
+    opacity: 1;
+    transition: opacity .2s linear;
+
+    &:hover {
+      //background-color: $plem-color;
+      //border: 1px solid $text-pchelo;
+      box-shadow: inset 0 0 10px rgba($pchelo-col, 0.8);
+      //background: none;
+      text-decoration: none;
+      color: $pchelo-col;
+
+    }
+  }
+}
+
+
+.pchelo-ramka {
+  padding-top: 1.5rem;
+  transition: box-shadow .2s linear;
+  border-radius: 5px;
+
+  &:hover {
+
+    text-decoration: none;
+    box-shadow: inset 0 0 10px rgba($pchelo-col, 0.7);
+  }
+}
+
+.pchelo__name-list {
+  display: flex;
+  padding: .6rem;
+  min-width: 10%;
+
+  &--wid {
+    min-width: 34%;
+    padding: 0;
+  }
+
+}
+.pchelo-arxiw {
+  width: 15.0rem;
+  padding-left: 6rem;
+  padding-bottom: 1rem;
+  background: transparent;
+}
+.pchelo__name {
+  display: flex; // добавляем т.к добаилась li-шка
+  min-width: 10%;
+  padding: .6rem;
+  border-bottom: 1px solid $text-pchelo; // linia
+
+  &--mr5 {
+    margin-right: 5rem;
+
+  }
+
+  &--wid34 {
+    min-width: 34%;
+
+  }
+
+  &--wid20 {
+    padding: .6rem 0 .6rem 5rem;
+  }
+
+  &--wid25 {
+    width: 25.0rem;
+  }
+
+  &--wid15 {
+    width: 15.0rem;
+  }
+
+  &--wid5 {
+    width: 5.0rem;
+  }
+
+  &--wid10 {
+    width: 10.0rem;
+  }
+
+}
+
+.pchelo-nomer {
+
+  box-shadow: inset 0 0 10px rgba($text-pchelo, 0.9);
+  background: transparent;
+  font-size: 1.2rem;
+  color: $text-pchelo;
+  margin: 10px;
+  padding: .5rem 1.2rem .5rem 1.2rem;
+
+  transition: box-shadow .2s linear;
+
+  &--pchel-col {
+    box-shadow: inset 0 0 10px rgba($pchelo-col, 0.9);
+    color: $pchelo-col;
+  }
+
+  &--wid8 {
+    width: 8.0rem;
+  }
+
+  &--wid10 {
+    width: 10rem;
+  }
+
+  &--wid12 {
+    width: 12.0rem;
+  }
+
+  &--wid28 {
+    width: 28.0rem;
+  }
+
+}
+
+
+

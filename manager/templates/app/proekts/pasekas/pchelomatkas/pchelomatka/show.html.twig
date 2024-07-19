@@ -1,0 +1,196 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}Расшифровка{% endblock %}
+
+{% block menupro %}
+    {{ include('app/proekts/_tabs.html.twig') }}
+    {{ include('app/proekts/page_glavas/pchelomatka/_tabs.html.twig') }}
+{% endblock %}
+
+    {% block kroxii %}
+        <a href="{{ path('app.proekts.pasekas.elitmatkas.spisoks') }}">Список Пчело-Маток</a>
+        <span class="aktiv ">{{ elitmatka.name }}</span>
+        <span class="aktiv ">Расшифровка сокращенных названий</span>
+    {% endblock %}
+
+{% block bodyy %}
+
+    <div class="  proekts-plem">
+
+        <div class="inklud">
+
+
+            <div class="inklud__title inklud__title--plem teni">
+                Расшифровка сокращенных названий Пчело-Матки
+            </div>
+        </div>
+
+
+        <div class="plem plem__jus-se">
+            <a href="{{ path('app.proekts.pasekas.elitmatkas.spisoks'  ) }}"
+               class="btnn btnn--mb0 btnn--pt btnn--col-plemm"> Список Пчело-Маток.
+            </a>
+{#            <a href="{{ path('app.proekts.pasekas.matkas.plemmatkas.redaktorss.show', {'plemmatka_id' : plemmatka.id}  ) }}"#}
+               class="btnn btnn--mb0 btnn--pt btnn--col-plemm">
+                .. к выбору <strong class="strongo strongo--kras">сезонов </strong>
+{#            </a>#}
+{#            <a href="{{ path('app.proekts.pasekas.matkas.plemmatkas.redaktorss.show', {'plemmatka_id' : plemmatka.id}  ) }}"#}
+               class="btnn btnn--mb0 btnn--pt btnn--col-plemm">
+                .. к объявлению <strong class="strongo strongo--kras">ДочьМаток </strong>
+{#            </a>#}
+
+        </div>
+
+        <div class="proekts-plr">
+
+
+
+
+            <h1 class="plem__title  ">{{ elitmatka.name }} -- сокращенное название Пчело-Матки</h1>
+            <ul class="plem__data">
+                {% if nomer %}
+                    {% set wseElitMats = wseElitMat|split('|') %}
+                    <li>
+                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                    </li>
+                    <li class="plem__name  "> Паспортные даные купленной матки!</li>
+                    <li>
+                        <table class="table table-bordered table-hover">
+                            <thead class="plem-nomer  plem-nomer__wid8">
+                            {% for wseElitMat in wseElitMats %}
+
+                                <tr>
+                                    <td> {{ wseElitMat }}</td>
+                                </tr>
+
+                            {% endfor %}
+                            </thead>
+                        </table>
+                    </li>
+                    <li></li>
+                {% endif %}
+            </ul>
+{#            #}
+{#            <ul class="plem plem__jus-st ">#}
+{#                <li class="plem__name plem-nomer">{{ rasa.name }}_</li>#}
+{#                <li class="plem__name plem__name--wid20"> Раса : &nbsp; &nbsp; <strong#}
+{#                            class="strongo "> {{ rasa.title }}</strong></li>#}
+{#            </ul>#}
+{#            <ul class="plem plem__jus-st">#}
+{#                <li class="plem__name  plem-nomer"><strong class="strongo  strongo--kras">{{ plemmatka.sort }}#}
+{#                        : </strong></li>#}
+{#                <li class="plem__name plem__name--wid20">нумерация - создается программно отдельно для каждой расы</li>#}
+{#            </ul>#}
+
+
+{#            <ul class="plem plem__jus-st ">#}
+{#                <li class="plem__name plem-nomer">{{ linia.name }} :</li>#}
+{#                <li class="plem__name plem__name--wid20"> Линия материнки</li>#}
+{#            </ul>#}
+
+{#            <ul class="plem plem__jus-st ">#}
+{#                <li class="plem__name plem-nomer">{{ vetka.nomer }}-{{ vetka.god }} :</li>#}
+{#                <li class="plem__name plem__name--wid20"> Ветка материнки</li>#}
+{#            </ul>#}
+{#            <ul class="plem plem__jus-st ">#}
+{#                <li class="plem__name plem-nomer">{{ nomer.title }} :</li>#}
+{#                {% if nomer.title == '-' %}#}
+{#                    <li class="plem__name plem__name--wid20">Линия материнки - НЕ меняется  </li>#}
+{#                {% else %}#}
+{#                    <li class="plem__name plem__name--wid20">#}
+{#                        <strong class="strongo  strongo--kras" >Новая . </strong> линия - ветка материнки </li>#}
+{#                {% endif %}#}
+{#            </ul>#}
+
+{#            <ul class="plem plem__jus-st ">#}
+{#                <li class="plem__name plem-nomer">{{ nomer.nomBr }}-{{ nomer.god }}:</li>#}
+{#                <li class="plem__name plem__name--wid20"> Номер - год выхода матка</li>#}
+{#            </ul>#}
+
+{#            <ul class="plem plem__jus-st">#}
+{#                <li class="plem__name plem-nomer">{{ plemmatka.mesto.nomer }}_</li>#}
+{#                <li class="plem__name plem__name--wid20">Место пасеки : &nbsp; &nbsp; <strong#}
+{#                            class="strongo "> {{ infaMesto[0].okrug }} - {{ infaMesto[0].oblast }}#}
+{#                        - {{ infaMesto[0].raion }} </strong></li>#}
+{#            </ul>#}
+
+{#            <ul class="plem plem__jus-st ">#}
+{#                <li class="plem__name plem-nomer">пн-{{ plemmatka.persona.nomer }} :</li>#}
+{#                <li class="plem__name plem__name--wid20"> Персональный номер матковода&nbsp; &nbsp;</li>#}
+{#            </ul>#}
+{#            <ul class="plem plem__jus-st">#}
+{#                <li class="plem__name plem-nomer">{{ plemmatka_status(plemmatka.status.name) }}  </li>#}
+{#                <li class="plem__name plem__name--wid20">-- статус ПлемМатки на данный момент</li>#}
+{#            </ul>#}
+{#            <ul class="plem plem__jus-st">#}
+{#                <li class="plem__name plem__name--wid20"></li>#}
+{#                <li class="plem__name plem__name--wid20"></li>#}
+{#            </ul>#}
+{#            <h1 class="plem__title  ">Данные о трутнях</h1>#}
+{#            {% if  plemmatka.otecNomer.linia.name %}#}
+{#                <ul class="plem plem__jus-st ">#}
+{#                    <li class="plem__name plem-nomer">{{ otecNomer.linia.name }}</li>#}
+{#                    <li class="plem__name plem__name--wid20"><strong class="strongo strongo--kras"> отцовская#}
+{#                            линия </strong></li>#}
+{#                </ul>#}
+{#                <ul class="plem plem__jus-st ">#}
+{#                    <li class="plem__name plem-nomer">{{ otecNomer.name }}</li>#}
+{#                    <li class="plem__name plem__name--wid20"><strong class="strongo strongo--kras"> номер#}
+{#                            материнки</strong></li>#}
+{#                    <li>#}
+{#                        <ul class="plem plem__jus-st ">#}
+{#                            <li class=" plem__name--wid20">#}
+{#                                <strong class="strongo "> бабушка: </strong></li>#}
+{#                        </ul>#}
+{#                        <ul class="plem plem__jus-st ">#}
+{#                            <li class=" plem__name--wid20">#}
+{#                                <strong class="strongo "> дедушка: </strong></li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <ul class="plem plem__jus-st ">#}
+{#                            <li class="plem__name plem__name--wid20">#}
+{#                                <strong class="strongo "> {{ otecNomer.matka.linia }}#}
+{#                                    _{{ otecNomer.matka.nomer }}</strong>#}
+{#                            </li>#}
+{#                            <li class="plem__name plem__name--wid20"> линия_номер</li>#}
+{#                        </ul>#}
+{#                        <ul class="plem plem__jus-st ">#}
+{#                            <li class=" plem__name--wid20">#}
+{#                                <strong class="strongo "> {{ otecNomer.otec.linia }}_{{ otecNomer.otec.nomer }}</strong>#}
+{#                            </li>#}
+{#                            <li class=" plem__name--wid20"> линия_номер</li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{#                </ul>#}
+{#                <ul class="plem plem__jus-st ">#}
+{#                    <li class="plem__name plem-nomer">{{ otecNomer.oblet }}</li>#}
+{#                    <li class="plem__name plem__name--wid20"><strong class="strongo strongo--kras"> спаринг </strong>#}
+{#                    </li>#}
+{#                </ul>#}
+{#                <ul class="plem plem__jus-st ">#}
+{#                    <li class="plem__name plem-nomer">{{ otecNomer.title }}</li>#}
+{#                    <li class="plem__name plem__name--wid20"><strong class="strongo strongo--kras"> от#}
+{#                            матковода </strong></li>#}
+
+{#                </ul>#}
+
+{#            {% else %}#}
+{#                <ul class="plem plem__jus-st ">#}
+{#                    <li class="plem__name plem-nomer">{{ plemmatka.kategoria.name }}_</li>#}
+{#                    <li class="plem__name plem__name--wid20"> Катеория -- пояснения внизу этой странички</li>#}
+{#                </ul>#}
+{#            {% endif %}#}
+
+
+        </div>
+    </div>
+
+    {#{% include('proekt/pasekas/matkas/kategor/_kategor-includ.html.twig') %}#}
+
+
+{% endblock %}

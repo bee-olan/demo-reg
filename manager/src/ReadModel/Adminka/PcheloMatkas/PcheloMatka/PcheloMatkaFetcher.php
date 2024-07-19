@@ -136,7 +136,7 @@ class PcheloMatkaFetcher
                 'pe.nomer as persona',
 //                'k.name AS kategoria',
                 '(SELECT COUNT(*) FROM admin_pchelomat_pchelosezons d WHERE d.pchelomatka_id = p.id) AS pchsezon_count',
-                '(SELECT COUNT(*) FROM admin_pchelo_childs c WHERE c.pchelomatka_id = p.id) AS child_count'
+//                '(SELECT COUNT(*) FROM admin_pchelo_childs c WHERE c.pchelomatka_id = p.id) AS child_count'
             )
             ->from('admin_pchelomats', 'p')
             ->innerJoin('p', 'adminka_uchasties_personas', 'pe', 'p.persona_id = pe.id')

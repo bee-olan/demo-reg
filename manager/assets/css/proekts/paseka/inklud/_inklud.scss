@@ -36,7 +36,8 @@
   &--pchelomat {
     background-color: $transpar;
     box-shadow: inset 0 0 10px rgba($white, 0.9); //тень внутри
-    border-bottom: 1px solid $white; // linia
+    border: none;
+    //border-bottom: 1px solid $white; // linia
   }
 
   &--childpchelo {

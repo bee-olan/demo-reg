@@ -1,0 +1,46 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}Редактирование. ПчелоМатка{% endblock %}
+
+{% block menupro %}
+    {{ include('app/proekts/_tabs.html.twig') }}
+
+    {{ include('app/proekts/page_glavas/pchelomatka/_tabs.html.twig') }}
+{% endblock %}
+
+{#   {% block kroxii %}#}
+{#       <a href="{{ path('app.proekts.pasekas.matkas') }}">Список БрендМаток</a>#}
+{#       <span class="aktiv ">{{ plemmatka.title }}</span>#}
+{#       <a href="{{ path('app.proekts.pasekas.matkas.plemmatkas.redaktorss.show', {'plemmatka_id': plemmatka.id}) }}">#}
+{#           Добавить сезон. Редактировать. Архив#}
+{#       </a>#}
+{#       <span class="aktiv "> Редактировать</span>#}
+{#   {% endblock %}#}
+
+{% block bodyy %}
+
+    <div  class=" proekts proekts--pchelomat">
+
+
+        <div class="inklud inklud--pchelomat ">
+
+            <div class="pchelo-title  pchelo-teni ">
+            Редактировать комментарий у Пчело-Матки
+        </div> 
+    </div>
+
+    <div class="proekts-plr  ">
+    <h1 class="elit-titul  ">Отредактировать  комментарий.</h1>
+        <div class="plem-form__header  "> 
+            <div class="plem-form ">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button type="submit" class="btnn btnn--mb0 btnn--pt btnn--col">Сохранить</button>
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

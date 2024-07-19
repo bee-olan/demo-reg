@@ -1,0 +1,88 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}Регистрация Пчело-Матки{% endblock %}
+
+{% block sidebarr %}
+    {% include('app/proekts/pasekas/matkas/side/_side_plem_index.html.twig') %}
+{% endblock %}
+
+{% block menupro %}
+    {{ include('app/proekts/_tabs.html.twig') }}
+    {{ include('app/proekts/page_glavas/brendmatka/_tabs.html.twig') }}
+{% endblock %}
+
+{#{% block kroxii %}#}
+{#    <span class="aktiv ">БрендМатки</span>#}
+{#    <a href="#">Регистрация </a>#}
+{#    <span class="aktiv ">Пункты 1-3</span> #}
+{#{% endblock %}#}
+
+{% block bodyy %}
+
+    {# <article class="uchastie"> #}
+
+    <div  class="proekts proekts--plemmatka">
+
+{#    {% include('app/proekts/pasekas/matkas/plemmatkas/_plemmatka-includ.html.twig') %}#}
+        
+        <div class="proekts-plr  ">
+
+        <h1 class="plem__title  "> Последовательно заполняем пункты: 1 - 3 </h1>
+            
+            {# <div class = "break-plem-create"> #}
+                <ul class="plem__data"> 
+              
+                        <li>
+                            <a href="{{ path('app.proekts.drevorods.rasbrs.plemras') }}"
+                            class="btnn btnn--mb0 btnn--col-plemm"><strong class="strongo strongo--kras"> .1.   </strong>Материнка
+                            </a>
+                        </li>
+                        <li class="plem__name plem__name--mr5" >1. Формируем название. Выбираем : Расу - Линию - Ветку - Номер </li>
+
+                </ul>
+
+                <ul class="plem__data">
+                    <li class="plem__name" >2. Далее, автоматически сформируется название новой
+                        Пчело-Матки с учетом Ваших данных: <br> ПерсонНомера и НомерМеста.
+                    </li>
+                </ul>
+            
+                <ul class="plem__data">
+                        <li class="plem__name" >3. Регистрация. Заполняем  позиции :
+                            <strong class="strongo strongo--kras">Отцовская линия  </strong> - или -
+                            <strong class="strongo strongo--kras">Категория  </strong>
+                        </li>
+                         <li> </li>
+                </ul>
+            {# </div>     #}
+
+            {# <div class = "break-plem-create-mobil" >
+                <ul class="plem__data">
+
+                        <li class="plem__name plem__name---wid5" >1. </li>
+                        <li>
+                            <a href="{{ path('app.proekts.pasekas.rasas.plemmatka') }}"
+                            class="btnn btnn--mb0 btnn--col">Выбрать <strong class="strongo strongo--kras">Расу  </strong>
+                            </a>
+                        </li>
+                    <li></li>
+
+                </ul>
+
+                <ul class="plem__data">
+                    <li class="plem__name" >2. Сформируется название новой
+                        Пчело-Матки с учетом Ваших данных.
+                    </li>
+                </ul>
+                <ul class="plem__data">
+                        <li class="plem__name" >3. Надо  заполнить еще пару позиций: </li>
+                </ul>
+
+            </div> #}
+
+
+        </div>
+
+    </div><!-- uchastie -->
+
+{% endblock %}

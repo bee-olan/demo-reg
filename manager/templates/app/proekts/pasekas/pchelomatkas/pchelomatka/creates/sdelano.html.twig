@@ -1,0 +1,113 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}Сделано!{% endblock %}
+
+{#{% block sidebarr %}#}
+{#    {% include('app/proekts/pasekas/matkas/side/_side_pchelo_sdelano.html.twig') %}#}
+{#{% endblock %}#}
+
+{% block menupro %}
+    {{ include('app/proekts/_tabs.html.twig') }}
+    {{ include('app/proekts/page_glavas/pchelomatka/_tabs.html.twig') }}
+{% endblock %}
+
+{#{% block kroxii %}#}
+{#    <a href="{{ path('proekt') }}">Главная</a>#}
+{#    <a href="#">Рег-ция ПлемМатки</a>#}
+{#    <a href="{{ path('app.proekts.pasekas.matkas.plemmatkas.creates') }}">Пункты 1-3</a>#}
+{#    #}{#             <a href="{{ path('app.proekts.pasekas.rasas.plemmatka') }}">Раса_</a>#}
+{#    <span class="aktiv ">Пункт 3</span>#}
+{#    {% if plemmatka %}#}
+{#        <span class="aktiv ">Катеория и внутреняя нумерация</span>#}
+{#        <span style="color: red">Сделано!!!  </span>#}
+{#    {% endif %}#}
+{#{% endblock %}#}
+
+
+{% block bodyy %}
+
+    <div  class=" proekts proekts--pchelomat">
+
+
+        <div class="inklud inklud--pchelomat ">
+
+            <div class="pchelo-title  pchelo-teni ">
+                Формируем название Пчело-Матки
+            </div>
+        </div>
+
+        <div class="proekts-plr  ">
+
+            <div class="elit-titul elit-titul--mt3 ">
+                {% if pchelomatka %}
+
+                    <span class=" pchelo-titul--col ">Ура! Всё получилось! </span>
+
+                {% else %}
+                    <span class=" pchelo-titul--col ">Для регистрации Пчело-Матки, надо последовательно заполнить пункты: 1 - 3  </span>
+
+                {% endif %}
+
+            </div>
+
+
+            {% if pchelomatka %}
+
+                <ul class="plem__data">
+
+                    <li>
+                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                    </li>
+                    <li>
+                        <div class="pchelo-nomer pchelo-nomer__wid12">
+                            <span class="strongo strongo--kras"> {{ pchelomatka.name }}  </span>
+
+                        </div>
+                    </li>
+                    <li class="pchelo__name  ">Ваша Пчело-Матка!</li>
+                    <li></li>
+                </ul>
+                <ul class="pchelo__data pchelo__data--mt2">
+                    <li class="pchelo__name">
+                        <span class="strongo strongo--kras">  Внимание!</span>.
+                        Можно добавить 3-и сезона в автоматическом режиме
+                    </li>
+                    <li class="pchelo__title pchelo__title--mb0">
+                        <a href="{{ path('app.proekts.pasekas.pchelomatkas.pchelomatka.redaktors.pchelosezons.createTri', {'pchelomatka_id': pchelomatka.id}  ) }}"
+                           class="btnn btnn--pchel ">
+                            Добавить 3-и сезона
+                        </a>
+                    </li>
+
+                    <li></li>
+                </ul>
+            {% endif %}
+
+            <ul class="pchelo__data pchelo__data--mt2">
+                <li>расшифровку
+                    {#                    <a href="{{ path('app.proekts.pasekas.pchelomatkas.show' , {'pchelomatka_id' : pchelomatka.id}  ) }}"#}
+                    {#                       class="btnn btnn--mb0 btnn--col-pchelom">Посмотреть <strong class="strongo strongo--kras">#}
+                    {#                            расшифровку </strong> названия ПлемМатки.#}
+                    {#                    </a>#}
+                </li>
+
+                <li>
+                    <a href="{{ path('app.proekts.pasekas.pchelomatkas.spisoks'  ) }}"
+                       class="btnn  btnn--pchel">Список Ваших <strong class="strongo strongo--kras">Пчело-Маток </strong> -
+                        смотреть
+                    </a>
+                </li>
+                <li></li>
+            </ul>
+            {# </div> #}
+
+
+        </div>
+
+    </div><!-- uchastie -->
+
+{% endblock %}

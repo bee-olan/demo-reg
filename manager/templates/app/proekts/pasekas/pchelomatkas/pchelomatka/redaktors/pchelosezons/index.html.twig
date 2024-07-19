@@ -1,0 +1,53 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}Отделы{% endblock %}
+
+{#  {% block kroxii %}#}
+{#      <a href="{{ path('app.proekts.basepro') }}">Главная</a>#}
+{#      <a href="{{ path('app.proekts.pasekas.matkas.plemmatkas.creates') }}">Рег-ция ПлемМатки</a>#}
+{#      <a href="{{ path('app.proekts.pasekas.matkas') }}">Список ПлемМаток</a>#}
+{#      <a href="{{ path('app.proekts.pasekas.matkas.plemmatkas.show', {'plemmatka_id': plemmatka.id}) }}">{{ plemmatka.name }}</a>#}
+{#      <a href="{{ path('app.proekts.pasekas.matkas.plemmatkas.redaktorss.show', {'plemmatka_id': plemmatka.id}) }}">Редактировать</a>#}
+{#      <span class="aktiv ">Добавить сезон</span>#}
+{#  {% endblock %}#}
+
+{% block bodyy %}
+
+    <div  class=" proekts proekts--pchelomat">
+
+
+        <div class="inklud inklud--pchelomat ">
+
+            <div class="pchelo-title  pchelo-teni ">
+                Добавить новый рабочий сезон для Пчело-Матки!!!<br>
+                Пока удалили часть стр
+            </div>
+        </div>
+
+        <div class="proekts-plr">
+            <h1 class="plem__title  "><strong class="strongo ">{{ plemmatka.name }} </strong> -- ПлемМатка, берём за
+                основу для ТестМаток</h1>
+            <h1 class="plem__title  "><strong
+                        class="strongo strongo--kras">{{ plemmatka_status(plemmatka.status.name) }} </strong> -- статус
+                ПлемМатки на данный момент</h1>
+            {# {% if departmentss %}
+                {% for department in departmentss %}
+                    <ul class="plem plem__jus-st ">
+                        <li class="plem__name " ><strong class="strongo ">Сезон: </strong></li>
+                        <li class="plem__name " >{{department.name}}</li>
+                    {% if department.uchasties_count  < 1 %}
+                        <li class="plem__name--wid20">  &nbsp; &nbsp;
+                            <a href="{{ path('app.proekts.pasekas.matkas.plemmatkas.redaktorss.uchastiess.edit',
+                                {'plemmatka_id': plemmatka.id}) }}" class="btnn btnn--mb0 btnn--col">добавить этот!!!</a>
+                        </li>
+                    {% endif %}
+                    </ul>
+                {% endfor %}
+            {% else %}
+             <h1 class="plem__title  "><strong class="strongo ">Пока сезонов нет </strong> --  напишите мне, исправлю</h1>
+            {% endif %} #}
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}{{ pchelomatka.name }}{% endblock %}
+
+{% block menupro %}
+    {{ include('app/proekts/_tabs.html.twig') }}
+
+    {{ include('app/proekts/page_glavas/pchelomatka/_tabs.html.twig') }}
+{% endblock %}
+
+{# {% block kroxii %}#}
+{#     <a href="{{ path('app.proekts.basepro') }}">Главная</a>#}
+{#     <a href="{{ path('app.proekts.pasekas.drevmatkas.spisoks') }}">Список Пчело-Маток</a>#}
+{#     <a href="{{ path('app.proekts.pasekas.pchelomatkas.pchelomatkas.show', {'pchelomatka_id': pchelomatka.id})  }}">{{ pchelomatka.name }}</a>#}
+{#     <a href="{{ path('app.proekts.pasekas.drevmatkas.redaktors.show', {'pchelomatka_id': pchelomatka.id})  }}">Добавить сезон. Статус</a>#}
+{#     <span class="aktiv ">Добавить сезон</span>#}
+{# {% endblock %}#}
+
+{% block bodyy %}
+
+    <div  class=" proekts proekts--pchelomat">
+
+
+        <div class="inklud inklud--pchelomat ">
+
+            <div class="pchelo-title  pchelo-teni ">
+                Добавить новый сезон Пчело-Матки
+            </div>
+        </div>
+
+        <div class="proekts-plr  ">
+            {% if pchelomatka.active %}
+                <div class="elit-titul elit-titul--mt3  ">
+                    <span>{{ pchelomatka.name }} </span>
+                </div>
+                <div class="plem-form__header  ">
+                    <div class="plem-form ">
+
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                        <div>
+                            <ul class="plem plem__jus-st ">
+                                <li>
+                                    <button type="submit" class="btnn  btnn--mb0 btnn--pt">Сохранить</button>
+                                </li>
+                                <li class="plem__name--wid20"> &nbsp; &nbsp;
+                                    <a href="{{ path('app.proekts.pasekas.pchelomatkas.pchelomatka.redaktors.show',
+                                        {'pchelomatka_id': pchelomatka.id}) }}" class="btnn btnn--mb0 btnn--pt">Или
+                                        вернуться на страничку</a>
+                                </li>
+                            </ul>
+                        </div>
+                        {{ form_end(form) }}
+
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if pchelomatka.archived %}
+                <div class="elit-titul elit-titul--mt3">
+                    <span> Вы не можете добавить новый сезон</span>
+                    <span class=" elit-titul--col ">Пчело-Матка находится</span>
+                    <span >в архиве </span>
+
+                </div>
+
+                <ul class="plem plem__jus-st ">
+
+                    <li class="plem__name--wid20"> &nbsp; &nbsp;
+                        <a href="{{ path('app.proekts.pasekas.pchelomatkas.pchelomatka.redaktors.show',
+                            {'pchelomatka_id': pchelomatka.id}) }}" class="btnn btnn--mb0 btnn--pt">Вернуться на
+                            страничку</a>
+                    </li>
+                </ul>
+            {% endif %}
+        </div>
+
+    </div>
+
+{% endblock %}

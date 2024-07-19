@@ -1,0 +1,71 @@
+<div class="tabl__header ">
+    <div style="overflow: auto; line-height: 1.2;">
+        <table class="tabl tabl-bordered tabl-hover mb-0 ">
+            <thead>
+            <tr>
+                {% for kategoria in kategorias %}
+                    <th class="tabl-bordered tabl-th">{{ kategoria.name }}</th>
+                {% endfor %}
+                <th class="tabl-th">Характеристики категорий</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for permission in permissions %}
+                <tr class="tabl__kateg  tabl-bordered">
+                    {% for kategoria in kategorias %}
+                        <th class="tabl-bordered tabl-icon-td tabl-th">
+                            {% if permission in kategoria.permissions %}
+                                <div class="tabl-icon ">
+                                    <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-check2"
+                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                              d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                    </svg>
+                                </div>
+                            {% endif %}
+                        </th>
+                    {% endfor %}
+                    <td style="position: relative;">
+                        <div style=" padding:  .5rem; font-size: 1.2rem ">
+                            {{ permission|trans({}, 'paseka_permissions') }}
+                        </div>
+                    </td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="inklud__title inklud__title--plem teni teni--rategor">
+       Условные обозначение категорий
+    </div>
+  <table  style=" padding:  .5rem; font-size: 1.2rem ">
+      <tr>
+          <td style=" font-size: 1.4rem " class="tabl-th">бр</td>
+          <td>-</td>
+          <td >брендовая</td>
+          <td></td>
+          <td style=" font-size: 1.4rem " class="tabl-th">м</td>
+          <td>-</td>
+          <td >местная</td>
+      </tr>
+      <tr>
+          <td  style=" font-size: 1.4rem "  class="tabl-th">бр / а</td>
+          <td>-</td>
+          <td >брендовая / адаптированная</td>
+          <td></td>
+          <td style=" font-size: 1.4rem "  class="tabl-th">м / а</td>
+          <td>-</td>
+          <td >местная / адаптированная</td>
+      </tr>
+      <tr>
+          <td style=" font-size: 1.4rem " class="tabl-th" >бр / с</td>
+          <td>-</td>
+          <td >брендовая / селекционная</td>
+          <td></td>
+          <td style=" font-size: 1.4rem " class="tabl-th">м / с</td>
+          <td>-</td>
+          <td  >местная / селекционная</td>
+      </tr>
+  </table>
+</div>

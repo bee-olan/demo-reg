@@ -1,0 +1,146 @@
+{% extends 'probase.html.twig' %}
+
+{% block title %}Редактирование{% endblock %}
+
+{% block menupro %}
+    {{ include('app/proekts/_tabs.html.twig') }}
+
+    {{ include('app/proekts/page_glavas/pchelomatka/_tabs.html.twig') }}
+{% endblock %}
+
+   {% block kroxii %}
+       <a href="{{ path('app.proekts.basepro') }}">Главная</a>
+       <a href="{{ path('app.proekts.pasekas.pchelomatkas.spisoks') }}">Список Пчело-Маток</a>
+       <span class="aktiv ">Добавить сезон. Статус</span>
+   {% endblock %}
+
+{% block bodyy %}
+    <div  class=" proekts proekts--pchelomat">
+
+
+        <div class="inklud inklud--pchelomat ">
+
+            <div class="pchelo-title  pchelo-teni ">
+                Добавить сезон . Статус (Активная/В архиве)
+            </div>
+        </div>
+
+
+        <div class="proekts-plr">
+
+            <div class="pchelo-titul ">
+                <span class=" pchelo-titul--col ">{{ pchelomatka.name }} </span>
+                <span> -- -- Пчело-Матка, берём за
+                основу для Дочь Маток</span>
+            </div>
+            <ul class="pchelo pchelo__jus-st ">
+                <li class="pchelo__name pchelo__name--wid20">Комментарий :</li>
+                <li class=" pchelo__name--wid20">
+                    <span class="pchelo-titul ">{{ pchelomatka.content }} </span>
+                </li>
+                <li class="pchelo__name--wid20"> &nbsp; &nbsp;
+                    <a href="{{ path('app.proekts.pasekas.pchelomatkas.pchelomatka.redaktors.edit',
+                        {'pchelomatka_id': pchelomatka.id}) }}"
+                       class=" btnn-elit ">Редактировать</a>
+                </li>
+            </ul>
+
+            <ul class="pchelo pchelo__jus-st ">
+                <li class="pchelo__name pchelo__name--wid20 ">Статус :</li>
+                <li class="pchelo__name pchelo__name--wid20 ">
+                    <strong class="strongo strongo--kras"> {{ plemmatka_status(pchelomatka.status.name) }} </strong>
+                </li>
+                <li> &nbsp;
+                    {% if pchelomatka.active and pchelomatka.id.value != app.user.id %}
+                        <div class=" pchelo-arxiw ">
+                            <form action="{{ path('app.proekts.pasekas.pchelomatkas.pchelomatka.redaktors.archive', {'pchelomatka_id': pchelomatka.id}) }}"
+                                  method="post" onsubmit="return confirm('Вы уверены?')">
+                                <input type="hidden" name="token" value="{{ csrf_token('archive') }}"/>
+                                <button type="submit" class="btnn-elit">В архив</button>
+                            </form>
+                        </div>
+                    {% endif %}
+                    {% if pchelomatka.archived %}
+                        <div class=" pchelo-arxiw ">
+                            <form action="{{ path('app.proekts.pasekas.pchelomatkas.pchelomatka.redaktors.reinstate', {'pchelomatka_id': pchelomatka.id}) }}"
+                                  method="post" onsubmit="return confirm('Вы уверены?')">
+                                <input type="hidden" name="token" value="{{ csrf_token('reinstate') }}"/>
+                                <button type="submit" class="btnn-elit">Из архива</button>
+                            </form>
+                        </div>
+                    {% endif %}
+                </li>
+            </ul>
+
+            {% if pchelovods %}
+                <ul class="pchelo pchelo__jus-st ">
+                    <li class="pchelo__name pchelo__name--wid20 ">Объявленные сезоны :</li>
+                    <li class="pchelo__name--wid20">
+                        {% for pchelovod in pchelovods %}
+                            <ul class="list-unstyled my-0">
+
+                                {% for pchelosezon in pchelovod.pchelosezons %}
+                                    {% set sezz = pchelosezon.name +1 %}
+                                    <li class="ma-le-2 ">
+                                        <span class="pchelo-titul "> {{ pchelosezon.name }} - {{ sezz }} </span>
+
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endfor %}
+                    </li>
+
+                    <li class="pchelo__name--wid20">
+                        <a href="{{ path('app.proekts.pasekas.pchelomatkas.pchelomatka.redaktors.pchelovods.edit',{'pchelomatka_id': pchelomatka.id}) }}"
+                           class="btnn-elit ">Объявить сезон
+                        </a>
+                    </li>
+                    <li>
+                    </li>
+                </ul>
+                <ul class="pchelo pchelo__jus-st ">
+                    <li class="pchelo__name pchelo__name--wid20 ">
+                        Добавить СЕЗОН для Пчело Матки :
+                    </li>
+                    <li class="pchelo__name--wid20">
+                        {% if pchelomatka.active %}
+                            <a href="{{ path('app.proekts.pasekas.pchelomatkas.pchelomatka.redaktors.pchelosezons.create', {'pchelomatka_id': pchelomatka.id}) }}"
+                               class=" btnn-elit  "> Добавить сезон
+                            </a>
+                        {% else %}
+                            <span class="pchelo-titul ">  Маточка в архиве </span>
+
+                        {% endif %}
+                    </li>
+                </ul>
+                <ul class="pchelo pchelo__jus-st ">
+                    <li class="pchelo__name pchelo__name--wid20 ">
+                        На страничку добавления ПчелоДочь :
+                    </li>
+
+                    <li class=" pchelo__name--wid20">
+                        <a href="{{ path('app.proekts.pasekas.pchelomatkas.pchelomatka.childpchelos.show', {'pchelomatka_id': pchelomatka.id}) }}"
+                           class=" btnn-elit  ">
+                            Перейти к регистрации
+                        </a>
+                    </li>
+                </ul>
+            {% else %}
+                <ul class="pchelo pchelo__jus-st ">
+                    <li class="pchelo__name pchelo__name--wid20">
+                        <strong class="strongo strongo--kras">Объявленных сезонов - нет.</strong>
+
+                        <a href="{{ path('app.proekts.pasekas.pchelomatkas.pchelomatka.redaktors.pchelosezons.createTri', {'pchelomatka_id': pchelomatka.id}) }}"
+                           class=" btnn-elit  ">Добавить 3-и сезона
+                        </a>
+                    </li>
+
+                </ul>
+            {% endif %}
+
+        </div>
+    </div>
+
+
+
+{% endblock %}

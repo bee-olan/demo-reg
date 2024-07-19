@@ -90,6 +90,23 @@ services:
     App\Menu\Proekts\PageGlavas\UchastGl\GlavMenu:
         tags: [{ name: knp_menu.menu_builder, method: build, alias: proekt_page_uchast_glav }]
 
+    App\Menu\Proekts\PageGlavas\PcheloMatka\GlavMenu:
+        tags: [{ name: knp_menu.menu_builder, method: build, alias: proekt_page_pchelo_glav }]
+
+    App\Menu\Proekts\PageGlavas\PcheloMatka\ChildMenu:
+        tags: [{ name: knp_menu.menu_builder, method: build, alias: proekt_page_child_pchelo }]
+
+    App\Menu\Proekts\PageGlavas\BrendMatka\GlavMenu:
+        tags: [{ name: knp_menu.menu_builder, method: build, alias: proekt_page_brend_glav }]
+
+    App\Menu\Proekts\PageGlavas\BrendMatka\ChildMenu:
+        tags: [{ name: knp_menu.menu_builder, method: build, alias: proekt_page_child_brend }]
+
+    App\Menu\Proekts\PageGlavas\ElitMatka\GlavMenu:
+        tags: [{ name: knp_menu.menu_builder, method: build, alias: proekt_page_elit_glav }]
+
+    App\Menu\Proekts\PageGlavas\ElitMatka\ChildMenu:
+        tags: [{ name: knp_menu.menu_builder, method: build, alias: proekt_page_child_elit }]
 
     Symfony\Component\HttpFoundation\Session\Session:
         alias: Symfony\Component\HttpFoundation\Session\SessionInterface
