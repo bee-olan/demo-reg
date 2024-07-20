@@ -47,6 +47,9 @@ class PcheloMatkasController extends AbstractController
         $form = $this->createForm(Filter\Form::class, $filter);
         $form->handleRequest($request);
 
+        $form = $this->createForm(Filter\Form::class, $filter);
+        $form->handleRequest($request);
+
         $pagination = $fetcher->all(
             $filter,
             $request->query->getInt('page', 1),

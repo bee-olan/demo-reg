@@ -1,0 +1,88 @@
+//strong-sait
+.stron-sezon {
+
+     font-weight: normal;
+        font-size: 2rem;
+        color: $red;
+    }
+
+.strongo {
+    font-weight: normal; //это о толщине шрифта 
+    color: $text;
+    //font-style: italic; //наклонный шрифт
+
+    &--child {
+        font-size: 1.4rem;
+        color: $fon-ser-bor;
+    }
+
+    &--elit {
+        //font-size: 1.4rem;
+        color: #888;;
+    }
+
+    &--sizee {
+        // font-weight: normal;
+        font-size: 2.4rem;
+        color: $red;
+    }
+
+    &--size-2 {
+        // font-weight: normal;
+        font-size: 1.6rem;
+        color: $red;
+    }
+    
+    &--name-nike {
+        font-weight: normal;
+        font-size: 1.4rem;
+        //color: $name-nike;
+    }
+
+    &--text {
+        // font-weight: normal;
+        font-size: 1.6rem;
+        //color: $name-nike;
+    }
+
+    &--krox {
+        font-size: 1.6rem;
+        color: $text;
+    }
+    &--rod {
+        font-size: 1.4rem;
+        color: $text;
+    }
+
+    &--kras {
+        color: $red;
+        font-size: 1.2rem;
+    }
+
+    &--sin {
+        color: $grad1;
+        font-size: 1.4rem;
+    }
+
+    &--ras {
+        font-size: 1.2rem;
+    }
+
+    &--lin {
+        font-size: 1.2rem;
+    }
+
+    &--nom {
+        font-size: 1.2rem;
+    }
+}
+.st-plem {
+    font-size: 1.2rem;
+
+    &__kras {
+        color: rgba($red, 0.7);
+    }
+    &__wse {
+        color: rgba($beloe, 0.3);
+    }
+}

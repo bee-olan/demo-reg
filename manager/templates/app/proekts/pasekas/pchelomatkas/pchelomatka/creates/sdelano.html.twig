@@ -64,9 +64,9 @@
                         <span class="strongo strongo--kras">  Внимание!</span>.
                         Можно добавить 3-и сезона в автоматическом режиме
                     </li>
-                    <li class="pchelo__title pchelo__title--mb0">
+                    <li >
                         <a href="{{ path('app.proekts.pasekas.pchelomatkas.pchelomatka.redaktors.pchelosezons.createTri', {'pchelomatka_id': pchelomatka.id}  ) }}"
-                           class="btnn btnn--pchel ">
+                           class="btnn btnn-pchel ">
                             Добавить 3-и сезона
                         </a>
                     </li>
@@ -76,8 +76,13 @@
             {% endif %}
 
             <ul class="pchelo__data pchelo__data--mt2">
-                <li>расшифровку
-                    {#                    <a href="{{ path('app.proekts.pasekas.pchelomatkas.show' , {'pchelomatka_id' : pchelomatka.id}  ) }}"#}
+                <li>
+                    <div class="btnn btnn-pchel">
+                        Посмотреть <strong class="strongo strongo--kras">
+                                                    расшифровку </strong> названия ПлемМатки
+
+                        </div>
+                        {#                    <a href="{{ path('app.proekts.pasekas.pchelomatkas.show' , {'pchelomatka_id' : pchelomatka.id}  ) }}"#}
                     {#                       class="btnn btnn--mb0 btnn--col-pchelom">Посмотреть <strong class="strongo strongo--kras">#}
                     {#                            расшифровку </strong> названия ПлемМатки.#}
                     {#                    </a>#}
@@ -85,7 +90,7 @@
 
                 <li>
                     <a href="{{ path('app.proekts.pasekas.pchelomatkas.spisoks'  ) }}"
-                       class="btnn  btnn--pchel">Список Ваших <strong class="strongo strongo--kras">Пчело-Маток </strong> -
+                       class="btnn  btnn-pchel">Список Ваших <strong class="strongo strongo--kras">Пчело-Маток </strong> -
                         смотреть
                     </a>
                 </li>

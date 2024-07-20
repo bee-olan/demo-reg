@@ -136,6 +136,7 @@ pre {
 }
 
 @import "chat";
+@import "strongo";
 
 @import "a-rasas/a_rasa";
 
@@ -160,6 +161,9 @@ pre {
 @import "proekts/headers/search";
 @import "proekts/headers/subnav";
 
+@import "proekts/imgg/drevimg";
+@import "proekts/imgg/kartinka";
+
 @import "proekts/proekt/proekts";
 @import "proekts/stories/stories";
 @import "proekts/wstavka/wstavka";
@@ -179,6 +183,7 @@ pre {
 @import "proekts/paseka/inklud/inklud";
 @import "proekts/paseka/inklud/tabs-inkl";
 
+@import "proekts/paseka/matkas/form-wse";
 @import "proekts/paseka/matkas/wse-matki";
 @import "proekts/paseka/matkas/pchelo/pchelomat";
 

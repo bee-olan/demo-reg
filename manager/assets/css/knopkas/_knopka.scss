@@ -1,6 +1,42 @@
+.btnn-elit {
+  display: inline-block; // чтобы падинги корректно работали
+  padding: 0.2rem .6rem 0.2rem .7rem;
+  color: $text-elit-swet;
+  border: 1px solid $text-elit-swet;
+  box-shadow: inset 0 0 10px rgba($text-elit-swet, 0.9);
+  // box-shadow: inset 0 0 10px rgba($border-kroxi, 0.9);
+
+  cursor: pointer;
+  border-radius: 3em;
+  font-family: inherit; //шрифт наследуется у родителя
+  text-decoration: none;
+  transition: background-color .3s linear;
+  margin-bottom: .5rem;
+  margin-left: 1.1rem;
+
+  &--nike {
+    border-radius: 5px;
+    font-size: .9rem;
+    color: $godina-swet;
+  }
+
+  &--execut {
+    border-radius: 5px;
+    font-size: .9rem;
+    color: $col-otec;
+  }
+
+  &:hover {
+    color: $elit-col;
+    border: 1px solid $elit-col;
+    box-shadow: inset 0 0 10px rgba($elit-col, 0.7);
+  }
+}
+
+
 .btnn {
   display: inline-block; // чтобы падинги корректно работали
-  padding: 0.15rem .7rem 0.15rem .8rem;
+  padding: 0.2rem .7rem 0.2rem .8rem;
   opacity: 1;
   cursor: pointer;
   border-radius: 2rem;
@@ -16,14 +52,30 @@
   //  box-shadow: inset 0 0 10px rgba($body-bg, 0.7);
   //}
 }
+.btnn-pchel {
+  background-color: $transpar;
+  padding: 0.2rem .8rem 0.2rem .9rem;
+  //box-shadow: inset 0 0 10px rgba($pchelo-col, 0.9);
+  box-shadow: 0 5px 10px rgba($text-pchelo, .2),
+  inset 0 0 10px rgba($pchelo-col, 0.9);
+  border: 1px solid $pchelo-col;
+  color: $pchelo-col;
+
+  &:hover {
+    box-shadow: inset 0 0 10px rgba($text-pchelo, 0.8);
+    border: 1px solid $text-pchelo;
+    text-decoration: none;
+    color: $text-pchelo;
+  }
+
+}
+
 .btnn-rasa {
   border: 1px solid $border-kroxi;
   background-color: inherit;
   color: inherit;
 
   &:hover {
-    //color: $body-bg;
-    //border: 1px solid $body-bg;
     box-shadow: inset 0 0 10px rgba($border-kroxi, 0.7);
   }
 }

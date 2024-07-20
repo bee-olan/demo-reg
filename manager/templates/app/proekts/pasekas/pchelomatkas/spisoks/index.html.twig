@@ -63,24 +63,23 @@
                         </li>
 
 
-                        <li class="pchelo__name-list ">
+                        <li class="pchelo__name-list   ">
                             <a href="{{ path('app.proekts.pasekas.pchelomatkas.pchelomatka.redaktors.show', {'pchelomatka_id': pchelomatka.id}) }}"
-                               class="btnn btnn--pchel "
-                               title="Редактировать, архивировать, добавить новый сезон">
+                                title="Редактировать, архивировать, добавить новый сезон">
                                 <div class="drevimg "></div>
                             </a>
                         </li>
                         {% if pchelomatka.pchsezon_count > 0 %}
                             <li class="pchelo__name-list td_cent">
-                                <a href="{{ path('app.proekts.pasekas.pchelomatkas.pchelomatka.childpchelos.show', {'pchelomatka_id': pchelomatka.id}) }}"
-                                   class="btnn btnn--pchel "
-                                   title="Добавить ДочьМаток от этой маточки">
+{#                                <a href="{{ path('app.proekts.pasekas.pchelomatkas.pchelomatka.childpchelos.show', {'pchelomatka_id': pchelomatka.id}) }}"#}
+{#                                   class="btnn btnn--pchel "#}
+{#                                   title="Добавить ДочьМаток от этой маточки">#}
                                     <div class="matimg"></div>
-                                </a>
+{#                                </a>#}
 
                             </li>
                             <li class="pchelo__name--wid5 td_cent">
-                                ({{ pchelomatka.child_count }})
+{#                                ({{ pchelomatka.child_count }})#}
                             </li>
                         {% else %}
                             <li class="pchelo__name-list">

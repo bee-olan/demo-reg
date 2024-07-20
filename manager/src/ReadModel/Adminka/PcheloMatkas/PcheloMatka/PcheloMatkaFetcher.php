@@ -112,7 +112,6 @@ class PcheloMatkaFetcher
                 ->setParameter(':id', $id)
                 ->execute()->fetchColumn() > 0;
     }
-
     /**
      * @param Filter $filter
      * @param int $page
@@ -135,7 +134,7 @@ class PcheloMatkaFetcher
                 'p.goda_vixod ',
                 'pe.nomer as persona',
 //                'k.name AS kategoria',
-                '(SELECT COUNT(*) FROM admin_pchelomat_pchelosezons d WHERE d.pchelomatka_id = p.id) AS pchsezon_count',
+                '(SELECT COUNT(*) FROM admin_pchelomat_pchelosezons d WHERE d.pchelomatka_id = p.id) AS pchsezon_count'
 //                '(SELECT COUNT(*) FROM admin_pchelo_childs c WHERE c.pchelomatka_id = p.id) AS child_count'
             )
             ->from('admin_pchelomats', 'p')
