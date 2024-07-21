@@ -2,10 +2,6 @@
 .sidee {
   width: $sidebar-width;
   height: 100vh;
-  // background: $sidebar-color;
-  //background: linear-gradient( $grad1, $grad2);
-  //  box-shadow: 5px 0 15px rgba(95, 84, 23, 0.3);
-
   position: fixed;
   top: 0;
   left: 0;
@@ -50,37 +46,10 @@
   height: 4.5rem;
   margin-bottom: 2rem;
 
-  //img {
-  //    display: block;
-  //    width: 100%;
-  //    height: 100%;
-  //    padding: 0 .2rem;
-  //    object-fit: cover; // если картинка не по размеру
-  //}
-
   //@include breakpoint($tablet-bp) {
   //    height: 4.6rem;
   //}
 }
-
-//.sidee__lupa {
-//    height: 2.6rem;
-//    width: 2.6rem;
-//    //margin-bottom: 2rem;
-//
-//
-//    img {
-//        display: flex;
-//        width: 100%;
-//        height: 100%;
-//        //padding: 0 .2rem;
-//          margin-top: .4rem;
-//       margin-left: .4rem;
-//      // margin: 1.5rem 1rem;
-//        object-fit: cover; // если картинка не по размеру
-//
-//    }
-//}
 
 .sideefiltr {
   display: block;
@@ -166,10 +135,10 @@
 }
 
 .side-title__li {
-  margin: .5rem 0 .5rem 0;
+  margin: 1.4rem 0 1.1rem 0;
   padding-left: 1rem;
   font-size: 1.4rem;
-  color: $text;
+  color: $border-linia-nav;
 
   //@include breakpoint($tablet-bp) {
   //    font-size: 1.8rem;
