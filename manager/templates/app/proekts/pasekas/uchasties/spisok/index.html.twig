@@ -2,21 +2,14 @@
 
 {% block title %}Участники{% endblock %}
 
-    {% block sidebar %}              
+    {% block sidebarr %}
            {% include('app/proekts/pasekas/uchasties/side/_sidefiltr.html.twig') %}
     {% endblock %}
 
 {% block menupro %}
     {{ include('app/proekts/_tabs.html.twig') }}
-
     {{ include('app/proekts/page_glavas/uchastieGl/_tabs.html.twig') }}
 {% endblock %}
-
-{#{% block kroxii %}#}
-{#    <a href="{{ path('proekt') }}">Главная</a>#}
-{#     <span class="aktiv">Список участноков</span>#}
-{#   #}
-{#{% endblock %}#}
 
 
 {% block bodyy %}
@@ -38,8 +31,10 @@
                     <li class = "uch-tabl__list-li uch-color uch-tabl__linia">  ПерсНомер </li>
                     <li class = "uch-tabl__list-li uch-color uch-tabl__linia"> Место  </li>
                     <li class = "uch-tabl__list-li uch-color uch-tabl__linia">Группа</li>
-                    <li class = "uch-tabl__list-li uch-color uch-tabl__linia" >ПлемМатки</li>
-{#                    <li class = "uch-tabl__list-li uch-color uch-tabl__linia" >Сезонов</li>#}
+                    <li class = "uch-tabl__list-li uch-color uch-tabl__linia" >Элит</li>
+                    <li class = "uch-tabl__list-li uch-color uch-tabl__linia" >Бренд</li>
+                    <li class = "uch-tabl__list-li uch-color uch-tabl__linia" >Пчело</li>
+                    <li class = "uch-tabl__list-li uch-color uch-tabl__linia" >Сезонов</li>
                     <li class = "uch-tabl__list-li uch-color uch-tabl__linia">
                         Статус
                         {# {{ member_status(uchastie.status) }}  #}
@@ -50,17 +45,28 @@
                 {% for uchastie in pagination %}
                     <ul class = "uch-tabl__list">
                             <li class = " uch-tabl__list-li" >
-                                 <a class="uch-tabl__link" href="{{ path('app.proekts.pasekas.uchasties.spisok.show', {'id': uchastie.id}) }}">
-                                {{ uchastie.nike }} </a>
+                                 <a class="uch-tabl__link" href="{{ path('app.proekts.pasekas.uchasties.uchastiee.show', {'id': uchastie.id}) }}">
+                                {{ uchastie.nike }}
+                                 </a>
                             </li>
                             <li class = "uch-tabl__list-li uch-tabl__linia">  {{ uchastie.persona }} </li>
                             <li class = "uch-tabl__list-li uch-tabl__linia">  {{ uchastie.mesto }} </li>
                             <li class = "uch-tabl__list-li uch-tabl__linia">{{ uchastie.group }}</li>
-                            <li class = "uch-tabl__list-li uch-tabl__linia">{{ uchastie.uchastniks_count }}</li>
-{#                            <li class = "uch-tabl__list-li uch-tabl__linia">{{ uchastie.sezon_count }}</li>#}
+                            <li class = "uch-tabl__list-li uch-tabl__linia">0
+{#                                {{ uchastie.uchastniks_count }}#}
+                            </li>
+                        <li class = "uch-tabl__list-li uch-tabl__linia">0
+                            {#                                {{ uchastie.uchastniks_count }}#}
+                        </li>
+                        <li class = "uch-tabl__list-li uch-tabl__linia">0
+                            {#                                {{ uchastie.uchastniks_count }}#}
+                        </li>
                             <li class = "uch-tabl__list-li uch-tabl__linia">
-                                 {{uchastie.status}}
-    {#                            {{ uchastiee_status(uchastie.status) }}#}
+{#                                {{ uchastie.sezon_count }}#}
+                            </li>
+                            <li class = "uch-tabl__list-li uch-tabl__linia">
+{#                                 {{uchastie.status}}#}
+                                {{ uchastie_status(uchastie.status) }}
                             </li>
                      </ul>
                 {% endfor %}
@@ -91,13 +97,13 @@
 
                 {% for uchastie in pagination %}
                     <ul class = "uch-tabl__list">
-                        <li class = " uch-tabl__list-li" >
-                            <a class="uch-tabl__link" href="{{ path('app.proekts.pasekas.uchasties.spisok.show', {'id': uchastie.id}) }}">
-                                {{ uchastie.nike }} </a>
+                        <li class = " uch-tabl__list-li" >????
+{#                            <a class="uch-tabl__link" href="{{ path('app.proekts.pasekas.uchasties.spisok.show', {'id': uchastie.id}) }}">#}
+{#                                {{ uchastie.nike }} </a>#}
                         </li>
                         <li class = "uch-tabl__list-li uch-tabl__linia">  {{ uchastie.persona }} </li>
                         <li class = "uch-tabl__list-li uch-tabl__linia">  {{ uchastie.mesto }} </li>                   
-                        <li class = "uch-tabl__list-li uch-tabl__linia">{{ uchastie.uchastniks_count }}</li>
+{#                        <li class = "uch-tabl__list-li uch-tabl__linia">{{ uchastie.uchastniks_count }}</li>#}
                        
                     </ul>
                 {% endfor %}

@@ -1,45 +1,60 @@
-<aside class="sidee" >
-    <div class="sidee__header">
-      <img src="{{ asset('assets/proekt/images/logo_es.png') }}" alt="">
+<aside class="sidebarr">
+
+    <div class="sidebarr__header">
+        <div class="logo_es"></div>
     </div>
 
-   <div class="sideemenu" >
-       <div class="sideefiltr__li sideefiltr__li--wid100">
-           <a class="btnn btnn--pt btnn--mb0"  href="/proekt">На Главную</a>
-       </div>
-   </div>
+    <div class="sideefiltr">
 
-  <div class="sideefiltr">
-    {{ form_start(form) }}
+        {{ form_start(form) }}
         <ul class="sideefiltr__ul">
-            <li class="sideefiltr__li sideefiltr__li--wid100 sideefiltr__li--flex">
-              <div >
-                <button type="submit" class=" btnn btnn--mb0 btnn--pt" >Фильтр</button>
-              </div>
-              <div class="sidee__lupa">
-                <img src="{{ asset('assets/proekt/images/lupa.png') }}" alt="">
-              </div>
-              <div >
-                <a  class=" btnn btnn--mb0 btnn--pt" href="{{ path('app.proekts.pasekas.uchasties') }}" >Сбросить</a>
-              </div>
+            <li class=" sideefiltr__li--wid100 sideefiltr__li--flex ma-to-06">
+                <div class="pa-ri-05">
+                    <button type="submit" class="  btnn  btnn-filtr">Фильтр</button>
+                </div>
+                <div class="sidee__lupa">
+                    <div class="lupaimg"></div>
+                </div>
+                <div>
+                    <a class=" btnn btnn-filtr "
+                       href="{{ path('app.proekts.pasekas.uchasties.spisok') }}">Сбросить</a>
+                </div>
             </li>
-            
+
             <li class="side-title__li">
-              Поиск по 
+                Поиск по
             </li>
+{#            <li class="sideefiltr__li sideefiltr__li--wid100">#}
+{#                                <a class="sideefiltr__link " > {{ form_widget(form.persona) }}</a>#}
+{#            </li>#}
+
             <li class="sideefiltr__li sideefiltr__li--wid100">
-              <a class="sideefiltr__link " > {{ form_widget(form.nike) }}</a>
+                                <a class="sideefiltr__link " > {{ form_widget(form.nike) }}</a>
             </li>
 
-            <li class="sideefiltr__li">
-              <a class="sideefiltr__link ">{{ form_widget(form.group) }}</a>
+            <li class="sideefiltr__li sideefiltr__li--wid100">
+                {#                <a class="sideefiltr__link ">{{ form_widget(form.goda_vixod) }}</a>#}
             </li>
+
             <li class="sideefiltr__li sideefiltr__li--wid10">
-              <a class="sideefiltr__link ">{{ form_widget(form.status) }}</a>
+                                <a class="sideefiltr__link ">{{ form_widget(form.status) }}</a>
             </li>
-          
-          </ul>
-      {{ form_end(form) }}
-  </div>
 
+            <li class="sideefiltr__li sideefiltr__li--wid10">
+                <a class="sideefiltr__link ">{{ form_widget(form.group) }}</a>
+            </li>
+
+        </ul>
+        {{ form_end(form) }}
+    </div>
+    <div class="profilee__text">
+        <div class="profilee__header">
+            <div class="profilee__name"> Внимание!</div>
+            <div class="profilee__prof"> Если что-то пошло <br>не так как надо
+            </div>
+            <button class="btnn  btnn--pt btnn--mb0 " type="button" data-modal="contact-modal">
+                напишите мне
+            </button>
+        </div>
+    </div>
 </aside>

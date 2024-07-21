@@ -125,11 +125,13 @@ class UchastieControllr extends AbstractController
     /**
      * @Route("/show/{id}", name=".show", requirements={"id"=Guid::PATTERN} )
      * @param UchastieRepository $uchasties
+     * @param string $id
 //     * @param MestoNomerFetcher $mestoNomers
      * @return Response
      */
     public function show(UchastieRepository $uchasties, string $id): Response
     {
+//        dd($id);
         $uchastie = $uchasties->get(new Id($id));
         //$infaMesto = $fetchers->infaMesto($plemmatka->getMesto());
        // dd($uchastie);
